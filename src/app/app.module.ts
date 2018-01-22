@@ -20,10 +20,6 @@ const appRoutes: Routes = [
   component: InicioComponent
 },
     {
-path: 'contact',
-component: ContactComponent      
-    },
-    {
       path: 'Service',
       component: ConservicesComponent
     },
