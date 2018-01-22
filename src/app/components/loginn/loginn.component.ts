@@ -22,10 +22,15 @@ export class LoginnComponent implements OnInit {
     var password = e.target.elements[1].value;
     
     if (username == 'Norma' && password == 'Luis' ){
+      console.log (username, password);
 this.router.navigate(['inicio']);
     }
-    console.log (username, password);
-    return false;
+    else{
+      console.log (username, password);
+      alert('Usuario o contraseña incorrecta');
+      return false;
+
+    }
 
   }
 }
