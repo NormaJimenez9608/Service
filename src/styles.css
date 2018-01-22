@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bg-light{
+    background-color: #0057a3!important; 
+    color:white !important;
+    padding: 1px;
+    padding-right: 20px;
+    height: 80px ;
+} 
+
+.blankspace{
+    height: 50px ;
+}
+
+.Servicio{
+    font-size: 13px !important;
+}

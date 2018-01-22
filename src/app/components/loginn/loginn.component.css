@@ -1,9 +1,16 @@
-.bg-light{
-    background-color: #004C99 !important;
-   color:white !important;
 
-} 
 
-.blankspace{
-    height: 50px ;
+.blankspacelogin{
+    height: 5px ;
+}
+
+.col-md-4{
+    font-family: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
+    color: #595959;
+
+}
+
+.cardheader {
+margin: 3px;   
+
 }
