@@ -1,50 +1,48 @@
-<!-- LOGIN WITH BOOSTRAP-->
-<div class="fondo">
+<div class="container-fluid fondo">
+
     <app-header></app-header>
-    <form (submit)="loginUser($event)">
+    <div class="row">
+            <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <app-imageloggin></app-imageloggin>
+        </div>
+     
+        <div class="col-md-4">
 
-        <div class="row">
-            <div class="container-fluid">
-                <div class="col-md-12">
-
-                    <div class="row " align="right" class="col-md-8">
-                        
-                        <div class="col-md-4"></div>
-                        <div class="card col-md-4">
-                            <div class="card-header">
-                                Login
-                            </div>
-                            <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <div class="row">
-                                        <div class="row col-md-12">
-                                            <label for="formGroupExampleInput" class="col-md-4">Username:</label>
-                                            <input type="text" class="form-control col-md-8" id="formGroupExampleInput" placeholder="Username">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <p></p>
-                                        </div>
-                                        <div class="row col-md-12">
-                                            <label for="inputPassword" class="col-md-4">Password:</label>
-                                            <input type="password" class="form-control col-md-8" id="inputPassword" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <p align="center">
-                                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Sign In</button>
-                                    </p>
-                                </blockquote>
-                            </div>
+            <div class="row fondo" align="center" class="col-md-12">
+                <form (submit)="loginUser($event)">
+                    <p></p>
+                    <p></p>
+                    <div class="card col-md-10">
+                        <div class="card-header" align="left">
+                            Login
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <div class="row">
+                                    <div class="row col-md-12">
+                                        <!-- <label for="formGroupExampleInput" class="col-md-4">Username:</label>-->
+                                        <input type="text" class="form-control col-md-12" id="formGroupExampleInput" placeholder="Username">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p></p>
+                                    </div>
+                                    <div class="row col-md-12">
+                                        <!--<label for="inputPassword" class="col-md-4">Password:</label>-->
+                                        <input type="password" class="form-control col-md-12" id="inputPassword" placeholder="Password">
+                                    </div>
+                                </div>
+                                <br>
+                                <p align="left">
+                                    <button type="submit" class="btn btn-secondary">Sign In</button>
+                                </p>
+                            </blockquote>
+                        </div>
                     </div>
-
-                    <div class="col-md-4" align="left">
-                        <app-imageloggin></app-imageloggin>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
-        <div class="blankspace"> </div>
-    </form>
+        <div class="col-md-1"></div>
+    </div>
+
 </div>
