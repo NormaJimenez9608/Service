@@ -9,6 +9,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConservicesComponent } from './components/conservices/conservices.component';
 import { ConsalesComponent } from './components/consales/consales.component';
+import { ImagelogginComponent } from './components/imageloggin/imageloggin.component';
+
 
 const appRoutes: Routes = [
   {
@@ -39,6 +41,8 @@ const appRoutes: Routes = [
     ContactComponent,
     ConservicesComponent,
     ConsalesComponent,
+    ImagelogginComponent,
+   
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

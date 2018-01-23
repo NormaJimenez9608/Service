@@ -1,5 +1,7 @@
 
-
+.fondo{
+    background-color: #EDEEEE;
+}
 .blankspacelogin{
     height: 5px ;
 }
@@ -14,3 +16,4 @@
 margin: 3px;   
 
 }
+

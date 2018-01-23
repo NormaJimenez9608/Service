@@ -2,3 +2,20 @@
 .blankspaceheader{
     height: 45px ;
 }
+
+.bg-light{
+    margin: 0px;
+    padding-left: 15px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo{
+    padding: 0%;
+    margin: 0%;
+    font-size: 40px;
+    color: #909192  ;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
