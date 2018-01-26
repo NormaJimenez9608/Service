@@ -1,12 +1,10 @@
-.navbar-nav{
-color: white !important;
-font-size: 18px;
-padding: 2px;
-}
-    
-.bg-light{
 
-    height: 50px !important;
-    color: white !important;
+.nav-tabs{
+    background-color: #F2F3F4;
+    padding-left: 15px !important;
+    font-size: 22px;
 }
 
+.blankspace2{
+    height: 300px ;
+}

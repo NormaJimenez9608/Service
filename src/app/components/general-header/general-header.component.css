@@ -1,0 +1,32 @@
+.Letter{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-nav{
+color: white !important;
+font-size: 25px;
+padding: 2px;
+}
+    
+.bg-light{
+
+    height: 60px !important;
+    color: white !important;
+}
+
+.blankspace{
+    height: 5px !important;
+}
+
+.col-md-9{
+    font-size: 40px;
+    font-family: 'arial'
+
+}
+
+.col-md-3{
+    padding-right: 15px !important;
+}

@@ -10,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ConservicesComponent } from './components/conservices/conservices.component';
 import { ConsalesComponent } from './components/consales/consales.component';
 import { ImagelogginComponent } from './components/imageloggin/imageloggin.component';
+import { GeneralHeaderComponent } from './components/general-header/general-header.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     ConservicesComponent,
     ConsalesComponent,
     ImagelogginComponent,
+    GeneralHeaderComponent,
    
   ],
   imports: [

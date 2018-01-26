@@ -21,7 +21,7 @@ export class LoginnComponent implements OnInit {
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
     
-    if (username == 'Norma' && password == 'Luis' ){
+    if (username == 'Guntner' && password == 'admin' ){
       console.log (username, password);
 this.router.navigate(['inicio']);
     }
