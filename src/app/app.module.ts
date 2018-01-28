@@ -11,6 +11,10 @@ import { ConservicesComponent } from './components/conservices/conservices.compo
 import { ConsalesComponent } from './components/consales/consales.component';
 import { ImagelogginComponent } from './components/imageloggin/imageloggin.component';
 import { GeneralHeaderComponent } from './components/general-header/general-header.component';
+import { UnitsComponent } from './components/units/units.component';
+import { NumunitsComponent } from './components/numunits/numunits.component';
+import { PagevaluesComponent } from './components/pagevalues/pagevalues.component';
+import { ValuesComponent } from './components/values/values.component';
 
 
 const appRoutes: Routes = [
@@ -29,7 +33,14 @@ const appRoutes: Routes = [
     {
       path: 'Sales',
       component: ConsalesComponent
-    }
+    },
+   { path: 'Units',
+    component: UnitsComponent
+  },
+  {
+    path: 'Values',
+    component: PagevaluesComponent
+  }
 ] 
 
 @NgModule({
@@ -44,6 +55,10 @@ const appRoutes: Routes = [
     ConsalesComponent,
     ImagelogginComponent,
     GeneralHeaderComponent,
+    UnitsComponent,
+    NumunitsComponent,
+    PagevaluesComponent,
+    ValuesComponent,
    
   ],
   imports: [
