@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Http, HttpModule} from '@angular/http'
+
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,7 +17,8 @@ import { UnitsComponent } from './components/units/units.component';
 import { NumunitsComponent } from './components/numunits/numunits.component';
 import { PagevaluesComponent } from './components/pagevalues/pagevalues.component';
 import { ValuesComponent } from './components/values/values.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {LoginService} from './services/login.service';
 
 const appRoutes: Routes = [
   {
@@ -63,9 +66,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule  
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoginService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

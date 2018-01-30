@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {  Router } from "@angular/router";
 import { DYNAMIC_TYPE } from '@angular/compiler/src/output/output_ast';
 import {  Login } from '../../models/login';
+import { LoginService } from '../../services/login.service';
+
 //Aqui se importa 
 //En los conceptos basicos del documento de drive se dice como generar el servicio, y como generar el modelo 
 @Component({
@@ -15,7 +17,7 @@ import {  Login } from '../../models/login';
 export class LoginnComponent implements OnInit {
   login = new Login();
 //dentro de los parentesis se declara lo del constructor 
-  constructor(private username:Login) { 
+  constructor(private username:LoginService) { 
 
   }
   ngOnInit() {
@@ -25,11 +27,12 @@ export class LoginnComponent implements OnInit {
   Login(){
 const username = this.login.username;
 const password = this.login.password;
+this.username.Login(this.login).subscribe(result=>{}, error=>{});
 if(username == 'Guentner' && password == '123'){
 console.log('succes' +username);
 }
 else{
-alert('false'+ username);
+console.log('false'+ username);
 }
   }
 }
