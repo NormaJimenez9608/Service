@@ -1,16 +1,15 @@
-
 <div class="container-fluid fondo1">
     <app-header></app-header>
     <div class="row">
-            <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-6">
             <app-imageloggin></app-imageloggin>
         </div>
-     
-        <div class="col-md-4">
 
+        <div class="col-md-4">
+            <!-- Detro del HTML camian los labels, y probablemente con el <form> no funcione y se deba retirar el boton tambien cambia a la funcion que llamara -->
             <div class="row fondo1" align="center" class="col-md-12">
-                <form (submit)="loginUser($event)">
+                
                     <p></p>
                     <p></p>
                     <div class="card col-md-10">
@@ -22,27 +21,25 @@
                                 <div class="row">
                                     <div class="row col-md-12">
                                         <!-- <label for="formGroupExampleInput" class="col-md-4">Username:</label>-->
-                                        <input type="text" class="form-control col-md-12" id="formGroupExampleInput" placeholder="Username">
+                                        <input type="text"  class="form-control col-md-12"  placeholder="Username" [(ngModel)]="login.username"/>
                                     </div>
                                     <div class="col-md-12">
-                                        <p></p>
+                                        <p></p> 
                                     </div>
                                     <div class="row col-md-12">
                                         <!--<label for="inputPassword" class="col-md-4">Password:</label>-->
-                                        <input type="password" class="form-control col-md-12" id="inputPassword" placeholder="Password">
+                                        <input type="password"  class="form-control col-md-12"  placeholder="Password"  [(ngModel)]="login.password"/>
                                     </div>
                                 </div>
                                 <br>
                                 <p align="left">
-                                    <button type="submit" class="btn btn-secondary">Sign In</button>
+                                    <button type="submit" class="btn btn-secondary"  (click)="Login()" >Sign In</button>
                                 </p>
                             </blockquote>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
-
 </div>

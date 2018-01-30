@@ -1,36 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from "@angular/router";
 import { DYNAMIC_TYPE } from '@angular/compiler/src/output/output_ast';
-
+import {  Login } from '../../models/login';
+//Aqui se importa 
+//En los conceptos basicos del documento de drive se dice como generar el servicio, y como generar el modelo 
 @Component({
   selector: 'app-loginn',
   templateUrl: './loginn.component.html',
-  styleUrls: ['./loginn.component.css']
+  styleUrls: ['./loginn.component.css'
+  ], 
+  providers: [Login]
+  
 })
 export class LoginnComponent implements OnInit {
-
-  constructor(private router: Router) { 
+  login = new Login();
+//dentro de los parentesis se declara lo del constructor 
+  constructor(private username:Login) { 
 
   }
-
   ngOnInit() {
   }
-  
-  loginUser(e) {
-    e.preventDefault();
-    var username = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
-    
-    if (username == 'Guntner' && password == 'admin' ){
-      console.log (username, password);
-this.router.navigate(['inicio']);
-    }
-    else{
-      console.log (username, password);
-      alert('Usuario o contraseña incorrecta');
-      return false;
+  //aqui se declaran nuevas funciones como la de login(){}
 
-    }
-
+  Login(){
+const username = this.login.username;
+const password = this.login.password;
+if(username == 'Guentner' && password == '123'){
+console.log('succes' +username);
+}
+else{
+alert('false'+ username);
+}
   }
 }
