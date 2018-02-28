@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {Http, HttpModule} from '@angular/http'
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
@@ -19,6 +20,7 @@ import { PagevaluesComponent } from './components/pagevalues/pagevalues.componen
 import { ValuesComponent } from './components/values/values.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LoginService} from './services/login.service';
+import {SystemsService} from './services/systems.service';
 
 const appRoutes: Routes = [
   {
@@ -68,9 +70,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule  
+    HttpModule,
+    HttpClientModule  
   ],
-  providers: [LoginService],
+  providers: [LoginService, SystemsService],
   bootstrap: [AppComponent],
 
 })

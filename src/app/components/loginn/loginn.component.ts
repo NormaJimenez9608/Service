@@ -4,6 +4,7 @@ import { DYNAMIC_TYPE } from '@angular/compiler/src/output/output_ast';
 import {  Login } from '../../models/login';
 import { LoginService } from '../../services/login.service';
 
+
  
 @Component({
   selector: 'app-loginn',
@@ -15,27 +16,26 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginnComponent implements OnInit {
   login = new Login();
- 
 
-  constructor(private username:LoginService, private router:Router) { 
+
+  constructor(private username:LoginService, private router:Router ) { 
+
 
   }
   ngOnInit() {
   }
 
-
   Login(){
 const username = this.login.username;
 const password = this.login.password;
-
-
-this.username.Login(this.login).subscribe(result=>{
-  console.log('HOLA');
-  this.router.navigate(['inicio']);
+this.username.Login(this.login)
+  .subscribe( response=>{
+    
+  this.router.navigate(['inicio'])
+ 
 }, error=>{
   alert("Usuario o contraseña incorrecta");
 });
-
-
+}
 }
 

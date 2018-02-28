@@ -1,8 +1,8 @@
 <div class="fondo1">
 <app-general-header></app-general-header>
-
+<p style="size: 25px;">{{name}}</p> 
 <div class="blankspace"> </div>
-
+{{projectName}}
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-2"></div>
@@ -33,9 +33,9 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td style="cursor:pointer" routerLink="/Units">Variable</td>
-      <td>Variable 2</td>
+      <td scope="row">{{activated}}</td>
+      <td style="cursor:pointer" routerLink="/Units">{{name}}</td>
+      <td>{{suspended}}</td>
       
     </tr>
     <tr>
@@ -59,3 +59,4 @@
 </div>
 <div class="blankspace2"> </div>
 </div>
+

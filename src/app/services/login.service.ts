@@ -12,7 +12,7 @@ private headers = new Headers({ 'Content-Type': 'application/json', 'X-Requested
 
 public username;
 private url;
-
+public accesKeyTest;
   constructor (public _http: Http,private router: Router) { 
     this.url = 'https://api.netbiter.net/operation/v1/rest/json/user/authenticate';
 
@@ -25,8 +25,14 @@ Login(modelologin:Login){
 }
 console.log(body);
 
-  return this._http.post(this.url, body, {headers: this.headers}).map(res=>res.json());
-   
-}
+  return this._http.post(this.url, body, {headers: this.headers}).map(res=>
+    {
+      console.log(res.json().accessKey);
+      localStorage.setItem('accessKey', res.json().accessKey);
+     this.accesKeyTest= localStorage.getItem('accessKey');
+     console.log('Esta es la clave en variable: '+this.accesKeyTest);
+      res.json()});
 
 }
+}
+
