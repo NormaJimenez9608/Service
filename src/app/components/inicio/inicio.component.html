@@ -1,62 +1,55 @@
 <div class="fondo1">
-<app-general-header></app-general-header>
-<p style="size: 25px;">{{name}}</p> 
-<div class="blankspace"> </div>
-{{projectName}}
-<div class="container-fluid">
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-9">
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Systems</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Alarms</a>
-  </li>
-</ul>
-
-<div class="blankspace"> </div>
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-<table class="table">
-  <caption>Showing 1 to 1 of 1 </caption>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Systems</th>
-      <th scope="col">Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row">{{activated}}</td>
-      <td style="cursor:pointer" routerLink="/Units">{{name}}</td>
-      <td>{{suspended}}</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Variable 3</td>
-      <td> Varible 4</td>
-     
-    </tr>
-  </tbody>
-</table>
-</div>
-<div class="col-md-1"></div>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="col-md-1"></div>
-</div>
-</div>
-<div class="blankspace2"> </div>
-</div>
-
+  <app-general-header></app-general-header>
+  <p style="size: 25px;" class="Name">{{projectName}}</p> 
+  <div class="blankspace"> </div>
+  
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-9">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Systems</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Alarms</a>
+    </li>
+  </ul>
+  
+  <div class="blankspace"> </div>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+  <table class="table">
+    <caption>Showing 1 to 1 of 1 </caption>
+    <thead>
+      <tr>
+        <th  scope="col">Actived</th>
+        <th scope="col">Name</th>
+        <th scope="col">Suspended</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table">
+        <td scope="row">{{activated}}</td>
+        <td style="cursor:pointer" routerLink="/Units">{{name}}</td>
+        <td >{{suspended}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+  </div>
+  </div>
+  
+  </div>
+  
+  <div class="col-md-1"></div>
+  </div>
+  </div>
+  <div class="blankspace2"> </div>
+  </div>
+  

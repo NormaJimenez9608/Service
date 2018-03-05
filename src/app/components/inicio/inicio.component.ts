@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  Router } from "@angular/router";
 import {  systems } from '../../models/systems';
 import { SystemsService } from '../../services/systems.service';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -13,6 +14,7 @@ export class InicioComponent implements OnInit {
   public name;
   public projectName;
   public suspended;
+  public id;
 
 SystemsModel = new systems;
 
@@ -23,21 +25,20 @@ SystemsModel = new systems;
     this.getSystems();
   }
 getSystems(): void{
-  console.log('Entro a revision getSystems');
-this.SystemsService.getSystems().subscribe((response: any)=>{
-  console.log(response[0].activated);
-  console.log(response[0].name);
-  console.log(response[0].projectName);
-  console.log(response[0].suspended);
-  this.activated = response[0].activated;
-  this.name= response[0].name;
-  this.projectName= response[0].projectName;
-  this.suspended= response[0].suspended;
-this.SystemsModel.name=response[0].name;
-}
-);
+
+  this.SystemsService.getSystems(this.accessKey).subscribe( response=>{
+    
+  this.activated = response[0].activated,
+  this.name= response[0].name,
+  this.projectName= response[0].projectName,
+  this.suspended= response[0].suspended
+  this.id = response[0].id
+  console.log(response)
+
+ });
 }
 }
+
 
 
 

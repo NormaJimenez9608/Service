@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {Http, HttpModule} from '@angular/http'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +20,8 @@ import { ValuesComponent } from './components/values/values.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LoginService} from './services/login.service';
 import {SystemsService} from './services/systems.service';
+import {UnitService} from './services/unit.service';
+import {ValuesService} from './services/values.service';
 
 const appRoutes: Routes = [
   {
@@ -73,7 +74,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, SystemsService],
+  providers: [LoginService, SystemsService, UnitService, ValuesService],
   bootstrap: [AppComponent],
 
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { systems } from '../../models/systems';
+import{Login} from '../../models/login'
 
 
 @Component({
@@ -10,13 +11,18 @@ import { systems } from '../../models/systems';
 export class GeneralHeaderComponent implements OnInit {
   public projectName;
   SystemsModel = new systems;
+  LoginModel = new Login;
+
+
   public name;
+  public username;
   constructor() { }
 
   ngOnInit() {
-console.log(this.SystemsModel.name);
-this.name = this.SystemsModel.name;
 
+this.name = this.SystemsModel.name;
+this.username = this.LoginModel.username;
+console.log(this.LoginModel.username);
   }
 
 }
