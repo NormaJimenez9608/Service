@@ -1,6 +1,6 @@
 export class systems{
     name: string;
-    id: string;
+    idSystem: string;
     activated: boolean;
     projectId: string;
     projectName:string;

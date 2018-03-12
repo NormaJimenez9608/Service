@@ -13,24 +13,23 @@ import { systems } from '../../models/systems';
 export class  UnitsComponent implements OnInit {
 
   public accessKey;
-  public id;
+  public idSystem;
   SystemsModels = new systems;
   unitModel = new unit ;
 
-  constructor(private UnitService: UnitService) { }
+  constructor(private UnitService: UnitService) {  
+    this.accessKey = localStorage.getItem('accessKey');
+    this.idSystem = localStorage.getItem('idSystem');
+ }
 
   ngOnInit() {
-    this.accessKey = localStorage.getItem('accessKey');
-    this.id  = this.SystemsModels.id;
     this.getUnit();
   }
 
   getUnit(): void{
-    this.UnitService.getUnit( this.id, this.accessKey).subscribe(data=>{
-    console.log(data)
-    }
-    
-    );
-
+    this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe(data=>{
+    });
   }
 }
+
+

@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
   public name;
   public projectName;
   public suspended;
-  public id;
+  public idSystem;
 
 SystemsModel = new systems;
 
@@ -31,13 +31,15 @@ getSystems(): void{
   this.activated = response[0].activated,
   this.name= response[0].name,
   this.projectName= response[0].projectName,
-  this.suspended= response[0].suspended
-  this.id = response[0].id
-  console.log(response)
+  this.suspended= response[0].suspended,
+  this.idSystem = response[0].id
+  localStorage.setItem('idSystem', this.idSystem);
 
- });
+});
 }
 }
+
+
 
 
 

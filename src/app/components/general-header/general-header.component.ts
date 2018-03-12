@@ -22,7 +22,6 @@ export class GeneralHeaderComponent implements OnInit {
 
 this.name = this.SystemsModel.name;
 this.username = this.LoginModel.username;
-console.log(this.LoginModel.username);
   }
 
 }
