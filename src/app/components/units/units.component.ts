@@ -14,6 +14,11 @@ export class  UnitsComponent implements OnInit {
 
   public accessKey;
   public idSystem;
+  public idValue;
+  public nameValue;
+  public idValue2;
+  public nameValue2;
+
   SystemsModels = new systems;
   unitModel = new unit ;
 
@@ -28,6 +33,15 @@ export class  UnitsComponent implements OnInit {
 
   getUnit(): void{
     this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe(data=>{
+      this.idValue = data[0].id,
+      this.nameValue= data[0].name,
+      this.idValue2 = data[5].id,
+      this.nameValue2= data[5].name,
+      localStorage.setItem('idValue', this.idValue);
+      localStorage.setItem('idValue2', this.idValue2);
+      
+      console.log(data);
+
     });
   }
 }

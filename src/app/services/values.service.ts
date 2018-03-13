@@ -13,24 +13,25 @@ private headers = new Headers({ 'Content-Type': 'application/json', 'X-Requested
 private url;
 public accessKey;
 public idSystem;
+public idValue;
+public idValues2;
 
   constructor (public _http: Http,private router: Router, private HTTP: HttpClient) { 
     
   }
 
-getValues(idSystem:string, accessKey:string){
+getValues(idSystem:string, accessKey:string, idvalue:string, idValue2:string){
   
-  console.log('Paso revision en valores');
-    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async?accesskey=${accessKey}&id=64065.0.174009&id=96092.0.174010`;
+ 
+    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async?accesskey=${accessKey}&id=${idvalue}&id=${idValue2}`;
     console.log(this.url);
     return this.HTTP.get(this.url)
     
 }
 
-getValores(idvalues:string, idSystem:string, accessKey:string){
-  
+getValores( idSystem:string, idValor:string, accessKey:string){
   console.log('Paso revision en la segunda API');
-    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async/${idvalues}?accesskey=${accessKey}`;
+    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async/${idValor}?accesskey=${accessKey}`;
     console.log(this.url);
     return this.HTTP.get(this.url)
     

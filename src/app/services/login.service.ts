@@ -27,10 +27,10 @@ console.log(body);
 
   return this._http.post(this.url, body, {headers: this.headers}).map(res=>
     {
-      console.log(res.json().accessKey);
+      
       localStorage.setItem('accessKey', res.json().accessKey);
      this.accesKeyTest= localStorage.getItem('accessKey');
-     console.log('Esta es la clave en variable: '+this.accesKeyTest);
+     console.log('LOGIN Esta es la clave en variable: '+this.accesKeyTest);
       res.json()});
 
 }

@@ -13,7 +13,9 @@ export class ValuesComponent implements OnInit {
 
   public accessKey;
   public idSystem;
-  public idvalues ;
+  public idvalue ;
+  public idValue2;
+  public idValor;
  
 
   SystemsModels = new systems;
@@ -26,7 +28,8 @@ export class ValuesComponent implements OnInit {
   ngOnInit() {
     this.accessKey = localStorage.getItem('accessKey');
     this.idSystem = localStorage.getItem('idSystem');
-
+    this.idvalue = localStorage.getItem('idValue');
+    this.idValue2 = localStorage.getItem('idValue2');
 
     this.getValues();
    
@@ -34,19 +37,19 @@ export class ValuesComponent implements OnInit {
 
   getValues(): void{
     console.log('Hola');
-    this.ValuesService.getValues( this.idSystem, this.accessKey).subscribe(data=>{
-      localStorage.setItem('idvalues', this.idvalues);
-    console.log(data);
-
-    this.idvalues = localStorage.getItem('idvalues');
-    this.ValuesService.getValores(this.idvalues, this.idSystem, this.accessKey).subscribe(dato=>{
-    console.log(dato); 
-    })
-      
-    }
+    this.ValuesService.getValues( this.idSystem, this.accessKey, this.idvalue, this.idValue2).subscribe(valores=>{
     
- 
-    );
+      this.idValor = valores[0].id;
+      localStorage.setItem('idValor', this.idValor);
+      console.log(valores);
+    });
 
+    this.idValor = localStorage.getItem('idValor');
+    this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe(dato=>{
+    console.log(dato); 
+    });
+      
   }
-}
+  
+  }
+
