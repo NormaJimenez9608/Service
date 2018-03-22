@@ -35,8 +35,8 @@ export class  UnitsComponent implements OnInit {
     this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe(data=>{
       this.idValue = data[0].id,
       this.nameValue= data[0].name,
-      this.idValue2 = data[5].id,
-      this.nameValue2= data[5].name,
+      this.idValue2 = data[2].id,
+      this.nameValue2= data[2].name,
       localStorage.setItem('idValue', this.idValue);
       localStorage.setItem('idValue2', this.idValue2);
       

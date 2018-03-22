@@ -30,12 +30,10 @@ getValues(idSystem:string, accessKey:string, idvalue:string, idValue2:string){
 }
 
 getValores( idSystem:string, idValor:string, accessKey:string){
-  console.log('Paso revision en la segunda API');
+  
     this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async/${idValor}?accesskey=${accessKey}`;
     console.log(this.url);
     return this.HTTP.get(this.url)
     
 }
-
-
 }

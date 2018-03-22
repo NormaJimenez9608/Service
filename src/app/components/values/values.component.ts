@@ -16,6 +16,8 @@ export class ValuesComponent implements OnInit {
   public idvalue ;
   public idValue2;
   public idValor;
+  public setpoint;
+  public setpoint2;
  
 
   SystemsModels = new systems;
@@ -36,20 +38,23 @@ export class ValuesComponent implements OnInit {
   }
 
   getValues(): void{
-    console.log('Hola');
-    this.ValuesService.getValues( this.idSystem, this.accessKey, this.idvalue, this.idValue2).subscribe(valores=>{
-    
-      this.idValor = valores[0].id;
-      localStorage.setItem('idValor', this.idValor);
-      console.log(valores);
-    });
 
-    this.idValor = localStorage.getItem('idValor');
-    this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe(dato=>{
-    console.log(dato); 
-    });
-      
+    this.ValuesService.getValues( this.idSystem, this.accessKey, this.idvalue, this.idValue2).subscribe((valores:any)=>{
+this.idValor= valores.id;
+this.getValores();
+    });      
   }
+
+
+
   
-  }
+ getValores():void{
+  
+  this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
+  console.log(dato); 
+  this.setpoint = dato[0].value;
+  this.setpoint2 = dato[1].value;
 
+  });
+ } 
+  }

@@ -24,5 +24,3 @@ getSystems(accesKeyTest: string){
 }
 }
 
-
-
