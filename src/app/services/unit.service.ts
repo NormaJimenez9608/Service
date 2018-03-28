@@ -10,7 +10,7 @@ import { systems } from '../models/systems';
 @Injectable()
 export class UnitService {
 private headers = new Headers({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' });
-SystemsModels = new systems;
+
 
 private url;
 public accessKey;
@@ -19,9 +19,8 @@ constructor (public _http: Http,private router: Router, private HTTP: HttpClient
     
   }
 
-getUnit(idSystem:string, accessKey:string){
-    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/config?accesskey=${accessKey}`;
-    console.log(this.url);
+getUnit(SystemID:string, accessKey:string){
+    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${SystemID}/live/config?accesskey=${accessKey}`;
     return this.HTTP.get(this.url)
 }
 }

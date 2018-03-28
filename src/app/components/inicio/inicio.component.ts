@@ -16,7 +16,7 @@ export class InicioComponent implements OnInit {
   public suspended;
   public idSystem;
 
-SystemsModel = new systems;
+public SystemsModel = new systems;
 
   constructor(private SystemsService: SystemsService) { }
 
@@ -33,9 +33,18 @@ getSystems(): void{
   this.projectName= response[0].projectName,
   this.suspended= response[0].suspended,
   this.idSystem = response[0].id
+
+  this.SystemsModel.idSystem = response[0].id;
+  this.SystemsModel.activated= response[0].activated;
+  this.SystemsModel.name= response[0].name,
+  this.SystemsModel.projectName= response[0].projectName,
+  this.SystemsModel.suspended= response[0].suspended,
+
+  console.log(this.SystemsModel);
+
   localStorage.setItem('idSystem', this.idSystem);
-  console.log(response)
 
 });
 }
 }
+

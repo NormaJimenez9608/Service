@@ -3,6 +3,8 @@ import {  Router } from "@angular/router";
 import {  values } from '../../models/values';
 import { ValuesService } from '../../services/values.service';
 import { systems } from '../../models/systems';
+import { SystemsService } from '../../services/systems.service';
+import { UnitService } from '../../services/unit.service';
 
 @Component({
   selector: 'app-values',
@@ -12,7 +14,7 @@ import { systems } from '../../models/systems';
 export class ValuesComponent implements OnInit {
 
   public accessKey;
-  public idSystem;
+  public deviceSelect;
   public idvalue ;
   public idValue2;
   public idValor;
@@ -23,24 +25,42 @@ export class ValuesComponent implements OnInit {
   SystemsModels = new systems;
   ValuesModel = new values;
 
-  constructor(private ValuesService: ValuesService) { 
+  constructor(private ValuesService: ValuesService, private SystemsService: SystemsService, private UnitService: UnitService) { 
     
   }
 
   ngOnInit() {
     this.accessKey = localStorage.getItem('accessKey');
-    this.idSystem = localStorage.getItem('idSystem');
-    this.idvalue = localStorage.getItem('idValue');
-    this.idValue2 = localStorage.getItem('idValue2');
+    this.deviceSelect = localStorage.getItem('deviceSelect');
 
-    this.getValues();
+    this.getSystems();
    
   }
 
-  getValues(): void{
+  getSystems(): void {
+    this.SystemsService.getSystems(this.accessKey).subscribe(response => {
+      this.SystemsModels.idSystem = response[0].id;
+      this.getUnit();
+    });
+  }
+  getUnit(): void {
+    this.UnitService.getUnit(this.SystemsModels.idSystem, this.accessKey).subscribe((data:any) => {
+      console.log(data);
+      this.getValues();
+      for (let i = data.length - 1; i >= 0; i--) {
+        if(data[i].id == this.deviceSelect){
+console.log(data[i].id, this.deviceSelect);
+this.getValues();
+        }
+      }
+    });
+  }
 
-    this.ValuesService.getValues( this.idSystem, this.accessKey, this.idvalue, this.idValue2).subscribe((valores:any)=>{
+  getValues(): void{
+console.log(this.deviceSelect);
+    this.ValuesService.getValues( this.SystemsModels.idSystem, this.accessKey, this.deviceSelect, this.idValue2).subscribe((valores:any)=>{
 this.idValor= valores.id;
+console.log(valores);
 this.getValores();
     });      
   }
@@ -50,7 +70,7 @@ this.getValores();
   
  getValores():void{
   
-  this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
+  this.ValuesService.getValores(this.SystemsModels.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
   console.log(dato); 
   this.setpoint = dato[0].value;
   this.setpoint2 = dato[1].value;
