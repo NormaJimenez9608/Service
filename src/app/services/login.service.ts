@@ -30,7 +30,7 @@ console.log(body);
       
       localStorage.setItem('accessKey', res.json().accessKey);
      this.accesKeyTest= localStorage.getItem('accessKey');
-     console.log('LOGIN Esta es la clave en variable: '+this.accesKeyTest);
+     
       res.json()});
 
 }

@@ -5,21 +5,24 @@ import { ValuesService } from '../../services/values.service';
 import { systems } from '../../models/systems.models';
 
 @Component({
-  selector: 'app-values',
-  templateUrl: './values.component.html',
-  styleUrls: ['./values.component.css']
+  selector: 'app-values2',
+  templateUrl: './values2.component.html',
+  styleUrls: ['./values2.component.css']
 })
-export class ValuesComponent implements OnInit {
+export class Values2Component implements OnInit {
 
   public accessKey;
   public idSystem;
-  public setpoint;
-  public temperatura;
+  public temperatura ;
   public controlvalue;
   public idValor;
-  public setpoint1;
-  public temperatura1;
-  public controlvalue1;
+  public setpoint;
+  public setpoint2;
+  public setpoint3 ;
+  public temperatura3 ;
+  public controlvalue3;
+ 
+
   SystemsModels = new systems;
   ValuesModel = new values;
 
@@ -30,9 +33,9 @@ export class ValuesComponent implements OnInit {
   ngOnInit() {
     this.accessKey = localStorage.getItem('accessKey');
     this.idSystem = localStorage.getItem('idSystem');
-    this.setpoint = localStorage.getItem('setpoint');
-    this.temperatura = localStorage.getItem('temperatura');
-    this.controlvalue = localStorage.getItem('controlvalue');
+    this.setpoint = localStorage.getItem('setpoint2');
+    this.temperatura = localStorage.getItem('temperatura2');
+    this.controlvalue = localStorage.getItem('controlvalue2');
   
 
     this.getValues();
@@ -51,10 +54,9 @@ this.getValores();
   
   this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
   console.log(dato); 
-  this.setpoint1 = dato[0].value;
-  this.temperatura1 = dato[1].value;
-  this.controlvalue1 = dato[2].value;
-
+  this.setpoint3 = dato[2].value;
+  this.temperatura3 = dato[0].value;
+  this.controlvalue3 = dato[1].value;
 
 
   });

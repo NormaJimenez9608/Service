@@ -1,12 +1,12 @@
 <div class="fondo1">
   <app-general-header></app-general-header>
-  <p style="size: 25px;" class="Name">{{projectName}}</p> 
+  <p style="size: 25px;" align="center" class="Name">{{projectName}}</p> 
   <div class="blankspace"> </div>
   
   <div class="container-fluid">
   <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-9">
+    <div class="col-md-7">
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" href="#">Systems</a>
@@ -15,37 +15,47 @@
       <a class="nav-link" href="#">Alarms</a>
     </li>
   </ul>
-  
   <div class="blankspace"> </div>
   <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
         <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-9">
   <table class="table">
     <caption>Showing 1 to 1 of 1 </caption>
     <thead>
       <tr>
-        <th  scope="col">Actived</th>
-        <th scope="col">Name</th>
-        <th scope="col">Suspended</th>
+        
+        <th  scope="col" align="left">Activated</th>
+        <th > </th>
+        <th  scope="col" >Name</th>
+        <th > </th>
+        
+        <th  scope="col">Suspended</th>
+        
       </tr>
     </thead>
-    <tbody>
-      <tr class="table">
-        <td scope="row">{{activated}}</td>
-        <td style="cursor:pointer" routerLink="/Units">{{name}}</td>
-        <td >{{suspended}}</td>
+    <tbody *ngFor="let responses of table">
+      <tr class="table" >         
+             
+        <td  scope="row" align="left" class="img" *ngIf="activated === true"><img  style="width:2%; " style="height:10%" src="assets\images\Boton_verde.png" alt="activated"></td>
+         
+        <td  scope="row"  *ngIf="activated === false"><img style="width:10%;" src="assets\images\Boton_rojo.png" alt="activated"></td>
+        <td ></td>
+        <td  style="cursor:pointer" routerLink="/Units">{{name}}</td>
+        <td ></td>
+        
+        <td  >{{suspended}}</td>
       </tr>
     </tbody>
   </table>
   </div>
-  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
   </div>
   </div>
   </div>
   </div>
-  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
   </div>
   </div>
   <div class="blankspace2"> </div>

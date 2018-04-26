@@ -5,5 +5,8 @@ export class systems{
     projectId: string;
     projectName:string;
     suspended:boolean;
+    id: string;
+
     
 }
+

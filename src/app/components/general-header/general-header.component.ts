@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { systems } from '../../models/systems';
+import { systems } from '../../models/systems.models';
 import{Login} from '../../models/login'
 
 

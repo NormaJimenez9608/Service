@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NumunitsComponent } from './numunits.component';
 
-describe('NumunitsComponent', () => {
-  let component: NumunitsComponent;
-  let fixture: ComponentFixture<NumunitsComponent>;
+import { Values2Component } from './values2.component';
+
+describe('Values2Component', () => {
+  let component: Values2Component;
+  let fixture: ComponentFixture<Values2Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NumunitsComponent ]
+      declarations: [ Values2Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NumunitsComponent);
+    fixture = TestBed.createComponent(Values2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

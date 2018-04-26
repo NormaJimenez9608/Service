@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Http, Response, Headers, ResponseContentType, } from '@angular/http';
 import {HttpClient} from '@angular/common/http';
-import { systems } from '../models/systems';
+import { systems } from '../models/systems.models';
 
 @Injectable()
 export class UnitService {
@@ -15,12 +15,15 @@ SystemsModels = new systems;
 private url;
 public accessKey;
 
+
 constructor (public _http: Http,private router: Router, private HTTP: HttpClient) { 
     
   }
 
-getUnit(idSystem:string, accessKey:string){
-    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/config?accesskey=${accessKey}`;
+  
+
+getUnit(idSystems, accessKey:string){
+    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/live/config?accesskey=${accessKey}`;
     console.log(this.url);
     return this.HTTP.get(this.url)
 }

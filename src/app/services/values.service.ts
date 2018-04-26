@@ -20,10 +20,10 @@ public idValues2;
     
   }
 
-getValues(idSystem:string, accessKey:string, idvalue:string, idValue2:string){
+getValues(idSystem:string, accessKey:string, setpoint:string, temperatura:string, controlvalue:string){
   
  
-    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async?accesskey=${accessKey}&id=${idvalue}&id=${idValue2}`;
+    this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async?accesskey=${accessKey}&id=${setpoint}&id=${temperatura}&id=${controlvalue}`;
     console.log(this.url);
     return this.HTTP.get(this.url)
     

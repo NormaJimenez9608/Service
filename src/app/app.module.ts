@@ -22,7 +22,8 @@ import {LoginService} from './services/login.service';
 import {SystemsService} from './services/systems.service';
 import {UnitService} from './services/unit.service';
 import {ValuesService} from './services/values.service';
-
+import { Values2Component } from './components/values2/values2.component';
+import { Pagevalues2Component } from './components/pagevalues2/pagevalues2.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +48,10 @@ const appRoutes: Routes = [
   {
     path: 'Values',
     component: PagevaluesComponent
+  },
+  {
+    path: 'Values2',
+    component: Pagevalues2Component
   }
 ] 
 
@@ -66,7 +71,8 @@ const appRoutes: Routes = [
     NumunitsComponent,
     PagevaluesComponent,
     ValuesComponent,
-   
+    Values2Component,
+    Pagevalues2Component,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -3,9 +3,9 @@
     <div class="container-fluid">
         <div class="row">
             <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/Temp.png" alt=""></p>    
-            <p align="left" class="col-md-1">Temperature</p>
+            <p align="left" class="col-md-1 ">Temperature</p>
             <div class="col-md-1"></div>
-            <p align="right" class="col-md-1">Cuadro</p>
+            <p align="right" class="col-md-1 border text-danger text-center" >{{temperatura1}}°C</p>
             <div class="col-md-1"></div>
 
             <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/Temp_ambient..png" alt=""></p>    
@@ -22,15 +22,23 @@
           <div class="row">
               <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
               <p align="left" class="col-md-1">Setpoint</p>
+
               <div class="col-md-1"></div>
-            
-              <p align="right" class="col-md-1 border text-danger text-center" >{{setpoint}}</p>
+              <div class="input-group mb-1 col-md-1 " align="right">
+                <input class="border text-danger text-center" align="right" type="text" placeholder=" Setpoint" aria-label=" Setpoint" size="8px" value="{{setpoint1}}">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">Set</button>
+                </div>
+           
+
+              </div>
+              
               <div class="col-md-1"></div>
   
               <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
-              <p align="left" class="col-md-1">Setpoint 2</p>
+              <p align="left" class="col-md-1">Speed</p>
               <div class="col-md-1"></div>
-              <p align="right" class="col-md-1 text-danger text-center">{{setpoint2}}</p>
+              <p align="right" class="col-md-1  text-center">Cuadro</p>
               <div class="col-md-2"></div>
           </div>
       </div>
@@ -42,9 +50,9 @@
                 <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
                 <p align="left" class="col-md-1">Control Value</p>
                 <div class="col-md-1"></div>
-                <p align="right" class="col-md-1">Cuadro</p>
+                <p align="right" class="col-md-1 border text-danger text-center">{{controlvalue1}}%</p>
                 <div class="col-md-1"></div>
-    
+    <script></script>
                 <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
                 <p align="left" class="col-md-1">RPM</p>
                 <div class="col-md-1"></div>

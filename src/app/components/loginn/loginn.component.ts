@@ -16,8 +16,6 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginnComponent implements OnInit {
   login = new Login();
-
-
   constructor(private username:LoginService, private router:Router ) { 
 
 
@@ -28,8 +26,8 @@ export class LoginnComponent implements OnInit {
   Login(){
 const username = this.login.username;
 const password = this.login.password;
-this.username.Login(this.login)
-  .subscribe( response=>{
+
+this.username.Login(this.login).subscribe( response=>{
     
   this.router.navigate(['inicio'])
  
