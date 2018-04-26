@@ -22,11 +22,7 @@ export class InicioComponent implements OnInit {
 
 
 
-<<<<<<< HEAD
   SystemsModel = new systems;
-=======
-public SystemsModel = new systems;
->>>>>>> 787590e941b422150f54f2aaf47028fb2e508736
 
   constructor(private SystemsService: SystemsService)
    {
@@ -37,7 +33,6 @@ public SystemsModel = new systems;
     this.accessKey = localStorage.getItem('accessKey');
     this.getSystems();
   }
-<<<<<<< HEAD
 
   getSystems(): void {
     this.SystemsService.getSystems(this.accessKey).subscribe(response => {
@@ -66,29 +61,3 @@ public SystemsModel = new systems;
 }
 
 
-=======
-getSystems(): void{
-
-  this.SystemsService.getSystems(this.accessKey).subscribe( response=>{
-    
-  this.activated = response[0].activated,
-  this.name= response[0].name,
-  this.projectName= response[0].projectName,
-  this.suspended= response[0].suspended,
-  this.idSystem = response[0].id
-
-  this.SystemsModel.idSystem = response[0].id;
-  this.SystemsModel.activated= response[0].activated;
-  this.SystemsModel.name= response[0].name,
-  this.SystemsModel.projectName= response[0].projectName,
-  this.SystemsModel.suspended= response[0].suspended,
-
-  console.log(this.SystemsModel);
-
-  localStorage.setItem('idSystem', this.idSystem);
-
-});
-}
-}
-
->>>>>>> 787590e941b422150f54f2aaf47028fb2e508736

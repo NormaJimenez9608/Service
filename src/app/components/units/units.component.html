@@ -6,22 +6,5 @@
 </Div>
 <div class="blankspace3"> </div>
 
-<div class="unidades" *ngFor="let optionUnits of optionsUnits">
-  <div class="row">
-    <div class="container-fluid">
-        <div class="logo">
-            <div class="row">            
-                <div class="col-md-1"></div>
-               <p align="right" class="col-md-2" style="cursor:pointer" ><img style="width:60%;" routerLink="/Values>" src="#" alt=""></p>
-               <p align="right" class="col-md-1" style="cursor:pointer" (click)="viewData(optionUnits.id)">{{optionUnits.deviceName}}</p>
-               <div class="col-md-8"></div>
-           </div>
-       </div>
-    </div>
-  </div>
-</div>
-
-  <div class="blankspace4"> </div>
-
-
+<app-numunits></app-numunits>
 </div>

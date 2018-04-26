@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from "@angular/router";
 import { unit } from '../../models/unit';
 import { UnitService } from '../../services/unit.service';
-<<<<<<< HEAD
+
 import { systems } from '../../models/systems.models';
-=======
-import { systems } from '../../models/systems';
->>>>>>> 787590e941b422150f54f2aaf47028fb2e508736
+
+
 import { SystemsService } from '../../services/systems.service';
 
 @Component({
@@ -18,7 +17,6 @@ import { SystemsService } from '../../services/systems.service';
 export class UnitsComponent implements OnInit {
 
   public accessKey;
-<<<<<<< HEAD
   public idSystem;
   public setpoint;
   public controlvalue;
@@ -69,29 +67,8 @@ getSystems(): void {
        localStorage.setItem('setpoint2', this.setpoint2);
        localStorage.setItem('temperatura2', this.temperatura2);
        localStorage.setItem('controlvalue2', this.controlvalue2);
-=======
-  SystemsModels = new systems;
-  unitModel = new unit;
-  optionsUnits;
-  constructor(private UnitService: UnitService, private SystemsService: SystemsService,  private router: Router) {
-    this.accessKey = localStorage.getItem('accessKey');
-  }
-
-  ngOnInit() {
-    this.getSystems();
-  }
-  getSystems(): void {
-    this.SystemsService.getSystems(this.accessKey).subscribe(response => {
-      this.SystemsModels.idSystem = response[0].id;
-      this.getUnit();
-    });
-  }
-  getUnit(): void {
-
-    this.UnitService.getUnit(this.SystemsModels.idSystem, this.accessKey).subscribe(data => {
->>>>>>> 787590e941b422150f54f2aaf47028fb2e508736
       console.log(data);
-      this.optionsUnits = data;
+      
       
     });
   }

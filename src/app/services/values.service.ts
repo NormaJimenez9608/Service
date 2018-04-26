@@ -13,8 +13,7 @@ private headers = new Headers({ 'Content-Type': 'application/json', 'X-Requested
 private url;
 public accessKey;
 public idSystem;
-public idValue;
-public idValues2;
+
 
   constructor (public _http: Http,private router: Router, private HTTP: HttpClient) { 
     
