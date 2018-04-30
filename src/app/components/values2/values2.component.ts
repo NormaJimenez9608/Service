@@ -3,6 +3,7 @@ import {  Router } from "@angular/router";
 import {  values } from '../../models/values';
 import { ValuesService } from '../../services/values.service';
 import { systems } from '../../models/systems.models';
+import { WritteService} from '../../services/writte.service'
 
 @Component({
   selector: 'app-values2',
@@ -21,12 +22,13 @@ export class Values2Component implements OnInit {
   public setpoint3 ;
   public temperatura3 ;
   public controlvalue3;
+  public idsetpoint;
  
 
   SystemsModels = new systems;
   ValuesModel = new values;
 
-  constructor(private ValuesService: ValuesService) { 
+  constructor(private ValuesService: ValuesService, private values1: WritteService) { 
     
   }
 
@@ -57,8 +59,19 @@ this.getValores();
   this.setpoint3 = dato[2].value;
   this.temperatura3 = dato[0].value;
   this.controlvalue3 = dato[1].value;
+  this.idsetpoint = dato[2].id
 
 
   });
  } 
+
+ 
+ Values(): void{
+  const value = this.ValuesModel.value;
+  
+  this.values1.Values(this.ValuesModel,this.idSystem, this.accessKey, this.idsetpoint ).subscribe( response=>{
+    
+  });
+}
+  }
   }

@@ -24,6 +24,7 @@ import {UnitService} from './services/unit.service';
 import {ValuesService} from './services/values.service';
 import { Values2Component } from './components/values2/values2.component';
 import { Pagevalues2Component } from './components/pagevalues2/pagevalues2.component';
+import {WritteService} from './services/writte.service';
 
 const appRoutes: Routes = [
   {
@@ -81,7 +82,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, SystemsService, UnitService, ValuesService],
+  providers: [LoginService, SystemsService, UnitService, ValuesService, WritteService],
   bootstrap: [AppComponent],
 
 })

@@ -12,13 +12,16 @@ export class WritteService {
 
   public value;
   public url;
+  public id;
 
-  constructor(public _http: Http,private router: Router) { }
+  constructor(public _http: Http,private router: Router) { 
+    
+  }
 
   Values(modelovalue:values,idSystem:string, accessKey:string, idsetpoint:string ){
     const body= {
+      'id' : idsetpoint ,
       'value': modelovalue.value
-
     }
 
   console.log(body);

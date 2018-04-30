@@ -23,6 +23,7 @@ export class ValuesComponent implements OnInit {
   public temperatura1;
   public controlvalue1;
   public idsetpoint;
+  public value;
   SystemsModels = new systems;
   ValuesModel = new values;
 
@@ -56,13 +57,16 @@ export class ValuesComponent implements OnInit {
   this.temperatura1 = dato[1].value;
   this.controlvalue1 = dato[2].value;
   this.idsetpoint = dato[0].id;
+
   });
+  
  } 
 
  Values(): void{
   const value = this.ValuesModel.value;
+  
   this.values1.Values(this.ValuesModel,this.idSystem, this.accessKey, this.idsetpoint ).subscribe( response=>{
-    console.log(response)
+   console.log(response);
   });
 }
   }
