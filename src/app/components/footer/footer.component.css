@@ -13,3 +13,6 @@
     color: white !important;
 }
 
+.col-md-1:hover{
+    text-decoration:underline;
+}

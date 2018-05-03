@@ -5,7 +5,7 @@
 }
 
 .blankspace2{
-    height: 300px ;
+    height: 260px ;
 }
 
 .table{
@@ -27,4 +27,9 @@
     
     
 }
+
+.cursor:hover{
+    text-decoration:underline;
+}
+
 

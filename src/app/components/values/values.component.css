@@ -4,7 +4,7 @@
     color: #566573;
 }
 .border{
-    padding: 5px;
+    padding-left:  10px;
     padding-bottom: 1px;
  
 }
@@ -12,4 +12,11 @@
 .input-group{
 
     font-size: 25px;
+}
+.blankspace2{
+    height: 40px;
+}
+
+.texto{
+    color: black;
 }

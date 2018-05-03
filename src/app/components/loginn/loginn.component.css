@@ -3,7 +3,7 @@
     background-color: #fefefa ;
 }
 .blankspacelogin{
-    height: 5px ;
+    height: 5px !important ;
 }
 
 .col-md-4{
@@ -25,4 +25,7 @@ padding-left: 15px;
 .card, .card-header{
     background-color: transparent !important;
     border: 0;
+}
+.blankspacelogin2{
+    height: 45px !important ;
 }
