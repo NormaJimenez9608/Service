@@ -5,7 +5,6 @@ import {  Login } from '../../models/login';
 import { LoginService } from '../../services/login.service';
 
 
- 
 @Component({
   selector: 'app-loginn',
   templateUrl: './loginn.component.html',
@@ -14,10 +13,12 @@ import { LoginService } from '../../services/login.service';
   providers: [Login]
   
 })
+
+
 export class LoginnComponent implements OnInit {
   login = new Login();
+  
   constructor(private username:LoginService, private router:Router ) { 
-
 
   }
   ngOnInit() {
@@ -26,6 +27,8 @@ export class LoginnComponent implements OnInit {
   Login(){
 const username = this.login.username;
 const password = this.login.password;
+
+
 
 this.username.Login(this.login).subscribe( response=>{
     

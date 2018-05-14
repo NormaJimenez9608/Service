@@ -25,6 +25,7 @@ import {ValuesService} from './services/values.service';
 import { Values2Component } from './components/values2/values2.component';
 import { Pagevalues2Component } from './components/pagevalues2/pagevalues2.component';
 import {WritteService} from './services/writte.service';
+import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
   },
   { 
      path: 'inicio',
-  component: InicioComponent
+     canActivate: [AuthGuard],
+    component: InicioComponent
 },
     {
       path: 'Service',
@@ -82,7 +84,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, SystemsService, UnitService, ValuesService, WritteService],
+  providers: [LoginService, SystemsService, UnitService, ValuesService, WritteService, AuthGuard],
   bootstrap: [AppComponent],
 
 })

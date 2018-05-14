@@ -6,8 +6,9 @@ import 'rxjs/add/operator/map';
 import {Http, Response, Headers, ResponseContentType, } from '@angular/http';
 import {HttpClient} from '@angular/common/http';
 
+
 @Injectable()
-export class LoginService {
+export class LoginService   {
 private headers = new Headers({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' });
 
 public username;
@@ -30,9 +31,14 @@ console.log(body);
       
       localStorage.setItem('accessKey', res.json().accessKey);
      this.accesKeyTest= localStorage.getItem('accessKey');
-     
       res.json()});
+
 
 }
 }
+    
+  
+
+  
+
 
