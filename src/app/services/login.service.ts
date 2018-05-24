@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Http, Response, Headers, ResponseContentType, } from '@angular/http';
 import {HttpClient} from '@angular/common/http';
+import {AuthGuardService } from '../services/auth-guard.service';
 
 
 @Injectable()

@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import {Http, HttpModule} from '@angular/http'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import{  RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConservicesComponent } from './components/conservices/conservices.component';
@@ -25,7 +25,7 @@ import {ValuesService} from './services/values.service';
 import { Values2Component } from './components/values2/values2.component';
 import { Pagevalues2Component } from './components/pagevalues2/pagevalues2.component';
 import {WritteService} from './services/writte.service';
-import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
+import {AuthGuardService } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -33,9 +33,10 @@ const appRoutes: Routes = [
     component: LoginnComponent
   },
   { 
-     path: 'inicio',
-     canActivate: [AuthGuard],
-    component: InicioComponent
+     path: 'Main',
+     component: InicioComponent,
+     
+     
 },
     {
       path: 'Service',
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
       component: ConsalesComponent
     },
    { path: 'Units',
-    component: UnitsComponent
+    component: UnitsComponent,
+   
   },
   {
     path: 'Values',
@@ -84,7 +86,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, SystemsService, UnitService, ValuesService, WritteService, AuthGuard],
+  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService ],
   bootstrap: [AppComponent],
 
 })
