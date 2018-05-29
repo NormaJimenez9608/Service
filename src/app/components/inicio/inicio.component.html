@@ -12,52 +12,29 @@
       <a class="nav-link active" href="#">Systems</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Alarms</a>
+      <a class="nav-link" href="#" routerLink="/Alarms">Alarms</a>
     </li>
   </ul>
   <div class="blankspace"> </div>
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-        <div class="col-md-1"></div>
-        <div class="col-md-9">
-  <table class="table">
-    <caption>Showing 1 to 1 of 1 </caption>
+  <table class="table table-bordered">
     <thead>
       <tr>
-        
-        <th  scope="col" align="left">Activated</th>
-        <th > </th>
-        <th  scope="col" >Name</th>
-        <th > </th>
-        
-        <th  scope="col">Suspended</th>
+        <th scope="col">Activated</th>
+        <th scope="col">Name</th>
+        <th scope="col">Suspended</th>
         
       </tr>
     </thead>
-    <tbody *ngFor="let responses of table">
-      <tr class="table" >         
-             
-        <td  scope="row" align="left" class="img" *ngIf="activated === true"><img  style="width:2%; " style="height:10%" src="assets\images\Boton_verde.png" alt="activated"></td>
-         
-        <td  scope="row"  *ngIf="activated === false"><img style="width:10%;" src="assets\images\Boton_rojo.png" alt="activated"></td>
-        <td ></td>
-        <td  style="cursor:pointer" class="cursor" routerLink="/Units">{{name}}</td>
-        <td ></td>
+    <tbody  *ngFor="let responses of table">
+      <tr>
+        <th scope="row"   class="img" *ngIf="activated === true"><img  style="width:2%; "  style="height:10%" src="assets\images\Boton_verde.png" alt="activated"></th>
+        <td style="cursor:pointer" class="cursor" routerLink="/Units">{{name}}</td>
+        <td scope="row" class="img" *ngIf="suspended === false"><img  style="width:2%; "  style="height:5%" src="assets\images\Boton-rojo.png" alt="activated"></td>
         
-        <td >{{suspended}}</td>
       </tr>
+      
     </tbody>
   </table>
-  </div>
-  <div class="col-md-2"></div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <div class="col-md-2"></div>
-  </div>
-  </div>
   <div class="blankspace2"> </div>
   </div>
-  
+

@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from "@angular/router";
 import { unit } from '../../models/unit';
 import { UnitService } from '../../services/unit.service';
-
 import { systems } from '../../models/systems.models';
-
-
 import { SystemsService } from '../../services/systems.service';
 
 @Component({
