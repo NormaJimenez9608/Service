@@ -1,21 +1,29 @@
 <div class="fondo1">
   <app-general-header></app-general-header>
-  <p style="size: 25px;" align="center" class="Name">{{projectName}}</p> 
+  <div class="row">
+      <div class="col-md-3"></div>
+  <p style="size: 25px;" align="center" class="Name col-md-4">{{projectName}}</p> 
+  <div class="col-md-5"></div>
+  </div>
   <div class="blankspace"> </div>
   
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-7">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Systems</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="/Alarms">Alarms</a>
-    </li>
-  </ul>
-  <div class="blankspace"> </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" routerLink="/Main">Systems</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" routerLink="/Alarms">Alarms</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#" routerLink="/AlarmsHistory">Alarms History</a>
+          </li>
+      </ul>
+      <div class="blankspace"> </div>
+
   <table class="table table-bordered">
     <thead>
       <tr>

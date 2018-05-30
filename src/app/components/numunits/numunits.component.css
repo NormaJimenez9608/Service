@@ -1,4 +1,4 @@
-.col-md-1{
+.col-md-2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;
     color: #909497  ;
@@ -8,6 +8,6 @@
     height: 170px ;
 }
 
-.col-md-1:hover{
+.col-md-2:hover{
     text-decoration:underline;
 }

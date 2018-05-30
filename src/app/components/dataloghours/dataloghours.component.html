@@ -1,31 +1,51 @@
 <div class="fondo1">
   <app-general-header></app-general-header>
-  <p style="size: 25px;" align="center" class="Name"></p> 
-  <div class="blankspace"> </div>
-  
-  
+  <div class="row">
+    <div class="col-md-3"></div>
+<p style="size: 25px;" align="center" class="Name col-md-4">DATA LOG</p> 
+<div class="col-md-5"></div>
+</div>
+ 
   <div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-7">
+        <div class="col-md-8">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link " href="#" routerLink="/Main">Systems</a>
+          <a class="nav-link " href="#" routerLink="/Values">Back</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#" routerLink="/Alarms">Alarms</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#" routerLink="/AlarmsHistory">Alarms History</a>
+            <a class="nav-link  " href="#" routerLink="/Datalog">For Day</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="#" >For Hours</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#" routerLink="/Graphics">Graphics</a>
+              </li>
       </ul>
-      <div class="blankspace"> </div>
-      
 
+  <div class="blankspace"> </div>
 
+   
+  <form>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Value</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    
+    <div class="blankspace"> </div>
  <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
  <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
- <button type="button" class="btn btn-dark">OK</button>
+ <button type="button" class="btn btn-secondary btn-sm">OK</button>
  <div class="blankspace"> </div>
   
  <table class="table table-bordered ">
@@ -68,5 +88,6 @@
  
  </tbody>
 </table>
-
+<button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>
+

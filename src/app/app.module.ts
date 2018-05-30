@@ -28,6 +28,9 @@ import {WritteService} from './services/writte.service';
 import {AuthGuardService } from './services/auth-guard.service';
 import { AlarmsComponent } from './components/alarms/alarms.component';
 import { AlarmsHistoryComponent } from './components/alarms-history/alarms-history.component';
+import { DatalogComponent } from './components/datalog/datalog.component';
+import { DataloghoursComponent } from './components/dataloghours/dataloghours.component';
+import { GraphicsComponent } from './components/graphics/graphics.component';
 
 const appRoutes: Routes = [
   {
@@ -66,7 +69,18 @@ const appRoutes: Routes = [
    {
      path: 'AlarmsHistory',
      component: AlarmsHistoryComponent
-   }
+   }, 
+  { path: 'Datalog',
+   component: DatalogComponent
+ },
+ {
+   path: 'DatalogHours',
+   component: DataloghoursComponent
+ },
+ {
+ path: 'Graphics',
+ component: GraphicsComponent
+ }
 ] 
 
 @NgModule({
@@ -89,6 +103,9 @@ const appRoutes: Routes = [
     Pagevalues2Component,
     AlarmsComponent,
     AlarmsHistoryComponent,
+    DatalogComponent,
+    DataloghoursComponent,
+    GraphicsComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
