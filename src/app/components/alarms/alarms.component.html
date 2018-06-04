@@ -9,7 +9,7 @@
     <div class="col-md-7">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link " href="#" routerLink="/Main">Systems</a>
+      <a class="nav-link " href="#" routerLink="/Units">Devices</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="#" routerLink="/Alarms">Alarms</a>
@@ -22,54 +22,35 @@
   
   <table class="table table-bordered ">
   <thead>
-    <tr>
-      <th scope="col">Active</th>
+    <tr class="name">
       <th scope="col">Status</th>
       <th scope="col">Device Name</th>
-      <th scope="col">Value</th>
+      <th scope="col">Value/Info</th>
       <th scope="col">Name</th>
       <th scope="col">Severity</th>
-      <th scope="col">Timestamp</th>
-      <th scope="col">Trigger Origin</th>
+      <th scope="col">Time</th>
+      
 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th >1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
+    <tr *ngFor="let data of listalarms">
+      <th class="img"  *ngIf="data.active === false" > <img  style="width:2%; "  style="height:10%" src="assets\images\Boton_verde.png" alt="activated"></th>
+      <th class="imgfalse"  *ngIf="data.active === true" > <img  style="width:2%; "  style="height:5%" src="assets\images\Boton-rojo.png" alt="activated"></th>
+      <td>{{data.deviceName}}</td>
+      <td>{{data.info}}</td>
+      <td>{{data.name}}</td>
+      <td *ngIf="data.severity === 0">Indeterminate</td>
+      <td *ngIf="data.severity === 1">Critical</td>
+      <td *ngIf="data.severity === 2">Major</td>
+      <td *ngIf="data.severity === 3">Minor</td>
+      <td *ngIf="data.severity === 4">Warning</td>
+      <td *ngIf="data.severity === 5">Information</td>
+      <td>{{data.timestamp}}</td>
+    
       
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td >Larry the Bird</td>
-      <td>@twitter</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-     
-    </tr>
-  
   </tbody>
 </table>
-
+<button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>

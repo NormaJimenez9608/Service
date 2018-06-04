@@ -31,6 +31,7 @@ import { AlarmsHistoryComponent } from './components/alarms-history/alarms-histo
 import { DatalogComponent } from './components/datalog/datalog.component';
 import { DataloghoursComponent } from './components/dataloghours/dataloghours.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';
+import {AlarmsService} from './services/alarms.service';
 
 const appRoutes: Routes = [
   {
@@ -114,7 +115,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService ],
+  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService ],
   bootstrap: [AppComponent],
 
 })

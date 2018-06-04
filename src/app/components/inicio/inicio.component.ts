@@ -17,17 +17,15 @@ export class InicioComponent implements OnInit {
   public projectName;
   public suspended;
   public idSystem;
-  public table;
-  public systems:systems = new systems();
-
+  public table: any[] =[];
+  public systems: systems = new systems();
 
 
   SystemsModel = new systems;
 
-  constructor(private SystemsService: SystemsService)
-   {
+  constructor(private SystemsService: SystemsService) {
 
-   }
+  }
 
   ngOnInit() {
     this.accessKey = localStorage.getItem('accessKey');
@@ -35,29 +33,29 @@ export class InicioComponent implements OnInit {
   }
 
   getSystems(): void {
-    this.SystemsService.getSystems(this.accessKey).subscribe(response => {
+    this.SystemsService.getSystems(this.accessKey).subscribe((response: any) => {
 
-      console.log(response) ;
-      this.table = response;
-     
-        this.name = response[0].name,
-        this.activated = response [0].activated,
-        this.suspended =response[0].suspended,
+      console.log(response);
+      this.table= response;
+
+      //     this.name = response[0].name,
+      //     this.activated = response[0].activated,
+      //     this.suspended = response[0].suspended,
         this.idSystem = response[0].id,
-        this.projectName = response[0].projectName
+      //     this.projectName = response[0].projectName
 
         this.SystemsModel.idSystem = response[0].id;
-        this.SystemsModel.activated= response[0].activated;
-        this.SystemsModel.name= response[0].name,
-        this.SystemsModel.projectName= response[0].projectName,
-        this.SystemsModel.suspended= response[0].suspended
-       
-      
-       localStorage.setItem('idSystem', this.idSystem);
-        
+      //     this.SystemsModel.activated = response[0].activated;
+      //     this.SystemsModel.name = response[0].name,
+      //     this.SystemsModel.projectName = response[0].projectName,
+      //     this.SystemsModel.suspended = response[0].suspended
+
+        localStorage.setItem('idSystem', this.idSystem);
+
       
     });
   }
 }
+
 
 

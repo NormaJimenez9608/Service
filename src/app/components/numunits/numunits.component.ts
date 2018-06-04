@@ -22,7 +22,8 @@ export class  NumunitsComponent implements OnInit {
   public name;
   public name2;
 
-  Units;
+  public device: any[] =[];
+
   SystemsModels = new systems;
   unitModel = new unit ;
 
@@ -44,11 +45,16 @@ getSystems(): void {
 }
   getUnit(): void{
      
-      this.UnitService.getUnit( this.SystemsModels.idSystem, this.accessKey).subscribe(data=>{
+      this.UnitService.getUnit( this.SystemsModels.idSystem, this.accessKey).subscribe((data:any)=>{
       
-      this.Units = data
-      this.name = data[0].deviceName;
-      this.name2 = data[1].deviceName;
+       this.device = data;
+
+       this.name = data[0].deviceName;
+
+       
+      
+     
+    
       
     // if(typeof name == "undefined"){
     //   this.name = "Hola";
