@@ -32,6 +32,7 @@ import { DatalogComponent } from './components/datalog/datalog.component';
 import { DataloghoursComponent } from './components/dataloghours/dataloghours.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';
 import {AlarmsService} from './services/alarms.service';
+import {ExcelService}from './services/excel.service';
 
 const appRoutes: Routes = [
   {
@@ -115,7 +116,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService ],
+  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService ],
   bootstrap: [AppComponent],
 
 })

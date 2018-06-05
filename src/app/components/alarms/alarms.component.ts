@@ -6,6 +6,8 @@ import { systems } from '../../models/systems.models';
 import { SystemsService } from '../../services/systems.service';
 import { SummaryResolver } from '@angular/compiler';
 import { AlarmsService } from '../../services/alarms.service';
+import { ExcelService } from '../../services/excel.service';
+
 
 @Component({
   selector: 'app-alarms',
@@ -14,16 +16,19 @@ import { AlarmsService } from '../../services/alarms.service';
   providers: [systems]
 })
 export class AlarmsComponent implements OnInit {
-
+ 
   public systems:systems = new systems();
   public accessKey;
   public idSystem;
   public listalarms: any[] = [];
+  public tableexcel ;
 
   SystemsModels = new systems;
 
-  constructor(private AlarmsServices: AlarmsService, private SystemsService: SystemsService,  private router: Router) {
-    this.accessKey = localStorage.getItem('accessKey');  
+  constructor(private AlarmsServices: AlarmsService, private SystemsService: SystemsService,  private router: Router, private excelService: ExcelService) {
+    this.accessKey = localStorage.getItem('accessKey'); 
+    this.excelService = excelService;
+
    }
 
    ngOnInit() {
@@ -45,4 +50,9 @@ export class AlarmsComponent implements OnInit {
 
 });
 } 
+
+exportToExcel(event) {
+  this.tableexcel = this.listalarms
+  this.excelService.exportAsExcelFile(this.tableexcel, '');
+}
 }
