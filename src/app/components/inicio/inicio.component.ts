@@ -51,8 +51,7 @@ export class InicioComponent implements OnInit {
       //     this.SystemsModel.suspended = response[0].suspended
 
         localStorage.setItem('idSystem', this.idSystem);
-
-      
+    
     });
   }
 }
