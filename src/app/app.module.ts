@@ -25,7 +25,6 @@ import {ValuesService} from './services/values.service';
 import { Values2Component } from './components/values2/values2.component';
 import { Pagevalues2Component } from './components/pagevalues2/pagevalues2.component';
 import {WritteService} from './services/writte.service';
-import {AuthGuardService } from './services/auth-guard.service';
 import { AlarmsComponent } from './components/alarms/alarms.component';
 import { AlarmsHistoryComponent } from './components/alarms-history/alarms-history.component';
 import { DatalogComponent } from './components/datalog/datalog.component';
@@ -33,6 +32,7 @@ import { DataloghoursComponent } from './components/dataloghours/dataloghours.co
 import { GraphicsComponent } from './components/graphics/graphics.component';
 import {AlarmsService} from './services/alarms.service';
 import {ExcelService}from './services/excel.service';
+import {AuthGuardGuard} from './auth-guard.guard'
 
 const appRoutes: Routes = [
   {
@@ -41,46 +41,58 @@ const appRoutes: Routes = [
   },
   { 
      path: 'Main',
-     component: InicioComponent,     
+     canActivate: [AuthGuardGuard],
+     component: InicioComponent, 
+      
 },
     {
       path: 'Service',
+      canActivate: [AuthGuardGuard],
       component: ConservicesComponent
     },
     {
       path: 'Sales',
       component: ConsalesComponent
     },
-   { path: 'Units',
-    component: UnitsComponent,
    
+  {
+    path:'Units',
+    canActivate: [AuthGuardGuard],
+    component: UnitsComponent,
   },
   {
     path: 'Values',
+    canActivate: [AuthGuardGuard],
     component: PagevaluesComponent
   },
   {
     path: 'Values2',
+    canActivate: [AuthGuardGuard],
     component: Pagevalues2Component
   },
 
 {
   path: 'Alarms',
+  canActivate: [AuthGuardGuard],
      component: AlarmsComponent
    },
    {
      path: 'AlarmsHistory',
+     canActivate: [AuthGuardGuard],
      component: AlarmsHistoryComponent
    }, 
   { path: 'Datalog',
+  canActivate: [AuthGuardGuard],
    component: DatalogComponent
  },
  {
    path: 'DatalogHours',
+   canActivate: [AuthGuardGuard],
    component: DataloghoursComponent
  },
  {
  path: 'Graphics',
+ canActivate: [AuthGuardGuard],
  component: GraphicsComponent
  }
 ] 
@@ -116,7 +128,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule  
   ],
-  providers: [LoginService, AuthGuardService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService ],
+  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService, AuthGuardGuard ],
   bootstrap: [AppComponent],
 
 })

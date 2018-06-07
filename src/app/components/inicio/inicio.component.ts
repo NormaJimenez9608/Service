@@ -42,7 +42,7 @@ export class InicioComponent implements OnInit {
       //     this.activated = response[0].activated,
       //     this.suspended = response[0].suspended,
         this.idSystem = response[0].id,
-      //     this.projectName = response[0].projectName
+         this.projectName = response[0].projectName
 
         this.SystemsModel.idSystem = response[0].id;
       //     this.SystemsModel.activated = response[0].activated;
