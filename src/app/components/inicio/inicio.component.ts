@@ -23,7 +23,7 @@ export class InicioComponent implements OnInit {
 
   SystemsModel = new systems;
 
-  constructor(private SystemsService: SystemsService) {
+  constructor(private SystemsService: SystemsService, private router:Router) {
 
   }
 
@@ -41,20 +41,24 @@ export class InicioComponent implements OnInit {
       //     this.name = response[0].name,
       //     this.activated = response[0].activated,
       //     this.suspended = response[0].suspended,
-        this.idSystem = response[0].id,
+        // this.idSystem = response[0].id,
          this.projectName = response[0].projectName
 
-        this.SystemsModel.idSystem = response[0].id;
+        // this.SystemsModel.idSystem = response[0].id;
       //     this.SystemsModel.activated = response[0].activated;
       //     this.SystemsModel.name = response[0].name,
       //     this.SystemsModel.projectName = response[0].projectName,
       //     this.SystemsModel.suspended = response[0].suspended
 
-        localStorage.setItem('idSystem', this.idSystem);
-    
+        
     });
-  }
 }
+onSelect(data) {
 
-
+  console.log([data.id]);
+  this.idSystem= data.id
+  localStorage.setItem('idSystem', this.idSystem);
+  this.router.navigate(['Units']); 
+}
+}
 

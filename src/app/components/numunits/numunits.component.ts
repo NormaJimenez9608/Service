@@ -65,6 +65,14 @@ getSystems(): void {
 
     });
   }
+
+  onSelect(data) {
+
+    console.log([data.id]);
+    
+    
+  }
+  
 }
 
 
