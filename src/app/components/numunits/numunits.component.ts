@@ -21,7 +21,7 @@ export class  NumunitsComponent implements OnInit {
   public number;
   public name;
   public name2;
-
+   names: any[];
   public device: any[] =[];
 
   SystemsModels = new systems;
@@ -29,25 +29,26 @@ export class  NumunitsComponent implements OnInit {
 
     constructor(private UnitService: UnitService, private SystemsService: SystemsService,  private router: Router) {  
     this.accessKey = localStorage.getItem('accessKey');  
+    this.idSystem = localStorage.getItem('idSystem')
  }
 
  ngOnInit() {
-  this.getSystems();
+  this.getUnit();
 }
-getSystems(): void {
-  this.SystemsService.getSystems(this.accessKey).subscribe(response => {
-    for (let i in response) {
-    this.SystemsModels.idSystem = response[i].id;
-    this.getUnit();
-    }
-    
-  });
-}
+
   getUnit(): void{
      
-      this.UnitService.getUnit( this.SystemsModels.idSystem, this.accessKey).subscribe((data:any)=>{
-      
-       this.device = data;
+      this.UnitService.getUnit( this.idSystem, this.accessKey).subscribe((data:any)=>{
+      this.names=[
+      data[0].deviceName
+      ]
+       for (let i of data.deviceName){
+        if(data.deviceName !== this.names){
+         console.log(data.deviceName)
+        this.names.push(data.deviceName);
+  }
+}
+console.log(this.names);
 
        this.name = data[0].deviceName;
 

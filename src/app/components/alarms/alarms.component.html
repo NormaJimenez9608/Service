@@ -1,7 +1,12 @@
 <div class="fondo1">
   <app-general-header></app-general-header>
-  <p style="size: 25px;" align="center" class="Name"></p> 
-  <div class="blankspace"> </div>
+
+  <div class="row">
+    <div class="col-md-3"></div>
+<p style="size: 25px;" align="center" class="Name col-md-4">ALARMS</p> 
+<div class="col-md-5"></div>
+</div>
+  
   
   <div class="container-fluid">
   <div class="row">
@@ -25,7 +30,6 @@
     <tr class="name">
       <th scope="col">Status</th>
       <th scope="col">Device Name</th>
-      <th scope="col">Value/Info</th>
       <th scope="col">Name</th>
       <th scope="col">Severity</th>
       <th scope="col">Time</th>
@@ -35,10 +39,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let data of listalarms">
-      <th class="img"  *ngIf="data.active === false" > <img  style="width:2%; "  style="height:10%" src="assets\images\Boton_verde.png" alt="activated"></th>
-      <th class="imgfalse"  *ngIf="data.active === true" > <img  style="width:2%; "  style="height:5%" src="assets\images\Boton-rojo.png" alt="activated"></th>
+      <th class="img"  *ngIf="data.active === false" >Normal</th>
+      <th class="imgfalse"  *ngIf="data.active === true" >Active</th>
       <td>{{data.deviceName}}</td>
-      <td>{{data.info}}</td>
       <td>{{data.name}}</td>
       <td *ngIf="data.severity === 0">Indeterminate</td>
       <td *ngIf="data.severity === 1">Critical</td>
@@ -46,11 +49,12 @@
       <td *ngIf="data.severity === 3">Minor</td>
       <td *ngIf="data.severity === 4">Warning</td>
       <td *ngIf="data.severity === 5">Information</td>
-      <td>{{data.timestamp}}</td>
+      <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
     
       
     </tr>
   </tbody>
+ 
 </table>
 <button type="button" (click)="exportToExcel(data)" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>

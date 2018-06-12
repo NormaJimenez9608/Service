@@ -15,9 +15,17 @@
 }
 
 .imgfalse{
-    background-color:#06CEDB;
+    background-color:#F35F68;
 }
 
 .name{
     background-color: #868989;
+}
+
+.Name{
+    padding-left: 60px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #566573  ;
+
 }

@@ -1,7 +1,11 @@
 <div class="fondo1">
   <app-general-header></app-general-header>
-  <p style="size: 25px;" align="center" class="Name"></p> 
-  <div class="blankspace"> </div>
+
+  <div class="row">
+    <div class="col-md-3"></div>
+<p style="size: 25px;" align="center" class="Name col-md-4">ALARMS HISTORY</p> 
+<div class="col-md-5"></div>
+</div>
   
   
   <div class="container-fluid">
@@ -23,50 +27,41 @@
       
 
 
- <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
- <button type="button" class="btn btn-secondary btn-sm">OK</button>
+ <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00" value="2018-06-01T12:00"  [(ngModel)]="alarms.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00" value="2018-07-01T12:00"  [(ngModel)]="alarms.endDate"></p> 
+ <button type="button" (click)="Alarms()" class="btn btn-secondary btn-sm">OK</button>
  <div class="blankspace"> </div>
   
  <table class="table table-bordered ">
  <thead>
    <tr>
-     <th scope="col">Action</th>
-     <th scope="col">Devicename</th>
-     <th scope="col">Value</th>
-     <th scope="col">Name</th>
-     <th scope="col">Severity</th>
-     <th scope="col">Timestamp</th>
+    <th scope="col">Status</th>
+      <th scope="col">Device Name</th>
+      <th scope="col">Name</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Time</th>
+      <th scope="col">Information</th>
      
    </tr>
  </thead>
  <tbody>
    <tr>
-     <th scope="row">1</th>
-     <td>Mark</td>
-     <td>Otto</td>
-     <td>@mdo</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
-   <tr>
-     <th scope="row">2</th>
-     <td>Jacob</td>
-     <td>Thornton</td>
-     <td>@fat</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
-   <tr>
-     <th scope="row">3</th>
-     <td >Larry the Bird</td>
-     <td>@twitter</td>
-     <td>Mark</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
- 
+    <tr *ngFor="let data of listalarms | paginate: { itemsPerPage: 10, currentPage: p }">
+      
+      <th>{{data.action}}</th>
+      <td>{{data.deviceName}}</td>
+      <td>{{data.name}}</td>
+      <td *ngIf="data.severity === 0">Indeterminate</td>
+      <td *ngIf="data.severity === 1">Critical</td>
+      <td *ngIf="data.severity === 2">Major</td>
+      <td *ngIf="data.severity === 3">Minor</td>
+      <td *ngIf="data.severity === 4">Warning</td>
+      <td *ngIf="data.severity === 5">Information</td>
+      <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+      <td>{{data.info}}</td>
  </tbody>
-</table>
+ 
+   </table>
+   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 <button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>

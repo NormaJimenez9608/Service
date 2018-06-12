@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from "@angular/router";
 import { unit } from '../../models/unit';
 import { UnitService } from '../../services/unit.service';
-import { systems } from '../../models/systems.models';
-import { SystemsService } from '../../services/systems.service';
+
 
 @Component({
   selector: 'app-units',
   templateUrl: './units.component.html',
   styleUrls: ['./units.component.css'],
-  providers: [systems]
+  providers: []
 })
 export class UnitsComponent implements OnInit {
 
@@ -21,34 +20,25 @@ export class UnitsComponent implements OnInit {
   public setpoint2;
   public temperatura2;
   public controlvalue2;
-  public systems:systems = new systems();
+ 
 
   Units;
-  SystemsModels = new systems;
+ 
   unitModel = new unit ;
 
-    constructor(private UnitService: UnitService, private SystemsService: SystemsService,  private router: Router) {  
+    constructor(private UnitService: UnitService, private router: Router) {  
     this.accessKey = localStorage.getItem('accessKey');
-    //this.idSystem = localStorage.getItem('idSystem');
-    //this.idSystem = modelossystem.id;
+    this.idSystem = localStorage.getItem('idSystem');
+ 
     
  }
 
  ngOnInit() {
-  this.getSystems();
-}
-getSystems(): void {
-  this.SystemsService.getSystems(this.accessKey).subscribe(response => {
-    for (let i in response) {
-    this.SystemsModels.idSystem = response[i].id;
-    this.getUnit();
-    }
-    
-  });
+  this.getUnit();
 }
   getUnit(): void{
       
-      this.UnitService.getUnit( this.SystemsModels.idSystem, this.accessKey).subscribe(data=>{
+      this.UnitService.getUnit( this.idSystem, this.accessKey).subscribe(data=>{
 
         this.setpoint = data[0].id;
         this.temperatura = data[1].id;
