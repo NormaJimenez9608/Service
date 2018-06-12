@@ -51,18 +51,6 @@ getSystems(): void {
 
        this.name = data[0].deviceName;
 
-       
-      
-     
-    
-      
-    // if(typeof name == "undefined"){
-    //   this.name = "Hola";
-
-    //}
-
-        
-
     });
   }
 

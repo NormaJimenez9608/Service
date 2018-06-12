@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     component: LoginnComponent
   },
   { 
-     path: 'Main',
+     path: 'Systems',
      canActivate: [AuthGuardGuard],
      component: InicioComponent, 
       
@@ -56,12 +56,12 @@ const appRoutes: Routes = [
     },
    
   {
-    path:'Units',
+    path:'Systems/Devices',
     canActivate: [AuthGuardGuard],
     component: UnitsComponent,
   },
   {
-    path: 'Values',
+    path: 'Systems/Devices/Values',
     canActivate: [AuthGuardGuard],
     component: PagevaluesComponent
   },
@@ -72,26 +72,27 @@ const appRoutes: Routes = [
   },
 
 {
-  path: 'Alarms',
+  path: 'Systems/Alarms',
   canActivate: [AuthGuardGuard],
      component: AlarmsComponent
    },
    {
-     path: 'AlarmsHistory',
+     path: 'Systems/AlarmsHistory',
      canActivate: [AuthGuardGuard],
      component: AlarmsHistoryComponent
    }, 
-  { path: 'Datalog',
+  { path: 'Systems/Devices/Datalog',
   canActivate: [AuthGuardGuard],
    component: DatalogComponent
+  
  },
  {
-   path: 'DatalogHours',
+   path: 'Systems/Devices/DatalogHours',
    canActivate: [AuthGuardGuard],
    component: DataloghoursComponent
  },
  {
- path: 'Graphics',
+ path: 'Systems/Devices/Graphics',
  canActivate: [AuthGuardGuard],
  component: GraphicsComponent
  }

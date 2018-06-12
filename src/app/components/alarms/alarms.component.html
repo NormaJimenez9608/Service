@@ -9,13 +9,13 @@
     <div class="col-md-7">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link " href="#" routerLink="/Units">Devices</a>
+      <a class="nav-link " href="#" routerLink="/Systems/Devices">Devices</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#" routerLink="/Alarms">Alarms</a>
+      <a class="nav-link active" href="#" routerLink="/Systems/Alarms">Alarms</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#" routerLink="/AlarmsHistory">Alarms History</a>
+        <a class="nav-link " href="#" routerLink="/Systems/AlarmsHistory">Alarms History</a>
       </li>
   </ul>
   <div class="blankspace"> </div>
@@ -52,5 +52,5 @@
     </tr>
   </tbody>
 </table>
-<button type="button" (click)="exportToExcel()" class="btn btn-info  btn-lg">Download data as file</button>
+<button type="button" (click)="exportToExcel(data)" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>

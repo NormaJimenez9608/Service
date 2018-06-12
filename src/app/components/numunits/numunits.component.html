@@ -8,7 +8,7 @@
             <div *ngFor="let data of device" >
                 
            <p align="center" class="col-md-3"   style="cursor:pointer" ><img style="width:60%;" routerLink="/Values>" src="assets/images/GMM.png" alt=""></p>
-           <p align="center" class="col-md-2" style="cursor:pointer" routerLink="/Values" (click)="onSelect(data)"  >{{data.deviceName}}</p>
+           <p align="center" class="col-md-2" style="cursor:pointer" routerLink="/Systems/Devices/Values" (click)="onSelect(data)"  >{{data.deviceName}}</p>
            <div class="col-md-1 "> </div>
         
         </div>
