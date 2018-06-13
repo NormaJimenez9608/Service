@@ -31,5 +31,7 @@
 .cursor:hover{
     text-decoration:underline;
 }
-
+.name{
+    background-color: #868989;
+}
 

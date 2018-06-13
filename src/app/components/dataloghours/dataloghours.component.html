@@ -2,7 +2,7 @@
   <app-general-header></app-general-header>
   <div class="row">
     <div class="col-md-3"></div>
-<p style="size: 25px;" align="center" class="Name col-md-4">DATA LOG</p> 
+<p style="size: 25px;" align="center" class="Name col-md-4">DATA LOG FOR HOURS</p> 
 <div class="col-md-5"></div>
 </div>
  
@@ -13,6 +13,9 @@
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link " href="#" routerLink="/Systems/Devices">Back</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " href="#"  routerLink="/Systems/Devices/AllDatalogs" >All datalog</a>
         </li>
         <li class="nav-item">
             <a class="nav-link  " href="#" routerLink="/Systems/Devices/Datalog">For Day</a>
@@ -27,67 +30,53 @@
 
   <div class="blankspace"> </div>
 
-   
-  <form>
+  <form class="value"> 
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected>Value</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
+            <option selected >Choose a data</option> 
+            <option value="{{value.id}}" *ngFor="let value of listdata"   >{{value.name}}</option>       
           </select>
         </div>
       </div>
     </form>
+  
 
     
     <div class="blankspace"> </div>
- <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00"></p> 
- <button type="button" class="btn btn-secondary btn-sm">OK</button>
+ <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00" [(ngModel)]="datalog2.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00" [(ngModel)]="datalog2.endDate"></p> 
+ <button type="button" class="btn btn-secondary btn-sm"  (click)="getHours(valueid)">OK</button>
  <div class="blankspace"> </div>
   
  <table class="table table-bordered ">
  <thead>
-   <tr>
-     <th scope="col">Action</th>
-     <th scope="col">Devicename</th>
-     <th scope="col">Value</th>
-     <th scope="col">Name</th>
-     <th scope="col">Severity</th>
-     <th scope="col">Timestamp</th>
-     
-   </tr>
+    <tr class="name">
+        <th scope="col">Time</th>
+       <th scope="col">Average value</th>
+       <th scope="col">Maximum value</th>
+       <th scope="col">Minimum value</th>
+       
+       
+      
+       
+     </tr>
  </thead>
  <tbody>
-   <tr>
-     <th scope="row">1</th>
-     <td>Mark</td>
-     <td>Otto</td>
-     <td>@mdo</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
-   <tr>
-     <th scope="row">2</th>
-     <td>Jacob</td>
-     <td>Thornton</td>
-     <td>@fat</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
-   <tr>
-     <th scope="row">3</th>
-     <td >Larry the Bird</td>
-     <td>@twitter</td>
-     <td>Mark</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
+    <tr *ngFor="let data of listdata2 | paginate: { itemsPerPage: 10, currentPage: p }">
  
- </tbody>
+       <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+      <td>{{data.avgValue  }}</td>
+      <td>{{data.maxValue }}</td>
+      <td>{{data.minValue }}</td>
+     
+      
+      
+    </tr>
+    <tr>
+  </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 <button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace2"> </div>
 

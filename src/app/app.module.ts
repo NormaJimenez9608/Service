@@ -35,6 +35,8 @@ import {ExcelService}from './services/excel.service';
 import {AuthGuardGuard} from './auth-guard.guard'
 import {AlarmHistoryService} from './services/alarm-history.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { AlldatalogsComponent } from './components/alldatalogs/alldatalogs.component';
+import {DatalogsService} from './services/datalogs.service';
 
 const appRoutes: Routes = [
   {
@@ -97,7 +99,12 @@ const appRoutes: Routes = [
  path: 'Systems/Devices/Graphics',
  canActivate: [AuthGuardGuard],
  component: GraphicsComponent
- }
+ },
+ {
+  path: 'Systems/Devices/AllDatalogs',
+  canActivate: [AuthGuardGuard],
+  component: AlldatalogsComponent
+  }
 ] 
 
 @NgModule({
@@ -123,6 +130,7 @@ const appRoutes: Routes = [
     DatalogComponent,
     DataloghoursComponent,
     GraphicsComponent,
+    AlldatalogsComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -132,7 +140,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService, AuthGuardGuard, AlarmHistoryService],
+  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService, AuthGuardGuard, AlarmHistoryService, DatalogsService],
   bootstrap: [AppComponent],
 
 })

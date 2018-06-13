@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from "@angular/router";
-import {  unit } from '../../models/unit';
-import { UnitService } from '../../services/unit.service';
 import { SummaryResolver } from '@angular/compiler';
 import { AlarmHistoryService} from '../../services/alarm-history.service';
 import {  Alarms } from '../../models/alarms';
@@ -42,7 +40,7 @@ console.log(dato)
     const endDate = this.alarms.endDate;
     const startDate = this.alarms.startDate;
 
-    console.log(this.alarms.startDate);
+    
     this.AlarmsHistory.getDate(this.idSystem, this.accessKey, this.alarms.startDate, this.alarms.endDate). subscribe((data:any)=>{
     this.listalarms= data;
 console.log(data)

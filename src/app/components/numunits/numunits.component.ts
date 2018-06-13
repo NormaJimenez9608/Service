@@ -39,15 +39,15 @@ export class  NumunitsComponent implements OnInit {
   getUnit(): void{
      
       this.UnitService.getUnit( this.idSystem, this.accessKey).subscribe((data:any)=>{
-      this.names=[
-      data[0].deviceName
-      ]
-       for (let i of data.deviceName){
-        if(data.deviceName !== this.names){
-         console.log(data.deviceName)
-        this.names.push(data.deviceName);
-  }
-}
+      // this.names=[
+      // data[0].deviceName
+      // ]
+      //  for (let i of data.deviceName){
+      //   if(data.deviceName !== this.names){
+      //    console.log(data.deviceName)
+      //   this.names.push(data.deviceName);
+    this.device = data
+
 console.log(this.names);
 
        this.name = data[0].deviceName;

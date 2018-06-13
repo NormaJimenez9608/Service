@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import {unit} from '../models/unit';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Http, Response, Headers, ResponseContentType, } from '@angular/http';
 import {HttpClient} from '@angular/common/http';
-import { systems } from '../models/systems.models';
+
 
 @Injectable()
 export class AlarmsService {
