@@ -18,8 +18,8 @@ private  IsUserLoginIn;
 
   constructor (public _http: Http,private router: Router) { 
     this.url = 'https://api.netbiter.net/operation/v1/rest/json/user/authenticate';
-    this.IsUserLoginIn = false;
-
+    this.IsUserLoginIn=true;
+// CAMBIO LOGIN
   }
 
 Login(modelologin:Login){

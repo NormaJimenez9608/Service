@@ -33,3 +33,4 @@ getDate(idSystems, accessKey, startDate, endDate){
   return this.HTTP.get(this.url2)
 }
 }
+

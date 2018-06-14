@@ -15,6 +15,7 @@ export class DatalogsService {
   public url3;
   public url4;
   public url5;
+  public url6;
   public accessKey;
 
   constructor(public _http: Http,private router: Router, private HTTP: HttpClient) { }
@@ -50,4 +51,9 @@ getDetailHours2(idSystems, idLog, accessKey, startDate, endDate){
     return this.HTTP.get(this.url5)
   }
 
+  getAllDatalog(idSystems, idLog, accessKey){
+   this.url6=` https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}?accesskey=${accessKey}`
+   console.log(this.url6);
+   return this.HTTP.get(this.url6)
+  }
 }

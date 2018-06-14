@@ -66,11 +66,11 @@
    <tr *ngFor="let data of listdata2 | paginate: { itemsPerPage: 10, currentPage: p }">
 
       <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
-     <td>{{data.avgValue  }}</td>
+     <td>{{data.avgValue | slice:0:7 }}</td>
      <td>{{data.maxValue }}</td>
      <td>{{data.minValue }}</td>
      <td>{{data.nrOfSamples }}</td>
-     <td>{{data.stdDeviation }}</td>
+     <td>{{data.stdDeviation |slice:0:6 }}</td>
      
    </tr>
    <tr>

@@ -54,7 +54,7 @@ export class UnitsComponent implements OnInit {
        localStorage.setItem('setpoint2', this.setpoint2);
        localStorage.setItem('temperatura2', this.temperatura2);
        localStorage.setItem('controlvalue2', this.controlvalue2);
-      console.log(data);
+      //console.log(data);
       
       
     });

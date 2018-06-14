@@ -20,42 +20,29 @@
   </ul>
 
   <div class="blankspace"> </div>
-  
+  <div class="hola">
  <table class="table table-bordered ">
  <thead>
    <tr class="name">
      <th scope="col"> Data Time</th>
      <th scope="col" *ngFor="let data of listdata" >{{data.name}}</th> 
-   
+
    </tr>
  </thead>
  <tbody>
-   <tr>
-     <th scope="row">1</th>
-     <td>Mark</td>
-     <td>Otto</td>
-     <td>@mdo</td>
-     <td>Mark</td>
-     <td>Mark</td>
+   <tr *ngFor="let data of listID | paginate: { itemsPerPage: 10, currentPage: p } ">
+     <th scope="row">{{data.timestamp}}</th>
+     <td *ngFor="let data of listID">{{data.value}}</td>
+  
    </tr>
-   <tr>
-     <th scope="row">2</th>
-     <td>Jacob</td>
-     <td>Thornton</td>
-     <td>@fat</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
-   <tr>
-     <th scope="row">3</th>
-     <td >Larry the Bird</td>
-     <td>@twitter</td>
-     <td>Mark</td>
-     <td>Mark</td>
-     <td>Mark</td>
-   </tr>
- 
+
+   <script src="FileSaver.js"> </script> 
+   <script src="tableexport.js"></script>
  </tbody>
 </table>
+
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<div class="blankspace"> </div>
 <button type="button" class="btn btn-info  btn-lg">Download data as file</button>
-<div class="blankspace2"> </div>
+<div class="blankspace"> </div>
