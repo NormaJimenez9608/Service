@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { unit } from '../../models/unit';
 import { UnitService } from '../../services/unit.service';
 import { systems } from '../../models/systems.models';
@@ -21,7 +21,8 @@ export class NumunitsComponent implements OnInit {
   public number;
   public name;
   public name2;
-  public names: any[] = [];;
+  public names: any[] = [];
+  public deviNames: any[] = [];
   public device;
   public filtrado = [];
   public concatenadofilter = [];
@@ -29,9 +30,9 @@ export class NumunitsComponent implements OnInit {
   SystemsModels = new systems;
   unitModel = new unit;
 
-  constructor(private UnitService: UnitService, private SystemsService: SystemsService, private router: Router) {
+  constructor(private UnitService:  UnitService, private SystemsService:  SystemsService, private router: Router) {
     this.accessKey = localStorage.getItem('accessKey');
-    this.idSystem = localStorage.getItem('idSystem')
+    this.idSystem = localStorage.getItem('idSystem');
   }
 
   ngOnInit() {
@@ -42,23 +43,30 @@ export class NumunitsComponent implements OnInit {
 
     this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
       this.device = data;
-      // console.log('inicio',this.names);        
-      console.log(this.device);
-    
-      let devicesNames = <any>[
-        {
-          deviceName: "GHM Pad"
-        },
-        {
-          deviceName: "GMM1"
-        }
-      ];
-      for (let i of devicesNames) {
-        this.concatenadofilter = this.filtrado;
-        this.filtrado = this.device.filter(device => device.deviceName === i.deviceName);
-        this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
-      }
-    });
+
+
+      var names = this.device.map(function (person) { return person.deviceName; });
+      var sorted = names.sort();
+      var unique = sorted.filter(function (value, index) {
+          return value !== sorted[index + 1];
+      });
+
+      console.log(unique);
+for (let i in unique) {
+  this.deviNames.push(
+         {
+       deviceName: unique[i]
+     })
+}
+
+console.log(this.deviNames)
+
+    //   for (let i of devicesNames) {
+    //     this.concatenadofilter = this.filtrado;
+    //     this.filtrado = this.device.filter(device => device.deviceName === i.deviceName);
+    //     this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
+    //   }
+   });
   }
   onSelect(data) {
 

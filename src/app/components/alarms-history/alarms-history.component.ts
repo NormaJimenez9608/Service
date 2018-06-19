@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router } from "@angular/router";
+import {  Router } from '@angular/router';
 import { SummaryResolver } from '@angular/compiler';
 import { AlarmHistoryService} from '../../services/alarm-history.service';
 import {  Alarms } from '../../models/alarms';
@@ -16,13 +16,11 @@ export class AlarmsHistoryComponent implements OnInit {
 public idSystem;
 alarms = new Alarms();
 
-
-
 public listalarms: any[] = [];
 
   constructor(private AlarmsHistory: AlarmHistoryService ,private router: Router, ) { 
- this.accessKey = localStorage.getItem('accessKey'); 
-  this.idSystem = localStorage.getItem('idSystem')}
+ this.accessKey = localStorage.getItem('accessKey') ;
+   this.idSystem = localStorage.getItem('idSystem')}
   ngOnInit() {
     this.getAlarmsHistory();
   }

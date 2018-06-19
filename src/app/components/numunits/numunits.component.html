@@ -2,16 +2,19 @@
 
     <div class="logo">
         <div class="container-fluid">
-            <div class="row col-md-12 ">
+            
 
-
-                <div *ngFor="let filtrados of concatenadofilter">
+                <div class="row ">
+                <div *ngFor="let name of deviNames" align="center">
+                        
+                            <div class=" row col-md-12">
+                                    <div class="col-md-4"></div>
                     <p align="center" class="col-md-3" style="cursor:pointer">
-                        <img style="width:60%;" routerLink="/Values>" src="assets/images/GMM.png" alt="">
+                        <img style="width:150%;" routerLink="/Values>" src="assets/images/GMM.png" alt="">
                     </p>
-                    <p align="center" class="col-md-2" style="cursor:pointer" routerLink="/Systems/Devices/Values" (click)="onSelect(data)">{{filtrados.deviceName}}</p>
-                    <div class="col-md-1 "> </div>
-
+                    <div class="col-md-1"></div>
+                    <p align="center" class="col-md-1 letter" style="cursor:pointer" routerLink="/Systems/Devices/Values" (click)="onSelect(data)">{{name.deviceName}}</p>
+                    <div class="col-md-3"></div>
                 </div>
 
 

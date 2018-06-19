@@ -39,9 +39,10 @@ export class AlarmsComponent implements OnInit {
 });
 } 
 
-exportToExcel(data) {
-  this.tableexcel = data
+exportToExcel(tablealarms) {
+
+  // this.tableexcel = data
   console.log(this.listalarms)
-  this.excelService.exportAsExcelFile(this.tableexcel, 'Alarms');
+  this.excelService.exportAsExcelFile(tablealarms, 'Alarms');
 }
 }
