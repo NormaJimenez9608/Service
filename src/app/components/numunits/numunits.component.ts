@@ -16,11 +16,9 @@ export class NumunitsComponent implements OnInit {
 
   public accessKey;
   public idSystem;
-  public idValue;
+  public nameDevice;
   public systems: systems = new systems();
   public number;
-  public name;
-  public name2;
   public names: any[] = [];
   public deviNames: any[] = [];
   public device;
@@ -68,10 +66,12 @@ console.log(this.deviNames)
     //   }
    });
   }
-  onSelect(data) {
+  onSelect(name) {
 
-    console.log([data.id]);
-
+    
+    this.nameDevice = name.deviceName
+    console.log([this.nameDevice]);
+    localStorage.setItem('nameDevice', this.nameDevice);
 
   }
 

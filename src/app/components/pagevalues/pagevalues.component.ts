@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagevalues.component.css']
 })
 export class PagevaluesComponent implements OnInit {
+  public nameDevice;
+  constructor() { 
+    this.nameDevice = localStorage.getItem('nameDevice');
+  }
 
-  constructor() { }
 
   ngOnInit() {
   }

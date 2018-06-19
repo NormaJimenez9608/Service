@@ -3,6 +3,7 @@ import {  Router } from '@angular/router';
 import { SummaryResolver } from '@angular/compiler';
 import { AlarmHistoryService} from '../../services/alarm-history.service';
 import {  Alarms } from '../../models/alarms';
+import { ExcelService } from '../../services/excel.service';
 
 @Component({
   selector: 'app-alarms-history',
@@ -18,7 +19,7 @@ alarms = new Alarms();
 
 public listalarms: any[] = [];
 
-  constructor(private AlarmsHistory: AlarmHistoryService ,private router: Router, ) { 
+  constructor(private AlarmsHistory: AlarmHistoryService ,private router: Router, private excelService: ExcelService) { 
  this.accessKey = localStorage.getItem('accessKey') ;
    this.idSystem = localStorage.getItem('idSystem')}
   ngOnInit() {
@@ -44,4 +45,15 @@ console.log(dato)
 console.log(data)
     })
   }
+
+
+  
+  exportToExcel(event) {
+
+    // this.tableexcel = data
+    console.log(this.listalarms)
+    this.excelService.exportAsExcelFile(this.listalarms, 'Alarms');
+  }
+  
+  
 }

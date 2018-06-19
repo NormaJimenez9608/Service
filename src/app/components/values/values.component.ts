@@ -4,6 +4,7 @@ import {  values } from '../../models/values';
 import { ValuesService } from '../../services/values.service';
 import { systems } from '../../models/systems.models';
 import { WritteService} from '../../services/writte.service'
+import { UnitService} from '../../services/unit.service'
 
 @Component({
   selector: 'app-values',
@@ -12,61 +13,63 @@ import { WritteService} from '../../services/writte.service'
   providers: [values]
 })
 export class ValuesComponent implements OnInit {
-
+  public nameDevice;
   public accessKey;
   public idSystem;
-  public setpoint;
-  public temperatura;
-  public controlvalue;
-  public idValor;
-  public setpoint1;
-  public temperatura1;
-  public controlvalue1;
-  public idsetpoint;
-  public value;
+  public device;
+  public concatenadofilter = [];
+  public filtrado = [];
+ 
+
   SystemsModels = new systems;
   ValuesModel = new values;
 
-  constructor(private ValuesService: ValuesService,  private router:Router, private values1: WritteService) { 
+  constructor(private ValuesService: ValuesService,  private router:Router, private values1: WritteService, private UnitService: UnitService) { 
     
   }
 
   ngOnInit() {
     this.accessKey = localStorage.getItem('accessKey');
     this.idSystem = localStorage.getItem('idSystem');
-    this.setpoint = localStorage.getItem('setpoint');
-    this.temperatura = localStorage.getItem('temperatura');
-    this.controlvalue = localStorage.getItem('controlvalue');
-    this.getValues();
+    this.nameDevice = localStorage.getItem('nameDevice');
+    this.getUnit();
    
   }
 
-  getValues(): void{
+  getUnit(): void {
 
-    this.ValuesService.getValues( this.idSystem, this.accessKey, this.setpoint, this.temperatura, this.controlvalue).subscribe((valores:any)=>{
-    this.idValor= valores.id;
-    this.getValores();
-    });      
-  }
+    this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
+      this.device = data;
 
- getValores():void{
+      for (let i of this.device) {
+           this.concatenadofilter = this.filtrado;
+         this.filtrado = this.device.filter(device => device.deviceName === this.nameDevice);
+         this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
+        }
+console.log(this.filtrado);
+    });
+//   getValues(): void{
+
+//     this.ValuesService.getValues( this.idSystem, this.accessKey, ).subscribe((valores:any)=>{
+
+//     this.getValores();
+//     });      
+//   }
+
+//  getValores():void{
   
-  this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
-  console.log(dato); 
-  this.setpoint1 = dato[0].value;
-  this.temperatura1 = dato[1].value;
-  this.controlvalue1 = dato[2].value;
-  this.idsetpoint = dato[0].id;
-
-  });
+//   this.ValuesService.getValores(this.idSystem, this.accessKey).subscribe((dato:any)=>{
+//   console.log(dato); 
+ 
+//   });
   
- } 
+//  } 
 
- Values(): void{
-  const value = this.ValuesModel.value;
+//  Values(): void{
+//   const value = this.ValuesModel.value;
   
-  this.values1.Values(this.ValuesModel,this.idSystem, this.accessKey, this.idsetpoint ).subscribe( response=>{
-   console.log(response);
-  });
-}
-  }
+//   this.values1.Values(this.idSystem, this.accessKey,  ).subscribe( response=>{
+//    console.log(response);
+//   });
+// }
+  }}
