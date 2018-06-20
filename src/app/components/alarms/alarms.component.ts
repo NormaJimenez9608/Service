@@ -4,7 +4,7 @@ import {  unit } from '../../models/unit';
 import { UnitService } from '../../services/unit.service';
 import { SummaryResolver } from '@angular/compiler';
 import { AlarmsService } from '../../services/alarms.service';
-import { ExcelService } from '../../services/excel.service';
+
 
 
 @Component({
@@ -21,10 +21,10 @@ export class AlarmsComponent implements OnInit {
   public tableexcel ;
   public rowsOnPage = 5;
 
-  constructor(private AlarmsServices: AlarmsService,   private router: Router, private excelService: ExcelService) {
+  constructor(private AlarmsServices: AlarmsService,   private router: Router) {
     this.accessKey = localStorage.getItem('accessKey'); 
     this.idSystem = localStorage.getItem('idSystem')
-    this.excelService = excelService;
+    
 
    }
 
@@ -39,10 +39,4 @@ export class AlarmsComponent implements OnInit {
 });
 } 
 
-exportToExcel(table) {
-
-  // this.tableexcel = data
-  console.log(this.listalarms)
-  this.excelService.exportAsExcelFile(table, 'Alarms');
-}
 }

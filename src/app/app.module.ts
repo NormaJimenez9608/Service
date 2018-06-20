@@ -31,7 +31,6 @@ import { DatalogComponent } from './components/datalog/datalog.component';
 import { DataloghoursComponent } from './components/dataloghours/dataloghours.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';
 import {AlarmsService} from './services/alarms.service';
-import {ExcelService}from './services/excel.service';
 import {AuthGuardGuard} from './auth-guard.guard'
 import {AlarmHistoryService} from './services/alarm-history.service';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -140,7 +139,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService, ExcelService, AuthGuardGuard, AlarmHistoryService, DatalogsService],
+  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService],
   bootstrap: [AppComponent],
 
 })
