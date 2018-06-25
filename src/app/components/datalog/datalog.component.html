@@ -77,5 +77,33 @@
  </tbody>
 </table>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-<button type="button" class="btn btn-info  btn-lg" >Download data as file</button>
+
+<button type="button" (click)="tableToExcel('testTable1', 'Datalog for Day')" class="btn btn-info  btn-lg" >Download data as file</button>
+   
+   <table style="display: none" class="table table-bordered " id="testTable1">
+     <thead>
+        <tr class="name">
+            <th scope="col">Time</th>
+           <th scope="col">Average value</th>
+           <th scope="col">Maximum value</th>
+           <th scope="col">Minimum value</th>
+           <th scope="col">Number of samples</th>
+           <th scope="col">Standard deviation</th>  
+         </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let data of listdata2 ">
+       
+             <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+            <td>{{data.avgValue | slice:0:7 }}</td>
+            <td>{{data.maxValue }}</td>
+            <td>{{data.minValue }}</td>
+            <td>{{data.nrOfSamples }}</td>
+            <td>{{data.stdDeviation |slice:0:6 }}</td>
+            
+          </tr>
+          <tr>
+        </tbody>
+       </table>
+
 <div class="blankspace2"> </div>
