@@ -63,6 +63,44 @@
  
    </table>
    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<button type="button" (click)="TabletoExcel('testTable1')" class="btn btn-info  btn-lg" >Download data as file</button>
+<button type="button" (click)="tableToExcel('testTable1', 'Alarms History')" class="btn btn-info  btn-lg" >Download data as file with 1 example</button>
+
+<table style="display: none" class="table table-bordered " id="testTable1">
+  <thead>
+    <tr class="name">
+     <th scope="col">Status</th>
+       <th scope="col">Device Name</th>
+       <th scope="col">Name</th>
+       <th scope="col">Severity</th>
+       <th scope="col">Time</th>
+       <th scope="col">Information</th>
+      
+    </tr>
+  </thead>
+  <tbody >
+    <tr>
+     <tr *ngFor="let data of listalarms">
+       
+       <th>{{data.action}}</th>
+       <td>{{data.deviceName}}</td>
+       <td>{{data.name}}</td>
+       <td *ngIf="data.severity === 0">Indeterminate</td>
+       <td *ngIf="data.severity === 1">Critical</td>
+       <td *ngIf="data.severity === 2">Major</td>
+       <td *ngIf="data.severity === 3">Minor</td>
+       <td *ngIf="data.severity === 4">Warning</td>
+       <td *ngIf="data.severity === 5">Information</td>
+       <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+       <td>{{data.info}}</td>
+  </tbody>
+  
+    </table>
+<div class="blankspace2"> </div>
+
    <!-- Boton para guardar en angular -->
    
    <!-- Boton para guardar en JS -->

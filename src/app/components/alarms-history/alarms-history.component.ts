@@ -63,6 +63,7 @@ saveAs(blob, "Report.xls");
 this.showTable= false;
 }
 
+// Funcion para guardar con JS
   tableToExcel = (function() {
     
     var uri = 'data:application/vnd.ms-excel;base64,'
