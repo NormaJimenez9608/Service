@@ -1,19 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SummaryResolver } from '@angular/compiler';
-<<<<<<< HEAD
 import { AlarmHistoryService } from '../../services/alarm-history.service';
 import { Alarms } from '../../models/alarms';
 import { DatePipe } from '@angular/common';
 
 declare function unescape(s: string): string;
-=======
-import { AlarmHistoryService} from '../../services/alarm-history.service';
-import {  Alarms } from '../../models/alarms';
-import { saveAs } from 'file-saver'
-
-declare function unescape(s:string): string;
->>>>>>> 15b6beefe6e0db8a7b45da9a625662f785a266a2
 @Component({
   selector: 'app-alarms-history',
   templateUrl: './alarms-history.component.html',

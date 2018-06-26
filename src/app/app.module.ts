@@ -1,13 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
-<<<<<<< HEAD
 import {Http, HttpModule} from '@angular/http'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-=======
-import { Http, HttpModule } from '@angular/http'
-import { HttpClient, HttpClientModule } from '@angular/common/http';
->>>>>>> 15b6beefe6e0db8a7b45da9a625662f785a266a2
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -95,11 +90,7 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     
   ],
-<<<<<<< HEAD
   providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService, DatePipe],
-=======
-  providers: [LoginService, SystemsService, UnitService, ValuesService, WritteService, AlarmsService, AuthGuardGuard, AlarmHistoryService, DatalogsService],
->>>>>>> 15b6beefe6e0db8a7b45da9a625662f785a266a2
   bootstrap: [AppComponent],
 
 })
