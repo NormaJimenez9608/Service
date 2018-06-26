@@ -41,10 +41,10 @@ export class DatalogComponent implements OnInit {
        this.listdata2 = data2
        this.startDat = data2[data2.length - 1].timestamp
       this.endDat = data2[0].timestamp;
-      this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-ddThh:mm');
-      this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-ddThh:mm')
+      this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
+      this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
 
-     
+     this.onChange(data[0].id);
      })
   
     })
