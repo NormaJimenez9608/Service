@@ -25,7 +25,7 @@
   </ul>
   <div class="blankspace"> </div>
   
-  <table class="table table-bordered">
+  <table class="table table-bordered ">
   <thead>
     <tr class="name">
       <th scope="col">Status</th>
@@ -36,7 +36,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of listalarms">
+    <tr *ngFor="let data of listalarms | paginate: { itemsPerPage: 12, currentPage: p }">
       <th class="img"  *ngIf="data.active === false" >Normal</th>
       <th class="imgfalse"  *ngIf="data.active === true" >Active</th>
       <td>{{data.deviceName}}</td>
@@ -52,5 +52,38 @@
   </tbody>
  
 </table>
-<button type="button" (click)="exportToExcel(table)" class="btn btn-info  btn-lg">Download data as file</button>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<button type="button" (click)="tableToExcel('testTable1', 'Alarms')" class="btn btn-info  btn-lg" >Download data as file</button>
+   
+   <table style="display: none" class="table table-bordered " id="testTable1">
+      <thead>
+      <tr class="name">
+          <th scope="col">Status</th>
+          <th scope="col">Device Name</th>
+          <th scope="col">Name</th>
+          <th scope="col">Severity</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of listalarms">
+          <th class="img"  *ngIf="data.active === false" >Normal</th>
+          <th class="imgfalse"  *ngIf="data.active === true" >Active</th>
+          <td>{{data.deviceName}}</td>
+          <td>{{data.name}}</td>
+          <td *ngIf="data.severity === 0">Indeterminate</td>
+          <td *ngIf="data.severity === 1">Critical</td>
+          <td *ngIf="data.severity === 2">Major</td>
+          <td *ngIf="data.severity === 3">Minor</td>
+          <td *ngIf="data.severity === 4">Warning</td>
+          <td *ngIf="data.severity === 5">Information</td>
+          <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+        </tr>
+      </tbody>
+     
+    </table>
+
+
 <div class="blankspace2"> </div>
