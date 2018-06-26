@@ -16,21 +16,28 @@ import { LoginService } from '../../services/login.service';
 
 export class LoginnComponent implements OnInit {
   login = new Login();
-  
+  public accesKeyTest;
   constructor(private username:LoginService, private router:Router ) { 
 
   }
   ngOnInit() {
+    this.verificarsesion();
   }
-
+  verificarsesion() {
+    const caselogin =localStorage.getItem('caselogin');
+  }
   Login(){
 const username = this.login.username;
 const password = this.login.password;
 
 this.username.Login(this.login).subscribe( response=>{
-  
+  localStorage.setItem('caselogin', JSON.stringify('true'));
+
   this.router.navigate(['Systems']); 
 }, error=>{
+
+  localStorage.setItem('caselogin', JSON.stringify('false'));
+
   this.router.navigate(['']);
   alert("Usuario o contraseña incorrecta");
 });
