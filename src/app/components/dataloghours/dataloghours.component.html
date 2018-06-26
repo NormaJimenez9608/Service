@@ -34,7 +34,7 @@
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
           <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
-            <option selected >Choose a data</option> 
+            
             <option value="{{value.id}}" *ngFor="let value of listdata"   >{{value.name}}</option>       
           </select>
         </div>

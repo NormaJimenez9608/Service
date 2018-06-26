@@ -30,7 +30,13 @@ export class DatalogComponent implements OnInit {
   getDatalogs(): void{
     this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
     this.listdata= data;
-    console.log(this.listdata)
+    
+     this.DatalogService.getDetailDay(this.idSystem, data[0].id, this.accessKey).subscribe((data2:any)=>{
+      
+       this.listdata2 = data2
+     
+     })
+  
     })
       }
 

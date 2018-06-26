@@ -34,6 +34,12 @@ export class DataloghoursComponent implements OnInit {
     this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
     this.listdata= data;
     console.log(this.listdata)
+
+     this.DatalogService.getDetailHours(this.idSystem, data[0].id, this.accessKey).subscribe((data2:any)=>{
+      
+      this.listdata2 = data2
+    })
+  
     })
       }
 

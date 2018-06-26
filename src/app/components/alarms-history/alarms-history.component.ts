@@ -54,7 +54,6 @@ console.log(data)
 
 
 
-
   tableToExcel = (function() {
     
     var uri = 'data:application/vnd.ms-excel;base64,'
