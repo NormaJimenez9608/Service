@@ -35,10 +35,9 @@
       <th scope="col">Time</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let data of listalarms | paginate: { itemsPerPage: 12, currentPage: p }">
-      <th class="img"  *ngIf="data.active === false" >Normal</th>
-      <th class="imgfalse"  *ngIf="data.active === true" >Active</th>
+  <tbody  *ngFor="let data of listalarms | paginate: { itemsPerPage: 12, currentPage: p }">
+    <tr class="imgfalse"  *ngIf="data.active === true" >
+      <th >Active</th>
       <td>{{data.deviceName}}</td>
       <td>{{data.name}}</td>
       <td *ngIf="data.severity === 0">Indeterminate</td>
@@ -49,7 +48,21 @@
       <td *ngIf="data.severity === 5">Information</td>
       <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
     </tr>
+    <tr class="img"  *ngIf="data.active === false">
+      <th >Normal</th>
+      <td>{{data.deviceName}}</td>
+      <td>{{data.name}}</td>
+      <td *ngIf="data.severity === 0">Indeterminate</td>
+      <td *ngIf="data.severity === 1">Critical</td>
+      <td *ngIf="data.severity === 2">Major</td>
+      <td *ngIf="data.severity === 3">Minor</td>
+      <td *ngIf="data.severity === 4">Warning</td>
+      <td *ngIf="data.severity === 5">Information</td>
+      <td>{{data.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+    </tr>
+    
   </tbody>
+
  
 </table>
 

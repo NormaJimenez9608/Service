@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
 import {Http, HttpModule} from '@angular/http'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -137,9 +138,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    
   ],
-  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService],
+  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService, DatePipe],
   bootstrap: [AppComponent],
 
 })

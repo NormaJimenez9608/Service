@@ -3,6 +3,8 @@ import {  Router } from "@angular/router";
 import { SummaryResolver } from '@angular/compiler';
 import { DatalogsService } from '../../services/datalogs.service';
 import {  Datalog } from '../../models/datalog';
+import { DatePipe } from '@angular/common';
+
 
 declare function unescape(s:string): string;
 @Component({
@@ -18,9 +20,11 @@ export class DatalogComponent implements OnInit {
   public listdata2: any[] = [];
   public listdata3: any[] = [];
   datalog = new Datalog;
+  public startDat;
+  public endDat;
   public Idvalor;
 
-  constructor(private DatalogService: DatalogsService, private router: Router) { 
+  constructor(private DatalogService: DatalogsService, private router: Router, private datePipe: DatePipe) { 
     this.accessKey = localStorage.getItem('accessKey'); 
     this.idSystem = localStorage.getItem('idSystem')}
 
@@ -31,9 +35,15 @@ export class DatalogComponent implements OnInit {
     this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
     this.listdata= data;
     
+    
      this.DatalogService.getDetailDay(this.idSystem, data[0].id, this.accessKey).subscribe((data2:any)=>{
       
        this.listdata2 = data2
+       this.startDat = data2[data2.length - 1].timestamp
+      this.endDat = data2[0].timestamp;
+      this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-ddThh:mm');
+      this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-ddThh:mm')
+
      
      })
   
@@ -46,7 +56,7 @@ export class DatalogComponent implements OnInit {
     console.log(data2)
     this.listdata2 = data2
     this.Idvalor = valueid
-
+    
   })
       }
 

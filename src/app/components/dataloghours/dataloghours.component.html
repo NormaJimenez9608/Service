@@ -34,8 +34,7 @@
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
           <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
-            
-            <option value="{{value.id}}" *ngFor="let value of listdata"   >{{value.name}}</option>       
+            <option [value]="value.id" *ngFor="let value of listdata">{{value.name}}</option>       
           </select>
         </div>
       </div>
@@ -44,8 +43,8 @@
 
     
     <div class="blankspace"> </div>
- <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00" [(ngModel)]="datalog2.startDate"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" value="2018-05-29T12:00" [(ngModel)]="datalog2.endDate"></p> 
+ <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00"  [(ngModel)]="datalog2.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00"  [(ngModel)]="datalog2.endDate"></p> 
  <button type="button" class="btn btn-secondary btn-sm"  (click)="getHours(valueid)">OK</button>
  <div class="blankspace"> </div>
   
