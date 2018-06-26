@@ -3,6 +3,11 @@ import { NgModule, Injectable } from '@angular/core';
 import {Http, HttpModule} from '@angular/http'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+
+
+
 import { AppComponent } from './app.component';
 import { LoginnComponent } from './components/loginn/loginn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -90,7 +95,12 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     
   ],
-  providers: [LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService, DatePipe],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    LoginService,  SystemsService, UnitService, ValuesService, WritteService, AlarmsService,  AuthGuardGuard, AlarmHistoryService, DatalogsService, DatePipe],
   bootstrap: [AppComponent],
 
 })
