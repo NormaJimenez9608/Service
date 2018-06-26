@@ -1,69 +1,67 @@
 <div class="fondo1">
-    <app-general-header></app-general-header>
+  <app-general-header></app-general-header>
 
-    <div class="row">
-      <div class="col-md-3"></div>
-  <p style="size: 25px;" align="center" class="Name col-md-4">GRAPHICS</p> 
-  <div class="col-md-5"></div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <p style="size: 25px;" align="center" class="Name col-md-4">GRAPHICS</p>
+    <div class="col-md-5"></div>
   </div>
-   
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link " href="#" routerLink="/Systems/Devices">Back</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#"  routerLink="/Systems/Devices/AllDatalogs" >All datalog</a>
+            <a class="nav-link " href="#" routerLink="/Systems/Devices/AllDatalogs">All datalog</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link  " href="#" routerLink="/Systems/Devices/Datalog">For Day</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/Systems/Devices/DatalogHours">For Hours</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active " href="#" routerLink="/Systems/Devices/Graphics">Graphics</a>
-                </li>
+            <a class="nav-link  " href="#" routerLink="/Systems/Devices/Datalog">For Day</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/Systems/Devices/DatalogHours">For Hours</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " href="#" routerLink="/Systems/Devices/Graphics">Graphics</a>
+          </li>
         </ul>
-  
-    <div class="blankspace"> </div>
-  
-     <div class="row ">
-     
-    <form>
-        <div class="form-row align-items-center ">
-          <div class="col-auto my-1">
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Value</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
-        </div>
-      </form>
- 
-       <p class=" vs align-center"> &nbsp;  &nbsp; VS  &nbsp; &nbsp; </p>
-      
-    <form>
-        <div class="form-row align-items-center ">
-          <div class="col-auto my-1">
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Value</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
-        </div>
-      </form>
-    </div>
 
-      <div class="blankspace"> </div>
-      <p class="fecha" >Start Date and Hour: <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"></p> 
-      <p class="fecha">End   Date and Hour:  <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"></p> 
-      <button type="button" class="btn btn-secondary btn-sm">OK</button>
-      <div class="blankspace"> </div>
+        <div class="blankspace"> </div>
+
+        <div class="row ">
+
+          <form >
+            <div class="form-row align-items-center ">
+              <div class="col-auto my-1">
+                <select (change)="onChange($event.target.value)" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option [value]="value.id" *ngFor="let value of listdata">{{value.name}}</option>
+                </select>
+              </div>
+            </div>
+
+          <p class=" vs align-center"> &nbsp; &nbsp; VS &nbsp; &nbsp; </p>
+
+            <div class="form-row align-items-center ">
+              <div class="col-auto my-1">
+                <select (change)="onChange2($event.target.value)" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option [value]="value2.id" *ngFor="let value2 of listdata">{{value2.name}}</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="blankspace"> </div>
+        <p class="fecha">Start Date and Hour:
+          <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"
+            [(ngModel)]="datalog.startDate">
+        </p>
+        <p class="fecha">End Date and Hour:
+          <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"
+            [(ngModel)]="datalog.endDate">
+        </p>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="getDay(valueid, value2id)">OK</button>
+        <div class="blankspace"> </div>

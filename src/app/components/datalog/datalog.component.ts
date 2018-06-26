@@ -38,8 +38,8 @@ export class DatalogComponent implements OnInit {
     
      this.DatalogService.getDetailDay(this.idSystem, data[0].id, this.accessKey).subscribe((data2:any)=>{
       
-       this.listdata2 = data2
-       this.startDat = data2[data2.length - 1].timestamp
+      this.listdata2 = data2
+      this.startDat = data2[data2.length - 1].timestamp
       this.endDat = data2[0].timestamp;
       this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
       this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
