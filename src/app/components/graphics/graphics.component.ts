@@ -20,9 +20,13 @@ export class GraphicsComponent implements OnInit {
   public endDat;
   public Idvalor;
   public Idvalor2;
+  public listdata1: any[] = [];
   public listdata2: any[] = [];
   public listdata3: any[] = [];
+  public listdata4: any[] = [];
+  public listdata5: any[] = [];
   datalog = new Datalog;
+  public nume;
 
   constructor(private DatalogService: DatalogsService, private router: Router, private datePipe: DatePipe) {
     this.accessKey = localStorage.getItem('accessKey'); 
@@ -48,7 +52,9 @@ export class GraphicsComponent implements OnInit {
   onChange(valueid){
     console.log('value1: ', valueid)
     this.Idvalor = valueid;
-
+this.listdata1.length =0;
+this.listdata2.length =0;
+this.listdata4.length=0
     this.getData();        
 
     
@@ -58,7 +64,9 @@ export class GraphicsComponent implements OnInit {
         onChange2(value2id){
 console.log('value2: ', value2id);
 this.Idvalor2 = value2id;
-
+this.listdata1.length =0;
+this.listdata2.length =0;
+this.listdata4.length=0
 this.getData();        
 }
 
@@ -67,17 +75,38 @@ this.getData();
             console.log(this.Idvalor, this.Idvalor2);
             this.DatalogService.getDetailDay(this.idSystem, this.Idvalor, this.accessKey).subscribe((data:any)=>{
               console.log(data);
-            
+     
+              for(let i in data){
+                this.listdata2.push({
+                  timestamp : data[i].timestamp,
+                  value: data[i].maxValue,
+                })
+              }
+              console.log(this.listdata2)
+   
             this.DatalogService.getDetailDay(this.idSystem, this.Idvalor2, this.accessKey).subscribe((data2:any)=>{
                 console.log(data2);
-              this.listdata2 = data2;
-            
-            })
-            })
-          // // }else{
-          // //   alert('PERATE');
-          // // }
 
+                for (let i in data2){
+                  this.listdata1.push({
+                    timestamp : data2[i].timestamp,                    
+                    value2: data2[i].maxValue
+                  })
+                }          
+                
+               if(this.listdata2.length < this.listdata1.length){
+                for (let i in this.listdata2){
+                  this.listdata4.push({
+                    timestamp : data2[i].timestamp,
+                    value: data[i].maxValue   ,                 
+                    value2: data2[i].maxValue
+                  })
+                }       
+               } 
+
+            console.log( 'hola', this.listdata4)
+            })
+            })        
         }}
         
   getDay(valueid, value2id){
