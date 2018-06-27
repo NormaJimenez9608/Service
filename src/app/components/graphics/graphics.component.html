@@ -40,11 +40,8 @@
                   <option [value]="value.id" *ngFor="let value of listdata">{{value.name}}</option>
                 </select>
               </div>
-            </div>
-
-          <p class=" vs align-center"> &nbsp; &nbsp; VS &nbsp; &nbsp; </p>
-
-            <div class="form-row align-items-center ">
+              <br/>
+              <p class=" vs align-center">&nbsp; &nbsp;  VS &nbsp; &nbsp; </p>
               <div class="col-auto my-1">
                 <select (change)="onChange2($event.target.value)" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                   <option [value]="value2.id" *ngFor="let value2 of listdata">{{value2.name}}</option>

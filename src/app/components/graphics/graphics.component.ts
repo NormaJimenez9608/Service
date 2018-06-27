@@ -40,8 +40,8 @@ export class GraphicsComponent implements OnInit {
     this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
     this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
 
-    //this.onChange(data[0].id, data[0].id);
-  
+    this.onChange(data[0].id);
+    this.onChange2(data[0].id);
     })
   }
 
@@ -74,11 +74,11 @@ this.getData();
             
             })
             })
-          }else{
-            alert('PERATE');
-          }
+          // // }else{
+          // //   alert('PERATE');
+          // // }
 
-        }
+        }}
         
   getDay(valueid, value2id){
     const endDate = this.datalog.endDate;
