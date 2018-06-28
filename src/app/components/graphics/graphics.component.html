@@ -9,8 +9,8 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link " href="#" routerLink="/Systems/Devices">Back</a>
@@ -37,14 +37,14 @@
             <div class="form-row align-items-center ">
               <div class="col-auto my-1">
                 <select (change)="onChange($event.target.value)" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option [value]="value.id" *ngFor="let value of listdata">{{value.name}}</option>
+                  <option [value]="value.id" *ngFor="let value of listdata" >{{value.name}}</option>
                 </select>
               </div>
               <br/>
               <p class=" vs align-center">&nbsp; &nbsp;  VS &nbsp; &nbsp; </p>
               <div class="col-auto my-1">
                 <select (change)="onChange2($event.target.value)" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option [value]="value2.id" *ngFor="let value2 of listdata">{{value2.name}}</option>
+                  <option [value]="value2.id" *ngFor="let value2 of listdata" >{{value2.name}} </option>
                 </select>
               </div>
             </div>
@@ -54,11 +54,15 @@
         <div class="blankspace"> </div>
         <p class="fecha">Start Date and Hour:
           <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"
-            [(ngModel)]="datalog.startDate">
+            [(ngModel)]="graphics.startDate">
         </p>
         <p class="fecha">End Date and Hour:
           <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29"
-            [(ngModel)]="datalog.endDate">
+            [(ngModel)]="graphics.endDate">
         </p>
         <button type="button" class="btn btn-secondary btn-sm" (click)="getDay(valueid, value2id)">OK</button>
         <div class="blankspace"> </div>
+
+        <div id="line-chart"></div>
+        <div class="col-md-1"></div>
+        <div class="blankspace"> </div>  <div class="blankspace"> </div>
