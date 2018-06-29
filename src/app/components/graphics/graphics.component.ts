@@ -8,6 +8,7 @@ import { Graphics } from '../../models/graphics';
 import { constructDependencies } from '@angular/core/src/di/reflective_provider';
 import { MorrisJsModule } from 'angular-morris-js';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Datalog2 } from '../../models/datalog2';
 declare var Morris: any;
 declare var $: any;
 @Component({
@@ -55,31 +56,32 @@ export class GraphicsComponent implements OnInit {
       this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
       this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
 
-      this.onChange(data[0].id);
-      this.onChange2(data[0].id);
+      this.onChange(data[0].id, data[0].name);
+      this.onChange2(data[0].id, data[0].name);
       this.getGraphics();
     })
   }
 
-  onChange(valueid) {
+  onChange(valueid, valuename) {
 
     this.Idvalor = valueid;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
     this.getData();
-    
-
+    this.name = valuename
+console.log(this.name)
   }
-  onChange2(value2id) {
+  onChange2(value2id, value2name2) {
 
     this.Idvalor2 = value2id;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
     this.getData();
-    this.name=this.graphics.name;
-    this.name2=this.graphics.name2;
+   
+    this.name2 = value2name2
+    console.log(this.name2)
   }
 
 
@@ -87,7 +89,7 @@ export class GraphicsComponent implements OnInit {
     if (this.Idvalor && this.Idvalor2) {
 
       this.DatalogService.getDetailDay(this.idSystem, this.Idvalor, this.accessKey).subscribe((data: any) => {
-        console.log(data);
+        
 
         for (let i in data) {
           this.listdata2.push({
@@ -95,10 +97,10 @@ export class GraphicsComponent implements OnInit {
             value: data[i].maxValue,
           })
         }
-        console.log(this.listdata2)
+        
 
         this.DatalogService.getDetailDay(this.idSystem, this.Idvalor2, this.accessKey).subscribe((data2: any) => {
-          console.log(data2);
+          
 
           for (let i in data2) {
             this.listdata1.push({
@@ -109,15 +111,15 @@ export class GraphicsComponent implements OnInit {
 
           console.log(this.listdata2.length, this.listdata1.length);
           if (this.listdata2.length < this.listdata1.length) {
+            this.startDat = data2[data2.length - 1].timestamp
+           this.endDat = data2[0].timestamp;
             for (let i in this.listdata1) {
-              console.log(i);
-if(data[i]==null)
-{
-console.log('entro?');
-  data[i]={
-    maxValue : "0",
-  }
-}
+              
+              if (data[i] == null) {
+                data[i] = {
+                  maxValue: "0",
+                }
+              }
               this.listdata4.push({
                 timestamp: data2[i].timestamp,
                 value: data[i].maxValue,
@@ -126,18 +128,24 @@ console.log('entro?');
             }
           }
           else {
-            for (let i in this.listdata1) {
+            for (let i in this.listdata2) {
+              this.startDat = data[data2.length - 1].timestamp
+              this.endDat = data[0].timestamp;
+              if (data2[i] == null) {
+                data2[i] = {
+                  maxValue: "0",
+                }
+              }
               this.listdata4.push({
-                timestamp: data2[i].timestamp,
+                timestamp: data[i].timestamp,
                 value: data[i].maxValue,
                 value2: data2[i].maxValue
               })
             }
           }
-
+          this.graphics.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
+           this.graphics.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
           console.log('hola', this.listdata4);
-
-          
           this.morris1.setData(this.listdata4)
         })
       })
@@ -145,18 +153,66 @@ console.log('entro?');
   }
 
   getDay(valueid, value2id) {
-    const endDate = this.datalog.endDate;
-    const startDate = this.datalog.startDate;
+    this.listdata1.length = 0;
+    this.listdata2.length = 0;
+    this.listdata4.length = 0;
+    const endDate = this.graphics.endDate;
+    const startDate = this.graphics.startDate;
     console.log(endDate)
-    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor, this.accessKey, this.datalog.startDate, this.datalog.endDate).subscribe((data4: any) => {
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor, this.accessKey, this.graphics.startDate, this.graphics.endDate).subscribe((data4: any) => {
       console.log(data4);
-
-    })
-    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor2, this.accessKey, this.datalog.startDate, this.datalog.endDate).subscribe((data3: any) => {
+      for (let i in data4) {
+        this.listdata2.push({
+          timestamp: data4[i].timestamp,
+          value: data4[i].maxValue,
+        })
+      }
+      
+    
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor2, this.accessKey, this.graphics.startDate, this.graphics.endDate).subscribe((data3: any) => {
       this.listdata3 = data3;
       console.log(data3)
+      for (let i in data3) {
+        this.listdata1.push({
+          timestamp: data3[i].timestamp,
+          value2: data4[i].maxValue
+        })
+      }
+      if (this.listdata2.length < this.listdata1.length) {
+        for (let i in this.listdata1) {
+              
+          if (data4[i] == null) {
+            data4[i] = {
+              maxValue: "0",
+            }
+          }
+          this.listdata4.push({
+            timestamp: data3[i].timestamp,
+            value: data3[i].maxValue,
+            value2: data3[i].maxValue
+          })
+        }
+      }
+      else {
+        for (let i in this.listdata2) {
+          
+          if (data3[i] == null) {
+            data3[i] = {
+              maxValue: "0",
+            }
+          }
+          this.listdata4.push({
+            timestamp: data4[i].timestamp,
+            value: data4[i].maxValue,
+            value2: data3[i].maxValue
+          })
+        }
+        
+      }
+      this.morris1.setData(this.listdata4)
+      console.log(this.listdata4)
     })
-
+  })
   }
   getGraphics() {
 
