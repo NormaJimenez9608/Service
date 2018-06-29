@@ -5,6 +5,8 @@ import {  Login } from '../../models/login';
 import { LoginService } from '../../services/login.service';
 
 
+
+
 @Component({
   selector: 'app-loginn',
   templateUrl: './loginn.component.html',
@@ -17,8 +19,11 @@ import { LoginService } from '../../services/login.service';
 export class LoginnComponent implements OnInit {
   login = new Login();
   public accesKeyTest;
+  onEnter(){
+      this.Login()
+  }
   constructor(private username:LoginService, private router:Router ) { 
-
+    
   }
   ngOnInit() {
     this.verificarsesion();

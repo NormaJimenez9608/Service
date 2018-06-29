@@ -39,6 +39,9 @@ export class GraphicsComponent implements OnInit {
   public nume;
   public y;
 
+  onEnter(valueid, value2id){
+    this.getDay(valueid, value2id)
+}
   constructor(private DatalogService: DatalogsService, private router: Router, private datePipe: DatePipe) {
     this.accessKey = localStorage.getItem('accessKey');
     this.idSystem = localStorage.getItem('idSystem');
@@ -53,34 +56,35 @@ export class GraphicsComponent implements OnInit {
       this.listdata = data;
       this.startDat = data[data.length - 1].timestamp
       this.endDat = data[0].timestamp;
-      this.datalog.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
-      this.datalog.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
+      this.graphics.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
+      this.graphics.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
 
-      this.onChange(data[0].id, data[0].name);
-      this.onChange2(data[0].id, data[0].name);
+      this.onChange(data[0].id);
+      this.onChange2(data[0].id);
       this.getGraphics();
     })
   }
 
-  onChange(valueid, valuename) {
+  onChange(valueid ) {
 
     this.Idvalor = valueid;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
+    // this.name = valuename
     this.getData();
-    this.name = valuename
+    
 console.log(this.name)
   }
-  onChange2(value2id, value2name2) {
+  onChange2(value2id, ) {
 
     this.Idvalor2 = value2id;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
+    
     this.getData();
-   
-    this.name2 = value2name2
+    // this.name2 = valuename2
     console.log(this.name2)
   }
 
@@ -221,9 +225,10 @@ console.log(this.name)
       data: this.listdata4,
       xkey: 'timestamp',
       ykeys: ['value', 'value2'],
+      
       labels: ['Value 1', 'Value 2'],
       resize: true,
-      lineColors: ['#C14D9F', '#2CB4AC'],
+      lineColors: ['#DA434C', '#696666'],
     });
     console.log(this.listdata4)
 

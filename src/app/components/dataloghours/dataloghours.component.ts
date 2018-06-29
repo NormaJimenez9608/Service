@@ -21,7 +21,9 @@ export class DataloghoursComponent implements OnInit {
   public startDat;
   public endDat;
   datalog2 = new Datalog2;
-  
+  onEnter(valueid){
+    this.getHours(valueid);
+}
 
   public Idvalor;
 
