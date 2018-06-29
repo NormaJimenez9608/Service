@@ -107,17 +107,23 @@ export class GraphicsComponent implements OnInit {
             })
           }
 
-          console.log(this.listdata2.length, this.listdata1.length)
+          console.log(this.listdata2.length, this.listdata1.length);
           if (this.listdata2.length < this.listdata1.length) {
-            for (let i in this.listdata2) {
+            for (let i in this.listdata1) {
+              console.log(i);
+if(data[i]==null)
+{
+console.log('entro?');
+  data[i]={
+    maxValue : "0",
+  }
+}
               this.listdata4.push({
                 timestamp: data2[i].timestamp,
                 value: data[i].maxValue,
                 value2: data2[i].maxValue
               })
             }
-
-
           }
           else {
             for (let i in this.listdata1) {
