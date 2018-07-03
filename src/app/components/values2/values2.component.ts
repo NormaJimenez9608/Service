@@ -40,17 +40,17 @@ export class Values2Component implements OnInit {
     this.controlvalue = localStorage.getItem('controlvalue2');
   
 
-    this.getValues();
+    // // this.getValues();
    
   }
 
-  getValues(): void{
+//   getValues(): void{
 
-    this.ValuesService.getValues( this.idSystem, this.accessKey, this.setpoint, this.temperatura, this.controlvalue).subscribe((valores:any)=>{
-this.idValor= valores.id;
-this.getValores();
-    });      
-  }
+//     this.ValuesService.getValues( this.idSystem, this.accessKey, this.setpoint, this.temperatura, this.controlvalue).subscribe((valores:any)=>{
+// this.idValor= valores.id;
+// this.getValores();
+//     });      
+//   }
 
  getValores():void{
   

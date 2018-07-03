@@ -19,7 +19,10 @@ export class ValuesComponent implements OnInit {
   public device;
   public concatenadofilter = [];
   public filtrado = [];
- 
+  public listdata = [];
+  public listdata2 = [];
+  public data: any[] = [];
+  public list = [];
 
   SystemsModels = new systems;
   ValuesModel = new values;
@@ -47,23 +50,52 @@ export class ValuesComponent implements OnInit {
          this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
         }
 console.log(this.filtrado);
+// var names = this.filtrado.map(function (name) { return name.name; });
+//       var sorted = names.sort();
+//       var unique = sorted.filter(function (value, index) {
+//           return value !== sorted[index + 1];
+//       });
+
+var persona = {};
+    var unicos = this.filtrado.filter(function (e) { 
+        return persona[e.name] ? false : (persona[e.name] = true);
     });
-//   getValues(): void{
-
-//     this.ValuesService.getValues( this.idSystem, this.accessKey, ).subscribe((valores:any)=>{
-
-//     this.getValores();
-//     });      
-//   }
-
-//  getValores():void{
-  
-//   this.ValuesService.getValores(this.idSystem, this.accessKey).subscribe((dato:any)=>{
-//   console.log(dato); 
+    console.log(unicos);
  
-//   });
-  
-//  } 
+    for (let i in unicos) {
+      this.listdata.push({
+        name: unicos[i].name,
+        id: unicos[i].id,
+    })
+    }
+    console.log(this.listdata)
+
+   this.getValues();
+    })}
+
+ 
+   getValues(): void{
+for( let i in this.listdata){
+this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id ).subscribe((valores:any)=>{
+  this.data.push({
+    id2: valores.id})
+   }) 
+   }
+   console.log(this.data)
+   this.getValores();
+ }
+
+  getValores():void{
+    // falta hacer que el data[], sea un arreglo con numero para proseguir. 
+    
+    for( let i in this.data){
+    
+  this.ValuesService.getValores(this.idSystem, this.data[i], this.accessKey).subscribe((dato:any)=>{
+  console.log(dato); 
+
+ })
+}
+  } 
 
 //  Values(): void{
 //   const value = this.ValuesModel.value;
@@ -72,4 +104,4 @@ console.log(this.filtrado);
 //    console.log(response);
 //   });
 // }
-  }}
+  }
