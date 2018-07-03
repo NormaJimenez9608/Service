@@ -23,6 +23,9 @@ export class DatalogComponent implements OnInit {
   public startDat;
   public endDat;
   public Idvalor;
+  onEnter(valueid){
+    this.getDay(valueid);
+}
 
   constructor(private DatalogService: DatalogsService, private router: Router, private datePipe: DatePipe) { 
     this.accessKey = localStorage.getItem('accessKey'); 

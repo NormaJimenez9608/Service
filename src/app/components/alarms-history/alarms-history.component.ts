@@ -18,7 +18,9 @@ export class AlarmsHistoryComponent implements OnInit {
   public idSystem;
   public startDat;
   public endDat;
-
+  onEnter(){
+    this.Alarms()
+}
 
   alarms = new Alarms();
 

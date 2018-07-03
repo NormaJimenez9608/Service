@@ -43,8 +43,8 @@
 
     
     <div class="blankspace"> </div>
- <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00"  [(ngModel)]="datalog2.startDate"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00"  [(ngModel)]="datalog2.endDate"></p> 
+ <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog2.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog2.endDate"></p> 
  <button type="button" class="btn btn-secondary btn-sm"  (click)="getHours(valueid)">OK</button>
  <div class="blankspace"> </div>
   

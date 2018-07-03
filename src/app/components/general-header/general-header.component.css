@@ -1,13 +1,13 @@
 .Letter{
     padding-top: 15px;
     padding-left: 15px;
-    font-size: 45px;
+    font-size: 240%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar-nav{
 color: white !important;
-font-size: 25px;
+font-size: 150%;
 padding: 2px;
 }
     

@@ -27,8 +27,8 @@
       
 
 
- <p class="fecha" >Start Date and Hour:  <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00"   [(ngModel)]="alarms.startDate"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00"  [(ngModel)]="alarms.endDate"></p> 
+ <p class="fecha" >Start Date and Hour:  <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00"  (keyup.enter)="onEnter()" [(ngModel)]="alarms.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00" (keyup.enter)="onEnter()" [(ngModel)]="alarms.endDate"></p> 
  <button type="button" (click)="Alarms()" class="btn btn-secondary btn-sm">OK</button>
  <div class="blankspace"> </div>
   
