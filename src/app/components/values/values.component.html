@@ -2,67 +2,21 @@
   <div class="row">
     <div class="container-fluid">
         <div class="row">
-            <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/Temp.png" alt=""></p>    
-            <p align="left" class="col-md-1 ">Temperature</p>
+                <div *ngFor="let data of data2" align="center">
+                        <div class=" row col-md-12">
+                <div class="col-md-1"></div>
+            <p align="right" class="col-md-2" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
             <div class="col-md-1"></div>
+            <p align="left" class="col-md-1">{{data.name}}</p>
+            <div class="col-md-1"></div>
+            <p align="right" class=" texto col-md-1  text-center" *ngIf="data.value === 'null'" ><img  style="width:2%; "  style="height:10%" src="assets\images\loading(3).gif" alt=""></p>
+            <p  *ngIf="data.value != 'null'" align="right" class=" texto col-md-1  text-center" >{{data.value}}</p>
             
-            <p align="right" class=" texto col-md-1  text-center" >{{temperatura1}}°C</p>
             <div class="col-md-1"></div>
-
-            <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/Temp_ambient..png" alt=""></p>    
-            <p align="left" class="col-md-1">Ambient Temperature</p>
-            <div class="col-md-1"></div>
-            <p align="center" class="col-md-1 texto">0</p>
-            <div class="col-md-2"></div>
         </div>
+    </div>
     </div>
   </div>
-  <div class="blankspace"> </div>
-  <div class="row">
-      <div class="container-fluid">
-          <div class="row">
-              <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
-              <p align="left" class="col-md-1">Setpoint</p>
 
-              <div class="col-md-1"></div>
-              <div class="input-group mb-1 col-md-1 " align="right">
-                <input class="border text text-left" align="right" type="text" placeholder=" Setpoint" aria-label=" Setpoint" size="8px" value="{{setpoint1}}" [(ngModel)]="ValuesModel.value">
-                <div class="input-group-append">
-                    <button  type="button" class="btn btn-secondary btn-sm" (click)="Values()" type="button">Set</button>
-                  </div>
-           
-
-              </div>
-              
-              <div class="col-md-1">
-                
-              </div>
-  
-              <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
-              <p align="left" class="col-md-1">Speed</p>
-              <div class="col-md-1"></div>
-              <p align="right" class="col-md-1 texto text-center">0</p>
-              <div class="col-md-2"></div>
-          </div>
-      </div>
-    </div>
-    <div class="blankspace"> </div>
-    <div class="row">
-        <div class="container-fluid">
-            <div class="row">
-                <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
-                <p align="left" class="col-md-1">Control Value</p>
-                <div class="col-md-1"></div>
-                <p align="right" class="texto col-md-1  text-center">{{controlvalue1}}%</p>
-                <div class="col-md-1"></div>
-    <script></script>
-                <p align="right" class="col-md-1" ><img style="width:90%;" src="assets/images/signo.png" alt=""></p>    
-                <p align="left" class="col-md-1">RPM</p>
-                <div class="col-md-1"></div>
-                <p align="center" class="col-md-1 texto">0</p>
-                <div class="col-md-2"></div>
-            </div>
-        </div>
-      </div>
       <div class="blankspace2"> </div>
 </div>

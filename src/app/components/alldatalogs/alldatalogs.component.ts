@@ -16,6 +16,8 @@ export class AlldatalogsComponent implements OnInit {
   public listdata: any[] = [];
   public listID: any[] = [];
   public listvalues: any[]=[];
+  public listall:any[]=[];
+  public list:any[]=[];
 
   constructor( private DatalogService: DatalogsService, private router: Router) {
     this.accessKey = localStorage.getItem('accessKey'); 
@@ -29,23 +31,28 @@ export class AlldatalogsComponent implements OnInit {
   getDatalogs(): void{
 this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
   this.listdata= data;
-  
-  for(let i in data){
-  this.listID.push(data[i].id)
-  
-  }
+  console.log(this.listdata)
 
-  for (let i in this.listID){
-    this.DatalogService.getAllDatalog(this.idSystem, this.listID[i], this.accessKey).subscribe((data2:any)=>{
-
-// this.listID=data2
+  for(let i in this.listdata){
+    this.listID.push(
+    {
+      name:this.listdata[i].name,
+      id: this.listdata[i].id
     })
-
+  
   }
+  console.log(this.listID)
+  for (let i in this.listID){
+
+   this.DatalogService.getAllDatalog(this.idSystem, this.listID[i].id, this.accessKey).subscribe((data2:any)=>{
+   
+   this.list=data2
+   
+    this.listall.push( [this.list]);
+
+    })
+ }
+ console.log(this.listall)
 })
   }
-
- 
- 
-
 }
