@@ -25,7 +25,7 @@
  <thead>
    <tr class="name">
      <th scope="col"> Data Time</th>
-     <th scope="col" *ngFor="let data of listdata" >{{data.name}}</th> 
+     <th scope="col" *ngFor="let data of listdata" >({{data.deviceName}}) {{data.name}}</th> 
 
    </tr>
  </thead>
@@ -36,8 +36,7 @@
   
    </tr>
 
-   <script src="FileSaver.js"> </script> 
-   <script src="tableexport.js"></script>
+   
  </tbody>
 </table>
 

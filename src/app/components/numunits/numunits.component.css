@@ -1,11 +1,11 @@
 .letter{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
+    font-size: 150%;
     color: #909497  ;
 }
 
 .blankspace5{
-    height: 170px ;
+    height: 150px ;
 }
 
 .col-md-1:hover{

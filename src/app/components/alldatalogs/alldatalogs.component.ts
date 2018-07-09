@@ -36,19 +36,23 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
   for(let i in this.listdata){
     this.listID.push(
     {
+      device: this.listdata[i].deviceName,
       name:this.listdata[i].name,
       id: this.listdata[i].id
     })
   
   }
   console.log(this.listID)
+
+  
+
   for (let i in this.listID){
 
    this.DatalogService.getAllDatalog(this.idSystem, this.listID[i].id, this.accessKey).subscribe((data2:any)=>{
    
    this.list=data2
    
-    this.listall.push( [this.list]);
+    this.listall.push( this.list );
 
     })
  }
