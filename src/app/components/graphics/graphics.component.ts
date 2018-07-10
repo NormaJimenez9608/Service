@@ -54,6 +54,7 @@ export class GraphicsComponent implements OnInit {
   getDatalogs(): void {
     this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data: any) => {
       this.listdata = data;
+     
       this.startDat = data[data.length - 1].timestamp
       this.endDat = data[0].timestamp;
       this.graphics.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
@@ -66,26 +67,34 @@ export class GraphicsComponent implements OnInit {
   }
 
   onChange(valueid ) {
+for(let i in this.listdata){
+  if (valueid === this.listdata[i].id)
+  this.name= this.listdata[i].name
+}
 
     this.Idvalor = valueid;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
-    // this.name = valuename
+    
     this.getData();
     
-console.log(this.name)
+
   }
   onChange2(value2id, ) {
-
+    for(let i in this.listdata){
+      if (value2id === this.listdata[i].id)
+      this.name2= this.listdata[i].name
+    }
+  
     this.Idvalor2 = value2id;
     this.listdata1.length = 0;
     this.listdata2.length = 0;
     this.listdata4.length = 0
     
     this.getData();
-    // this.name2 = valuename2
-    console.log(this.name2)
+    
+    
   }
 
 
@@ -113,7 +122,7 @@ console.log(this.name)
             })
           }
 
-          console.log(this.listdata2.length, this.listdata1.length);
+          
           if (this.listdata2.length < this.listdata1.length) {
             this.startDat = data2[data2.length - 1].timestamp
            this.endDat = data2[0].timestamp;
@@ -149,8 +158,10 @@ console.log(this.name)
           }
           this.graphics.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
            this.graphics.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
-          console.log('hola', this.listdata4);
+          
           this.morris1.setData(this.listdata4)
+          this.morris1.options.labels =[this.name, this.name2]
+          
         })
       })
     }
@@ -214,7 +225,7 @@ console.log(this.name)
         
       }
       this.morris1.setData(this.listdata4)
-      console.log(this.listdata4)
+      //console.log(this.listdata4)
     })
   })
   }
@@ -226,7 +237,7 @@ console.log(this.name)
       xkey: 'timestamp',
       ykeys: ['value', 'value2'],
       
-      labels: ['Value 1', 'Value 2'],
+      labels: [this.name, this.name2],
       resize: true,
       lineColors: ['#DA434C', '#696666'],
     });

@@ -30,12 +30,10 @@
    </tr>
  </thead>
  <tbody>
-   <tr *ngFor="let data of listID | paginate: { itemsPerPage: 10, currentPage: p } ">
+   <tr *ngFor="let data of data2 | paginate: { itemsPerPage: 10, currentPage: p } ">
      <th scope="row">{{data.timestamp}}</th>
-     <td *ngFor="let data of listID">{{data.value}}</td>
-  
+     <td *ngFor="let data of listID">{{data.value}}</td>  
    </tr>
-
    
  </tbody>
 </table>
@@ -45,3 +43,4 @@
 <div class="blankspace"> </div>
 <button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace"> </div>
+

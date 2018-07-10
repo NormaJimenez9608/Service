@@ -24,30 +24,30 @@ export class DatalogsService {
 
 getDatalog(idSystems, accessKey:string){
   this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/config?accesskey=${accessKey}`;
-  console.log(this.url);
+  //console.log(this.url);
   return this.HTTP.get(this.url)
 }
 
 getDetailDay(idSystems, idLog, accessKey){
   this.url2 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/day?accesskey=${accessKey}`;
-  console.log(this.url2);
+  //console.log(this.url2);
   return this.HTTP.get(this.url2)
 }
 
 getDetailDay2(idSystems, idLog, accessKey, startDate, endDate){
  this.url3 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/day?accesskey=${accessKey}&startdate=${startDate}T05:00:00Z&enddate=${endDate}T05:00:00Z`
- console.log(this.url3);
+ //console.log(this.url3);
   return this.HTTP.get(this.url3)
 }
 
 getDetailHours(idSystems, idLog, accessKey){
 this.url4= `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/hour?accesskey=${accessKey}`
-console.log(this.url4);
+//console.log(this.url4);
   return this.HTTP.get(this.url4)
 }
 getDetailHours2(idSystems, idLog, accessKey, startDate, endDate){
   this.url5= `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/hour?accesskey=${accessKey}&startdate=${startDate}:00Z&enddate=${endDate}:00Z`
-  console.log(this.url5);
+ // console.log(this.url5);
     return this.HTTP.get(this.url5)
   }
 

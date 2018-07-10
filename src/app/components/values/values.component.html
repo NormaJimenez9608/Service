@@ -7,12 +7,12 @@
                
             <div class=" row col-md-12">
                 <div class="col-md-1"></div>
-<p align="center" class="col-md-2" ><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
-<div class="col-md-1"></div>
-<p align="left" class="col-md-3">{{data.name}}</p>
+<p align="center" class="col-md-3" ><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
+
+<p align="right" class="col-md-5">{{data.name}}</p>
 <div class="col-md-1"></div>
 <p align="right" class=" texto col-md-1  text-center" *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:30px" src="assets\images\loading(3).gif" alt=""></p>
-            <p  *ngIf="data.value != 'null'" align="right" class=" texto col-md-1  text-center" >{{data.value}}</p>
+            <p  *ngIf="data.value != 'null'" align="right" class=" texto col-md-1  text-left" >{{data.value}}</p>
 
 </div>
 <div class="blankspace"> </div>

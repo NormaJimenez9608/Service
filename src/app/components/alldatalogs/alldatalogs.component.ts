@@ -31,8 +31,8 @@ export class AlldatalogsComponent implements OnInit {
   getDatalogs(): void{
 this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
   this.listdata= data;
-  console.log(this.listdata)
-
+  console.log(this.listdata);
+  
   for(let i in this.listdata){
     this.listID.push(
     {
@@ -40,7 +40,7 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
       name:this.listdata[i].name,
       id: this.listdata[i].id
     })
-  
+
   }
   console.log(this.listID)
 
@@ -49,10 +49,9 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
   for (let i in this.listID){
 
    this.DatalogService.getAllDatalog(this.idSystem, this.listID[i].id, this.accessKey).subscribe((data2:any)=>{
-   
    this.list=data2
-   
-    this.listall.push( this.list );
+
+   this.listall.push( this.list );
 
     })
  }
@@ -60,3 +59,4 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
 })
   }
 }
+
