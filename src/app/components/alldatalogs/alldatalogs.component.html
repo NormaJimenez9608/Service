@@ -26,12 +26,11 @@
    <tr class="name">
      <th scope="col"> Data Time</th>
      <th scope="col" *ngFor="let data of listdata" >({{data.deviceName}}) {{data.name}}</th> 
-
    </tr>
  </thead>
  <tbody>
    <tr *ngFor="let data of data2 | paginate: { itemsPerPage: 10, currentPage: p } ">
-     <th scope="row">{{data.timestamp}}</th>
+     <th scope="row">{{listall[i].timestamp}}</th>
      <td *ngFor="let data of listID">{{data.value}}</td>  
    </tr>
    

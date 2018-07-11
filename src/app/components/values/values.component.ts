@@ -29,6 +29,7 @@ export class ValuesComponent implements OnInit {
   public list = [];
   public cero;
   public number;
+  public count;
   SystemsModels = new systems;
   ValuesModel = new values;
 
@@ -59,7 +60,7 @@ var persona = {};
     var unicos = this.filtrado.filter(function (e) { 
         return persona[e.name] ? false : (persona[e.name] = true);
     });
-     console.log(unicos);
+     
  
     for (let i in unicos) {
       this.listdata.push({
@@ -75,7 +76,7 @@ var persona = {};
 for( let i in this.listdata){
 this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id ).subscribe((valores:any)=>{
   this.data = valores.id;
-  console.log(this.data)
+ 
   this.number= i
   this.getValores(this.data, this.number);
  
@@ -104,11 +105,13 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
       }) 
     
   console.log(this.data2)
+  this.count= this.data2.length
+  
  })
 
-  } 
 
-//  Values(): void{
+  } 
+  //  Values(): void{
 //   const value = this.ValuesModel.value;
   
 //   this.values1.Values(this.idSystem, this.accessKey,  ).subscribe( response=>{

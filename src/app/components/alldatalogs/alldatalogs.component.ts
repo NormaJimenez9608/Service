@@ -49,13 +49,16 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
   for (let i in this.listID){
 
    this.DatalogService.getAllDatalog(this.idSystem, this.listID[i].id, this.accessKey).subscribe((data2:any)=>{
-   this.list=data2
-
-   this.listall.push( this.list );
+   this.list=data2;
+console.log('data2: ', data2[i]);
+   this.listall.push(this.list );
 
     })
+    console.log(this.list);
  }
- console.log(this.listall)
+ 
+ 
+ 
 })
   }
 }

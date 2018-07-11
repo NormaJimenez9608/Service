@@ -9,33 +9,43 @@
                 <div class="col-md-1"></div>
                 
 <p align="center" class="col-md-3" *ngIf="data.name === '% opening Valve'"><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Absolute Operating Hours '" ><img style="width:80px;"  src="assets\images\reloj.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Absolute Operating Hours'" ><img style="width:80px;"  src="assets\images\reloj.png" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === 'Ambient Temp'" ><img style="width:80px;"  src="assets/images/Temp_ambient..png" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === '% Fan Speed form GMM'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Setpoint GHM'" ><img style="width:80px;"  src="assets/images/setpoint.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Setpoint GMM'" ><img style="width:80px;"  src="assets/images/setpoint.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Meter reading Water consumption '" ><img style="width:80px;"  src="assets/images/MEDIDOR.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Setpoint'" ><img style="width:80px;"  src="assets/images/setpoint.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Meter reading Water consumption'" ><img style="width:80px;"  src="assets/images/MEDIDOR.png" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === 'Control Value'" ><img style="width:80px;"  src="assets/images/fan.gif" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === 'Process Temperature'" ><img style="width:80px;"  src="assets/images/processTemp.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Power Consumption'" ><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Power Consumption'" ><img style="width:80px;"  src="assets/images/power.png" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === 'Fan Speed 1'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
 <p align="center" class="col-md-3" *ngIf="data.name === 'Fan Speed 2'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
-<p align="center" class="col-md-3" *ngIf="data.name === 'Humidity '" ><img style="width:80px;"  src="assets/images/humedad.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Humidity'" ><img style="width:80px;"  src="assets/images/humedad.png" alt=""></p>
 
 <p align="right" class="col-md-5">{{data.name}}</p>
 <div class="col-md-1"></div>
 <p align="right" class=" texto col-md-1  text-center" *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:30px" src="assets\images\loading(3).gif" alt=""></p>
-            <p  *ngIf="data.value != 'null'" align="right" class=" texto col-md-1  text-left" >{{data.value}}</p>
 
+<div class="input-group mb-1 col-md-1 " *ngIf="data.value === 'setpoint'"  align="right">
+    <input class="border text text-left" align="right" type="text" placeholder=" Setpoint" aria-label=" Setpoint" size="8px" value="{{data.value}}" [(ngModel)]="ValuesModel.value">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button>
+      </div>
+
+
+  </div>            
+<div *ngIf="data.value != 'setpoint'">
+<p  *ngIf="data.value != 'null'" align="right"   class=" texto col-md-1  text-left" >{{data.value}}</p>
+</div>
 </div>
 <div class="blankspace"> </div>
 
     </div>
     </div>
   </div>
-  <div class="blankspace"> </div>
-      <div class="blankspace2"> </div>
-      <div class="blankspace2"> </div>
-      <div class="blankspace2"> </div>
  
+</div>
+
+<div class="blankspace2"> </div>
+<div *ngIf="count === 6"   class="blankspace"> </div>
+
 </div>
