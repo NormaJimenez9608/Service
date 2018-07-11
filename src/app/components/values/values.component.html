@@ -7,7 +7,20 @@
                
             <div class=" row col-md-12">
                 <div class="col-md-1"></div>
-<p align="center" class="col-md-3" ><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
+                
+<p align="center" class="col-md-3" *ngIf="data.name === '% opening Valve'"><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Absolute Operating Hours '" ><img style="width:80px;"  src="assets\images\reloj.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Ambient Temp'" ><img style="width:80px;"  src="assets/images/Temp_ambient..png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === '% Fan Speed form GMM'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Setpoint GHM'" ><img style="width:80px;"  src="assets/images/setpoint.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Setpoint GMM'" ><img style="width:80px;"  src="assets/images/setpoint.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Meter reading Water consumption '" ><img style="width:80px;"  src="assets/images/MEDIDOR.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Control Value'" ><img style="width:80px;"  src="assets/images/fan.gif" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Process Temperature'" ><img style="width:80px;"  src="assets/images/processTemp.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Power Consumption'" ><img style="width:80px;"  src="assets/images/signo.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Fan Speed 1'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Fan Speed 2'" ><img style="width:80px;"  src="assets/images/speed2.png" alt=""></p>
+<p align="center" class="col-md-3" *ngIf="data.name === 'Humidity '" ><img style="width:80px;"  src="assets/images/humedad.png" alt=""></p>
 
 <p align="right" class="col-md-5">{{data.name}}</p>
 <div class="col-md-1"></div>
@@ -16,9 +29,13 @@
 
 </div>
 <div class="blankspace"> </div>
+
     </div>
     </div>
   </div>
-
+  <div class="blankspace"> </div>
       <div class="blankspace2"> </div>
+      <div class="blankspace2"> </div>
+      <div class="blankspace2"> </div>
+ 
 </div>

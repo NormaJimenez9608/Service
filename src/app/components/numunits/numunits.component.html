@@ -8,14 +8,20 @@
                 <div *ngFor="let name of deviNames" align="center">
                         
                             <div class=" row col-md-12">
-                                    <div class="col-md-1"></div>
+                                    <div *ngIf="count === 2" class="col-md-2"> </div>
+                                    <div class="col-md-2"></div>
                     <p align="center" class="col-md-3" style="cursor:pointer">
                         <img style="width:110px;" routerLink="/Values>" src="assets/images/GMM.png" alt="">
                     </p>
                     <div class="col-md-1"></div>
-                   
+                    
                     <p align="center" class="col-md-3 letter" style="cursor:pointer" routerLink="/Systems/Devices/Values" (click)="onSelect(name)">{{  name.deviceName}}</p>
-                    <div class="col-md-1"></div>
+                    <div *ngIf="name.deviceName === 'GMM1'" class="col-md-1"></div>
+                    <div *ngIf="name.deviceName === 'GMM2'" class="col-md-1"></div>
+                    <div *ngIf="name.deviceName === 'GMM3'" class="col-md-1"></div>
+                    <div *ngIf="name.deviceName === 'GMM4'" class="col-md-1"></div>
+                    <div *ngIf="count != 2" class="col-md-2"></div>
+                    
                 </div>
                 <div class="blankspace"></div>
             </div>
@@ -23,4 +29,6 @@
     </div>
 </div>
 
+<div *ngIf="count === 2" class="blankspace5"> </div>
+<div *ngIf="count === 3" class="blankspace5"> </div>
 <div class="blankspace5"> </div>

@@ -57,7 +57,8 @@ for (let i in unique) {
      })
 }
 
-console.log(this.deviNames)
+console.log(this.deviNames.length)
+this.count=this.deviNames.length
 
     //   for (let i of devicesNames) {
     //     this.concatenadofilter = this.filtrado;
