@@ -34,32 +34,31 @@ this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:an
   console.log(this.listdata);
   
   for(let i in this.listdata){
-    this.listID.push(
+   
+ // console.log(this.listID)
+  //for (let i in this.listID){
+   this.DatalogService.getAllDatalog(this.idSystem, this.listdata[i].id, this.accessKey).subscribe((data2:any)=>{
+   this.list=data2;
+   this.listID.push(
     {
       device: this.listdata[i].deviceName,
       name:this.listdata[i].name,
-      id: this.listdata[i].id
+      id: this.listdata[i].id,
+      data: data2
     })
-
+   console.log(i, this.listdata[i].name, this.listdata[i].id, data2)
+  // this.listall.push(data2);
+ 
+    })
   }
-  console.log(this.listID)
-
-  
-
-  for (let i in this.listID){
-
-   this.DatalogService.getAllDatalog(this.idSystem, this.listID[i].id, this.accessKey).subscribe((data2:any)=>{
-   this.list=data2;
-console.log('data2: ', data2[i]);
-   this.listall.push(this.list );
-
-    })
-    console.log(this.list);
- }
+    
+ //}
  
  
  
 })
+console.log(this.listID[0].data);
   }
+
 }
 
