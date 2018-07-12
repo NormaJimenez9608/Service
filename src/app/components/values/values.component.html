@@ -30,7 +30,7 @@
 </div>
 
 <div class="input-group mb-1 col-md-1 " *ngIf="data.name === 'Setpoint'"  align="right">
-    <input class="border text text-left" align="right" type="text"  size="5px" value={{data.value}} [(ngModel)]="ValuesModel.value">
+    <input class="border text text-left texto" align="right" type="text"  placeholder="{{data.value}}"  size="3px" value='{{data.value}}' [(ngModel)]="ValuesModel.value">
     <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button>
       </div>

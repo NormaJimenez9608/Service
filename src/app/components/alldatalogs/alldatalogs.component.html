@@ -5,7 +5,7 @@
   <p style="size: 25px;" align="center" class="Name col-md-4">ALL DATA LOG</p> 
   <div class="col-md-5"></div>
 </div>
-  
+
   <div class="container-fluid">
   <div class="row">
     <div class="col-md-1"></div>
@@ -31,10 +31,10 @@
  </thead>
  <tbody>
    <tr *ngFor="let data of listID | paginate: { itemsPerPage: 10, currentPage: p } ">
-     <th scope="row">{{data.data.timestamp}}</th>
-     <td *ngFor="let data of listID">{{data.data.value}}</td>  
+     <th scope="row">timedata</th>
+     <td *ngFor="let datatimes of data.data">{{datatimes.value}}</td>  
    </tr>
- 
+  
    
  </tbody>
 
