@@ -55,7 +55,7 @@ getDatos(): void {
     })
     
   // console.log(i, this.listdata[i].name, this.listdata[i].id, data2)
-    console.log(this.listID[0].lenght);
+    console.log(this.listID);
     })
     
     
