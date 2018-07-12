@@ -23,21 +23,22 @@
 
 <p align="right" class="col-md-5">{{data.name}}</p>
 
-<div *ngIf="data.name != 'Setpoint'" class="col-md-1">
+<div *ngIf="data.name != 'Setpoint'">
 
 <p align="right" class=" texto col-md-1  text-center" *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:30px" src="assets\images\loading(3).gif" alt=""></p>
 
 </div>
+
 <div class="input-group mb-1 col-md-1 " *ngIf="data.name === 'Setpoint'"  align="right">
-    <input class="border text text-left" align="right" type="text"  size="5px" value="{{data.value}}" [(ngModel)]="ValuesModel.value">
+    <input class="border text text-left" align="right" type="text"  size="5px" value={{data.value}} [(ngModel)]="ValuesModel.value">
     <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button>
       </div>
    
-
   </div>            
 <div *ngIf="data.name != 'Setpoint'">
-<p  *ngIf="data.value != 'null'" align="right"   class=" texto col-md-3  text-left" >{{data.value}}</p>
+<p  *ngIf="data.value != 'null'" align="right"   class=" texto col-md-1  text-left" >{{data.value}}</p>
+
 </div>
 
 
