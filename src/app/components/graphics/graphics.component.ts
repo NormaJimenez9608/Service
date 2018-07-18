@@ -173,9 +173,9 @@ for(let i in this.listdata){
     this.listdata4.length = 0;
     const endDate = this.graphics.endDate;
     const startDate = this.graphics.startDate;
-    console.log(endDate)
+   // console.log(endDate)
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor, this.accessKey, this.graphics.startDate, this.graphics.endDate).subscribe((data4: any) => {
-      console.log(data4);
+    //  console.log(data4);
       for (let i in data4) {
         this.listdata2.push({
           timestamp: data4[i].timestamp,
@@ -186,7 +186,7 @@ for(let i in this.listdata){
     
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor2, this.accessKey, this.graphics.startDate, this.graphics.endDate).subscribe((data3: any) => {
       this.listdata3 = data3;
-      console.log(data3)
+    //  console.log(data3)
       for (let i in data3) {
         this.listdata1.push({
           timestamp: data3[i].timestamp,
@@ -241,7 +241,7 @@ for(let i in this.listdata){
       resize: true,
       lineColors: ['#DA434C', '#696666'],
     });
-    console.log(this.listdata4)
+  //  console.log(this.listdata4)
 
   }
 }

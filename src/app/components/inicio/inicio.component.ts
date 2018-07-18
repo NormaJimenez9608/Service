@@ -35,7 +35,7 @@ export class InicioComponent implements OnInit {
   getSystems(): void {
     this.SystemsService.getSystems(this.accessKey).subscribe((response: any) => {
 
-      console.log(response);
+    
       this.table= response;
          this.projectName = response[0].projectName
 
@@ -44,7 +44,7 @@ export class InicioComponent implements OnInit {
 }
 onSelect(data) {
 
-  console.log([data.id]);
+  
   this.idSystem= data.id
   localStorage.setItem('idSystem', this.idSystem);
   this.router.navigate(['Systems/Devices']); 

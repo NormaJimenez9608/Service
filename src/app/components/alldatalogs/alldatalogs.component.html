@@ -45,7 +45,25 @@
 </div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
 <div class="blankspace"> </div>
-<button type="button" class="btn btn-info  btn-lg">Download data as file</button>
+<button type="button" (click)="tableToExcel('testTable1', 'All datalog')" class="btn btn-info  btn-lg">Download data as file</button>
+
+<table class="table" style="display: none" class="table table-bordered " id="testTable1" >
+    <thead>
+      <tr class="name">
+       <th  class="columna" scope="col">Data time</th>
+        <th scope="col" class="columna" *ngFor="let data of fecha" >{{data.time |date:"MM/dd/yyyy"}}</th>  
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let data of listID | paginate: { itemsPerPage: 8, currentPage: p } ">
+         <th style="width:auto;" class="columna" scope="row">({{data.device}}) {{data.name}}</th>
+        <td *ngFor="let datatimes of data.data" align="center">{{datatimes.maxValue}}</td>  
+      </tr>
+      
+    </tbody>
+   
+   </table>
 <div class="blankspace"> </div>
 
 

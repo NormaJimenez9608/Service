@@ -4,6 +4,7 @@ import { SummaryResolver } from '@angular/compiler';
 import { DatalogsService } from '../../services/datalogs.service';
 
 
+declare function unescape(s:string): string;
 @Component({
   selector: 'app-alldatalogs',
   templateUrl: './alldatalogs.component.html',
@@ -32,7 +33,7 @@ export class AlldatalogsComponent implements OnInit {
   getDatalogs(): void{
 this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
   this.listdata= data;
-  console.log(this.listdata);
+ // console.log(this.listdata);
 this.getDatos();
 })
 }
@@ -71,12 +72,26 @@ getDatos(): void {
 
    
    }   
-   console.log(this.listID)
+ //  console.log(this.listID)
 
  } 
  //console.log(this.listID);
 
  
+ tableToExcel = (function() {
+    
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="https://www.w3.org/TR/html401/"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById(table)
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    window.location.href = uri + base64(format(template, ctx))
+    
+  }
+}
 
+)()
 
 }

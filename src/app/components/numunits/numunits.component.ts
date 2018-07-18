@@ -49,7 +49,7 @@ export class NumunitsComponent implements OnInit {
           return value !== sorted[index + 1];
       });
 
-      console.log(unique);
+     
 for (let i in unique) {
   this.deviNames.push(
          {
@@ -57,7 +57,7 @@ for (let i in unique) {
      })
 }
 
-console.log(this.deviNames.length)
+
 this.count=this.deviNames.length
 
     //   for (let i of devicesNames) {
@@ -71,7 +71,7 @@ this.count=this.deviNames.length
 
     
     this.nameDevice = name.deviceName
-    console.log([this.nameDevice]);
+    //console.log([this.nameDevice]);
     localStorage.setItem('nameDevice', this.nameDevice);
 
   }

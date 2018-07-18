@@ -54,9 +54,9 @@ export class DatalogComponent implements OnInit {
       }
 
   onChange(valueid){
-  console.log(valueid)
+ // console.log(valueid)
   this.DatalogService.getDetailDay(this.idSystem, valueid, this.accessKey).subscribe((data2:any)=>{
-    console.log(data2)
+    //console.log(data2)
     this.listdata2 = data2
     this.Idvalor = valueid
     
@@ -66,10 +66,10 @@ export class DatalogComponent implements OnInit {
   getDay(valueid){
     const endDate = this.datalog.endDate;
     const startDate = this.datalog.startDate;
-    console.log(endDate)
+   // console.log(endDate)
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor, this.accessKey, this.datalog.startDate, this.datalog.endDate).subscribe((data3:any)=>{
       this.listdata2= data3;
-      console.log(data3)
+     // console.log(data3)
     })
 
   }

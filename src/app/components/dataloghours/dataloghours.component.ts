@@ -39,7 +39,7 @@ export class DataloghoursComponent implements OnInit {
   getDatalogs(): void{
     this.DatalogService.getDatalog(this.idSystem, this.accessKey).subscribe((data:any)=>{
     this.listdata= data;
-    console.log(this.listdata)
+   // console.log(this.listdata)
 
      this.DatalogService.getDetailHours(this.idSystem, data[0].id, this.accessKey).subscribe((data2:any)=>{
       
@@ -56,9 +56,9 @@ this.onChange(data[0].id);
       }
 
   onChange(valueid){
-   console.log(valueid)
+  // console.log(valueid)
    this.DatalogService.getDetailHours(this.idSystem, valueid, this.accessKey).subscribe((data2:any)=>{
-   console.log(data2)
+  // console.log(data2)
    this.listdata2 = data2
    this.Idvalor = valueid
   })
@@ -67,10 +67,10 @@ this.onChange(data[0].id);
 getHours(valueid){
   const endDate = this.datalog2.endDate;
   const startDate = this.datalog2.startDate;
-  console.log(endDate)
+ // console.log(endDate)
   this.DatalogService.getDetailHours2(this.idSystem, this.Idvalor, this.accessKey, this.datalog2.startDate, this.datalog2.endDate).subscribe((data3:any)=>{
     this.listdata2= data3;
-    console.log(data3)
+   // console.log(data3)
   })
 
 }

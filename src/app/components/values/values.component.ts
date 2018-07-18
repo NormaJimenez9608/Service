@@ -30,6 +30,7 @@ export class ValuesComponent implements OnInit {
   public cero;
   public number;
   public count;
+  public idSetpoint;
   SystemsModels = new systems;
   ValuesModel = new values;
 
@@ -104,18 +105,24 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
         value: this.cero,
       }) 
     
-  console.log(this.data2)
-  this.count= this.data2.length
   
+  this.count= this.data2.length
+  for ( let i in this.data2){
+   
+  if (this.data2[i].name === "Setpoint"){
+    this.idSetpoint= this.data2[i].id
+    
+  }
+  
+  }
  })
 
 
   } 
-  //  Values(): void{
-//   const value = this.ValuesModel.value;
-  
-//   this.values1.Values(this.idSystem, this.accessKey,  ).subscribe( response=>{
-//    console.log(response);
-//   });
-// }
+    Values(): void{
+  const value = this.ValuesModel.value;
+   this.values1.Values(this.ValuesModel, this.idSystem, this.accessKey,this.idSetpoint ).subscribe( response=>{
+    
+   });
+ }
   }

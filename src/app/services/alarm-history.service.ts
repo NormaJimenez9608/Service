@@ -23,13 +23,13 @@ export class AlarmHistoryService {
 
 getAlarmsHistory(idSystems, accessKey:string){
   this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/alarm/historical?accesskey=${accessKey}`;
-  console.log(this.url);
+ // console.log(this.url);
   return this.HTTP.get(this.url)
 }
 
 getDate(idSystems, accessKey, startDate, endDate){
   this.url2 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/alarm/historical?accesskey=${accessKey}&startdate=${startDate}&enddate=${endDate}`;
-  console.log(this.url2);
+ // console.log(this.url2);
   return this.HTTP.get(this.url2)
 }
 }

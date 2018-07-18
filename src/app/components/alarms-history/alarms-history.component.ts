@@ -40,7 +40,7 @@ export class AlarmsHistoryComponent implements OnInit {
   getAlarmsHistory(): void {
     this.AlarmsHistory.getAlarmsHistory(this.idSystem, this.accessKey).subscribe((dato: any) => {
       this.listalarms = dato;
-      console.log(dato);
+      //console.log(dato);
       this.startDat = dato[0].timestamp;
       this.endDat = dato[dato.length - 1].timestamp
       this.alarms.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-ddThh:mm');
@@ -54,10 +54,10 @@ export class AlarmsHistoryComponent implements OnInit {
     const endDate = this.alarms.endDate;
     const startDate = this.alarms.startDate;
 
-    console.log(this.alarms.endDate, this.alarms.startDate)
+   // console.log(this.alarms.endDate, this.alarms.startDate)
     this.AlarmsHistory.getDate(this.idSystem, this.accessKey, this.alarms.startDate, this.alarms.endDate).subscribe((data: any) => {
       this.listalarms = data;
-      console.log(data)
+     // console.log(data)
 
     })
   }

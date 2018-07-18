@@ -23,7 +23,7 @@ constructor (public _http: Http,private router: Router, private HTTP: HttpClient
 
 getAlarms(idSystems, accessKey:string){
     this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/alarm?accesskey=${accessKey}`;
-    console.log(this.url);
+   
     return this.HTTP.get(this.url)
 }
 }
