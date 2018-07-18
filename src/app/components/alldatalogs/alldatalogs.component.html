@@ -21,28 +21,31 @@
 
   <div class="blankspace"> </div>
   <div class="hola">
- <table class="table table-bordered ">
- <thead>
-   <tr class="name">
-     <th scope="col"> Data Time</th>
-     
-     <th scope="col" *ngFor="let data of listID" >({{data.device}}) {{data.name}}</th>  
-   </tr>
- </thead>
- <tbody>
-   <tr *ngFor="let data of listID | paginate: { itemsPerPage: 10, currentPage: p } ">
-     <th scope="row">timedata</th>
-     <td *ngFor="let datatimes of data.data">{{datatimes.value}}</td>  
-   </tr>
-  
-   
- </tbody>
-
-</table>
-
+    <div class="table-responsive">
+        <table class="table" >
+            <thead>
+              <tr class="name">
+               <th  class="columna" scope="col">Data time</th>
+                <th scope="col" class="columna" *ngFor="let data of fecha" >{{data.time |date:"MM/dd/yyyy"}}</th>  
+              </tr>
+            </thead>
+            <tbody>
+             
+              <tr *ngFor="let data of listID | paginate: { itemsPerPage: 8, currentPage: p } ">
+                 <th style="width:auto;" class="columna" scope="row">({{data.device}}) {{data.name}}</th>
+                <td *ngFor="let datatimes of data.data" align="center">{{datatimes.maxValue}}</td>  
+              </tr>
+              
+            </tbody>
+           
+           </table>
+           
+    </div>
+ 
 </div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
 <div class="blankspace"> </div>
 <button type="button" class="btn btn-info  btn-lg">Download data as file</button>
 <div class="blankspace"> </div>
+
 
