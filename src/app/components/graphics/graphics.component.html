@@ -35,18 +35,35 @@
 
           <form class="list">
             <div class="form-row align-items-center  ">
+              
               <div class="col-auto my-1">
                 <select (change)="onChange($event.target.value)"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                   <option [value]="value.id" *ngFor="let value of listdata" >({{value.deviceName}}) {{value.name}}</option>
                 </select>
               </div>
               <br/>
-              <p class=" vs align-center">&nbsp; &nbsp;  VS &nbsp; &nbsp; </p>
+              <!-- <p class=" vs align-center">&nbsp; &nbsp;  VS &nbsp; &nbsp; </p> -->
               <div class="col-auto my-1">
                 <select (change)="onChange2($event.target.value)"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                   <option [value]="value2.id" *ngFor="let value2 of listdata"  >({{value2.deviceName}}) {{value2.name}} </option>
                 </select>
               </div>
+              <div class="col-auto my-1">
+                  <select (change)="onChange3($event.target.value)"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option [value]="value3.id" *ngFor="let value3 of listdata"  >({{value3.deviceName}}) {{value3.name}} </option>
+                  </select>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-auto my-1">
+                    <select (change)="onChange4($event.target.value)"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option [value]="value4.id" *ngFor="let value4 of listdata"  >({{value4.deviceName}}) {{value4.name}} </option>
+                    </select>
+                  </div>
+                  <div class="col-auto my-1">
+                      <select (change)="onChange5($event.target.value)"  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option [value]="value5.id" *ngFor="let value5 of listdata"  >({{value5.deviceName}}) {{value5.name}} </option>
+                      </select>
+                    </div>
             </div>
           </form>
         </div>

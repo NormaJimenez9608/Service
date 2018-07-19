@@ -30,7 +30,7 @@ getDatalog(idSystems, accessKey:string){
 
 getDetailDay(idSystems, idLog, accessKey){
   this.url2 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/day?accesskey=${accessKey}`;
-  //console.log(this.url2);
+ // console.log(this.url2);
   return this.HTTP.get(this.url2)
 }
 
@@ -47,13 +47,13 @@ this.url4= `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/
 }
 getDetailHours2(idSystems, idLog, accessKey, startDate, endDate){
   this.url5= `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/hour?accesskey=${accessKey}&startdate=${startDate}:00Z&enddate=${endDate}:00Z`
- // console.log(this.url5);
+  //console.log(this.url5);
     return this.HTTP.get(this.url5)
   }
 
   getAllDatalog(idSystems, idLog, accessKey){
    this.url6=` https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}?accesskey=${accessKey}`
-  //  console.log(this.url6);
+   // console.log(this.url6);
    return this.HTTP.get(this.url6)
   }
 }
