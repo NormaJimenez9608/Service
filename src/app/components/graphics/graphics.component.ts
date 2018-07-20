@@ -60,6 +60,10 @@ export class GraphicsComponent implements OnInit {
       this.graphics.startDate = this.datePipe.transform(this.startDat, 'yyyy-MM-dd');
       this.graphics.endDate = this.datePipe.transform(this.endDat, 'yyyy-MM-dd')
       this.onChange(data[0].id);
+      this.onChange2(this.listdata[0].id);
+      this.onChange3(this.listdata[0].id);
+      this.onChange4(this.listdata[0].id);
+      this.onChange5(this.listdata[0].id);
       this.getGraphics();
     })
   }
@@ -70,7 +74,7 @@ export class GraphicsComponent implements OnInit {
     }
     this.Idvalor = valueid;
     this.getClean();
-    this.onChange2(this.listdata[0].id);
+    this.getData(this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5);
   }
   onChange2(value2id, ) {
     for (let i in this.listdata) {
@@ -79,7 +83,8 @@ export class GraphicsComponent implements OnInit {
     }
     this.Idvalor2 = value2id;
     this.getClean();
-    this.onChange3(this.listdata[0].id);
+    this.getData(this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5);
+    
   }
   onChange3(value3id) {
     for (let i in this.listdata) {
@@ -88,7 +93,7 @@ export class GraphicsComponent implements OnInit {
     }
     this.Idvalor3 = value3id;
     this.getClean();
-    this.onChange4(this.listdata[0].id);
+    this.getData(this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5);
   }
   onChange4(value4id, ) {
     for (let i in this.listdata) {
@@ -97,7 +102,7 @@ export class GraphicsComponent implements OnInit {
     }
     this.Idvalor4 = value4id;
     this.getClean();
-    this.onChange5(this.listdata[0].id);
+    this.getData(this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5);
   }
   onChange5(value5id, ) {
     for (let i in this.listdata) {
@@ -110,7 +115,7 @@ export class GraphicsComponent implements OnInit {
   }
 
   getData(idValor, IdValor2, IdValor3, IdValor4, IdValor5) {
-   
+   if( this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5){
       this.DatalogService.getDetailDay(this.idSystem, idValor, this.accessKey).subscribe((data: any) => {
         for (let i in data) {
           this.listdata1.push({
@@ -232,7 +237,7 @@ export class GraphicsComponent implements OnInit {
      })
    })
  })    
-}  
+}  }
   
  
 
