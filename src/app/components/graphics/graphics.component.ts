@@ -153,7 +153,7 @@ export class GraphicsComponent implements OnInit {
                   })
                 }
               
-                console.log(this.listdata1.length, this.listdata2.length )
+           //     console.log(this.listdata1.length, this.listdata2.length )
     //  console.log(this.listdata1, this.listdata2, this.listdata3, this.listdata4, this.listdata5)
     //  console.log(this.listdata1.length, this.listdata2.length)
       if(this.listdata1.length > this.listdata2.length ){
@@ -231,18 +231,13 @@ export class GraphicsComponent implements OnInit {
        this.morris1.setData(this.listdata6)
        this.morris1.options.labels =[this.name1, this.name2, this.name3, this.name4, this.name5]
 
-       console.log(this.listdata6) 
+      // console.log(this.listdata6) 
         })
        })
      })
    })
  })    
 }  }
-  
- 
-
-  
-  
   getClean(){
     this.listdata1.length =0;
     this.listdata2.length=0;
@@ -266,5 +261,135 @@ export class GraphicsComponent implements OnInit {
 
   }
 
+
+  getDay(valueid, value2id, value3id, value4id, value5id) {
+    console.log(this.Idvalor, this.Idvalor2, this.Idvalor3, this.Idvalor4, this.Idvalor5)
+    this.getClean();
+    const endDate = this.graphics.endDate;
+    const startDate = this.graphics.startDate;
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor, this.accessKey, startDate, endDate).subscribe((data6: any) => {
+       // console.log(data6);
+        for (let i in data6) {
+          this.listdata1.push({
+            timestamp: data6[i].timestamp,
+            value: data6[i].maxValue,
+          })
+        }
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor2, this.accessKey, startDate, endDate).subscribe((data7: any) => {
+           // console.log(data7);
+            for (let i in data7) {
+              this.listdata2.push({
+                timestamp: data7[i].timestamp,
+                value: data7[i].maxValue,
+              })
+            }
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor3, this.accessKey, startDate, endDate).subscribe((data8: any) => {
+            //    console.log(data8);
+                for (let i in data8) {
+                  this.listdata3.push({
+                    timestamp: data8[i].timestamp,
+                    value: data8[i].maxValue,
+                  })
+                }
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor4, this.accessKey, startDate, endDate).subscribe((data9: any) => {
+             //       console.log(data9);
+                    for (let i in data9) {
+                      this.listdata4.push({
+                        timestamp: data9[i].timestamp,
+                        value: data9[i].maxValue,
+                      })
+                    }
+    this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor5, this.accessKey, startDate, endDate).subscribe((data10: any) => {
+                 //       console.log(data10);
+                        for (let i in data10) {
+                          this.listdata5.push({
+                            timestamp: data10[i].timestamp,
+                            value: data10[i].maxValue,
+                          })
+                        }
+      console.log(this.listdata1, this.listdata2, this.listdata3, this.listdata4, this.listdata5)
+      console.log(this.listdata1.length, this.listdata2.length)
+
+                if(this.listdata1.length > this.listdata2.length ){
+                          this.startDat = this.listdata1[this.listdata1.length - 1].timestamp
+                          this.endDat = this.listdata1[0].timestamp;
+                          for(let i in this.listdata1){
+                            if (this.listdata2[i] == null) {
+                             this.listdata2[i] = {
+                                maxValue: "0",
+                              }
+                            }
+                            if (this.listdata3[i] == null) {
+                              this.listdata3[i] = {
+                                 maxValue: "0",
+                               }
+                             }
+                             if (this.listdata4[i] == null) {
+                              this.listdata4[i] = {
+                                 maxValue: "0",
+                               }
+                             }
+                             if (this.listdata5[i] == null) {
+                              this.listdata5[i] = {
+                                 maxValue: "0",
+                               }
+                             }
+                            
+                              this.listdata6.push({
+                                timestamp:this.listdata1[i].timestamp,
+                                value: this.listdata1[i].value,
+                                value2: this.listdata2[i].value2,
+                                value3: this.listdata3[i].value3,
+                                value4: this.listdata4[i].value4,
+                                value5: this.listdata5[i].value5, 
+                              })
+                            
+                          }
+                        }
+                        else{
+                          console.log('hola')
+                          this.startDat = this.listdata2[this.listdata2.length - 1].timestamp
+                          this.endDat = this.listdata2[0].timestamp;
+                          for (let i in this.listdata2) {
+                            if (this.listdata1[i] == null) {
+                              this.listdata1[i] = {
+                                 maxValue: "0",
+                               }
+                             }
+                             if (this.listdata3[i] == null) {
+                               this.listdata3[i] = {
+                                  maxValue: "0",
+                                }
+                              }
+                              if (this.listdata4[i] == null) {
+                               this.listdata4[i] = {
+                                  maxValue: "0",
+                                }
+                              }
+                              if (this.listdata5[i] == null) {
+                               this.listdata5[i] = {
+                                  maxValue: "0",
+                                }
+                              }
+                              this.listdata6.push({
+                                timestamp:this.listdata2[i].timestamp,
+                                value: this.listdata1[i].value,
+                                value2: this.listdata2[i].value2,
+                                value3: this.listdata3[i].value3,
+                                value4: this.listdata4[i].value4,
+                                value5: this.listdata5[i].value5, 
+                              })
+                           } 
+                         }  
+                        console.log(this.listdata6)
+                         this.morris1.setData(this.listdata6)
+                         this.morris1.options.labels =[this.name1, this.name2, this.name3, this.name4, this.name5]
+
+                      }) 
+                  }) 
+              }) 
+          }) 
+      })  
+  }
 }
 

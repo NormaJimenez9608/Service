@@ -36,7 +36,7 @@ getDetailDay(idSystems, idLog, accessKey){
 
 getDetailDay2(idSystems, idLog, accessKey, startDate, endDate){
  this.url3 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/log/${idLog}/aggregated/day?accesskey=${accessKey}&startdate=${startDate}T05:00:00Z&enddate=${endDate}T05:00:00Z`
- //console.log(this.url3);
+ console.log(this.url3);
   return this.HTTP.get(this.url3)
 }
 
