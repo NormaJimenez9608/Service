@@ -246,20 +246,7 @@ export class GraphicsComponent implements OnInit {
     this.listdata5.length=0;
     this.listdata6.length=0;
   }
-  getGraphics() {
 
-    this.morris1 = new Morris.Line({
-      element: 'line-chart',
-      data: this.listdata6,
-      xkey: 'timestamp',
-      ykeys: ['value', 'value2', 'value3', 'value4', 'value5'],
-      labels: [this.name1, this.name2, this.name3, this.name4, this.name5],
-      resize: true,
-      lineColors: ['#DA434C', '#696666', '#F94207', '#CDC403', '#04779E'],
-    });
-  //  console.log(this.listdata4)
-
-  }
 
 
   getDay(valueid, value2id, value3id, value4id, value5id) {
@@ -280,7 +267,7 @@ export class GraphicsComponent implements OnInit {
             for (let i in data7) {
               this.listdata2.push({
                 timestamp: data7[i].timestamp,
-                value: data7[i].maxValue,
+                value2: data7[i].maxValue,
               })
             }
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor3, this.accessKey, startDate, endDate).subscribe((data8: any) => {
@@ -288,7 +275,7 @@ export class GraphicsComponent implements OnInit {
                 for (let i in data8) {
                   this.listdata3.push({
                     timestamp: data8[i].timestamp,
-                    value: data8[i].maxValue,
+                    value3: data8[i].maxValue,
                   })
                 }
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor4, this.accessKey, startDate, endDate).subscribe((data9: any) => {
@@ -296,7 +283,7 @@ export class GraphicsComponent implements OnInit {
                     for (let i in data9) {
                       this.listdata4.push({
                         timestamp: data9[i].timestamp,
-                        value: data9[i].maxValue,
+                        value4: data9[i].maxValue,
                       })
                     }
     this.DatalogService.getDetailDay2(this.idSystem, this.Idvalor5, this.accessKey, startDate, endDate).subscribe((data10: any) => {
@@ -304,15 +291,14 @@ export class GraphicsComponent implements OnInit {
                         for (let i in data10) {
                           this.listdata5.push({
                             timestamp: data10[i].timestamp,
-                            value: data10[i].maxValue,
+                            value5: data10[i].maxValue,
                           })
                         }
-      console.log(this.listdata1, this.listdata2, this.listdata3, this.listdata4, this.listdata5)
-      console.log(this.listdata1.length, this.listdata2.length)
-
+  
                 if(this.listdata1.length > this.listdata2.length ){
                           this.startDat = this.listdata1[this.listdata1.length - 1].timestamp
                           this.endDat = this.listdata1[0].timestamp;
+                          
                           for(let i in this.listdata1){
                             if (this.listdata2[i] == null) {
                              this.listdata2[i] = {
@@ -343,13 +329,14 @@ export class GraphicsComponent implements OnInit {
                                 value4: this.listdata4[i].value4,
                                 value5: this.listdata5[i].value5, 
                               })
-                            
                           }
                         }
                         else{
-                          console.log('hola')
+                        
                           this.startDat = this.listdata2[this.listdata2.length - 1].timestamp
                           this.endDat = this.listdata2[0].timestamp;
+                          console.log(this.listdata1, this.listdata2, this.listdata3, this.listdata4, this.listdata5)
+                          console.log(this.listdata1[0].value, this.listdata2[0].value2, this.listdata3[0].value3, this.listdata4[0].value4, this.listdata5[0].value5)
                           for (let i in this.listdata2) {
                             if (this.listdata1[i] == null) {
                               this.listdata1[i] = {
@@ -390,6 +377,21 @@ export class GraphicsComponent implements OnInit {
               }) 
           }) 
       })  
+  }
+
+  getGraphics() {
+
+    this.morris1 = new Morris.Line({
+      element: 'line-chart',
+      data: this.listdata6,
+      xkey: 'timestamp',
+      ykeys: ['value', 'value2', 'value3', 'value4', 'value5'],
+      labels: [this.name1, this.name2, this.name3, this.name4, this.name5],
+      resize: true,
+      lineColors: ['#DA434C', '#696666', '#F94207', '#CDC403', '#04779E'],
+    });
+  //  console.log(this.listdata4)
+
   }
 }
 
