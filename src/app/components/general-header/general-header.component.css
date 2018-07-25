@@ -1,13 +1,13 @@
 .Letter{
     padding-top: 15px;
     padding-left: 15px;
-    font-size: 240%;
+    /* font-size: 240%; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar-nav{
 color: white !important;
-font-size: 150%;
+/* font-size: 150%; */
 padding: 2px;
 }
     
@@ -22,11 +22,48 @@ padding: 2px;
 }
 
 .col-md-9{
-    font-size: 40px;
+    /* font-size: 40px; */
     font-family: 'arial'
 
 }
 
 .col-md-3{
     padding-right: 15px !important;
+}
+@media (min-width:900px)  {
+    .title{
+        font-size: 240%
+    }
+    .navbar-nav{
+  font-size: 150%; 
+    }
+}
+
+@media (min-width:768px)  {
+    .title{
+        font-size:240%
+    }
+}
+@media (max-width:767px)  {
+    .bg-light{
+        font-size: 40px
+    }
+    .title{
+        font-size: 15px
+    }
+    .navbar-nav{
+        font-size: 15px
+    }
+
+}
+@media (max-width:468px)  {
+    .bg-light{
+        font-size: 15px
+    }
+    .title{
+        font-size: 15px
+    }
+    .navbar-nav{
+        font-size: 15px
+    }
 }

@@ -1,11 +1,7 @@
 .copyright{
-    font-size: 12px;
+    
     padding-right: 20px !important;
     padding-bottom: 0px !important;
-}
-
-.img-icon{
-    height: 25px;
 }
 
 
@@ -15,4 +11,49 @@
 
 .col-md-1:hover{
     text-decoration:underline;
+}
+@media (min-width:900px)  {
+    .img-icon{
+        height: 25px;
+    }
+    .copyright{
+        font-size: 12px;
+    }
+    .title{
+        font-size: 15px 
+     }
+}
+
+@media (min-width:768px)  {
+    .img-icon{
+        height: 25px;
+    }
+    .title{
+       font-size: 15px 
+    }
+    .copyright{
+        font-size: 12px;
+    }
+}
+@media (max-width:767px)  {
+    .img-icon{
+        height: 15px;
+    }
+    .title{
+        font-size: 8px 
+     }
+     .copyright{
+        font-size: 10px;
+    }
+}
+@media (max-width:468px)  {
+    .img-icon{
+        height: 15px;
+    }
+    .title{
+        font-size: 8px 
+     }
+     .copyright{
+        font-size: 10px;
+    }
 }

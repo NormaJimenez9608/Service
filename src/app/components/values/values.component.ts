@@ -6,6 +6,7 @@ import { systems } from '../../models/systems.models';
 import { WritteService} from '../../services/writte.service'
 import { UnitService} from '../../services/unit.service'
 import { Datalog } from '../../models/datalog';
+import {Observable} from 'rxjs/Rx'
 // import { DESTRUCTION } from 'dns';
 
 @Component({
@@ -26,6 +27,7 @@ export class ValuesComponent implements OnInit {
   public listdata2 = [];
   public data = [];
   public data2 = [];
+  
   public list = [];
   public cero;
   public number;
@@ -34,7 +36,7 @@ export class ValuesComponent implements OnInit {
   SystemsModels = new systems;
   ValuesModel = new values;
 
-  constructor(private ValuesService: ValuesService,  private router:Router, private values1: WritteService, private UnitService: UnitService) { 
+  constructor(private ValuesService: ValuesService,  private router:Router, private values1: WritteService, private UnitService: UnitService, ) { 
     
   }
 
@@ -43,7 +45,9 @@ export class ValuesComponent implements OnInit {
     this.idSystem = localStorage.getItem('idSystem');
     this.nameDevice = localStorage.getItem('nameDevice');
     this.getUnit();
-   
+    // let timer = Observable.timer(0, 10000);
+    // timer.subscribe(() => this.getValores(this.data, this.number));
+    
   }
 
   getUnit(): void {
@@ -52,7 +56,7 @@ export class ValuesComponent implements OnInit {
       this.device = data;
 
       for (let i of this.device) {
-           this.concatenadofilter = this.filtrado;
+         this.concatenadofilter = this.filtrado;
          this.filtrado = this.device.filter(device => device.deviceName === this.nameDevice);
          this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
         }
@@ -62,7 +66,6 @@ var persona = {};
         return persona[e.name] ? false : (persona[e.name] = true);
     });
      
- 
     for (let i in unicos) {
       this.listdata.push({
         name: unicos[i].name,
@@ -70,33 +73,33 @@ var persona = {};
     })
     }
    this.getValues();
+ 
     })}
 
  
-   getValues(): void{
+   getValues(){
+   this.data2.length=0;
 for( let i in this.listdata){
 this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id ).subscribe((valores:any)=>{
   this.data = valores.id;
- 
   this.number= i
   this.getValores(this.data, this.number);
  
    }) 
    }
 
-   
  }
 
  getValores(data1, number):void{
-  
+  this.data2.length=0;
   this.ValuesService.getValores(this.idSystem, data1, this.accessKey).subscribe((dato:any)=>{
     if (dato == null) {
-      
-        this.cero = 'null'
-      
+      // console.log('entro')
+      // let timer = Observable.timer(5000);
+      // timer.subscribe(() => this.getValores(this.data, this.number));
+         this.cero = 'null'
     }else{
        
-      
         this.cero= dato[0].value
     }
       this.data2.push({
@@ -107,22 +110,31 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
     
   
   this.count= this.data2.length
+
   for ( let i in this.data2){
-   
   if (this.data2[i].name === "Setpoint"){
     this.idSetpoint= this.data2[i].id
-    
   }
+  
+    
   
   }
  })
-
-
+ 
   } 
+
+  
     Values(): void{
   const value = this.ValuesModel.value;
    this.values1.Values(this.ValuesModel, this.idSystem, this.accessKey,this.idSetpoint ).subscribe( response=>{
     
    });
  }
+
+
+
+ 
+  
+
+ 
   }

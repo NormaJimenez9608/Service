@@ -1,7 +1,7 @@
 .nav-tabs{
     background-color: #F2F3F4;
     padding-left: 15px !important;
-    font-size: 22px;
+   
 }
 
 .blankspace2{
@@ -9,14 +9,14 @@
 }
 
 .table{
-    font-size: 20px;
+   
     font-family: Arial, Helvetica, sans-serif;
     color:#283747;
 }
 
 .Name{
     padding-left: 60px;
-    font-size: 30px;
+   
     font-family: Arial, Helvetica, sans-serif;
     color: #566573  ;
 
@@ -35,3 +35,73 @@
     background-color: #868989;
 }
 
+@media (min-width:900px)  {
+  .Name{
+    font-size: 30px;
+  }
+  .blankspace6{
+      height: 50px;
+  }
+  .nav-tabs{
+    font-size: 22px;
+  }
+  .table{
+    font-size: 20px;
+  }
+  .blankspace2{
+    height: 260px ;
+}
+}
+
+@media (min-width:768px)  {
+    .Name{
+        font-size: 30px;
+    }
+    .blankspace6{
+        height: 50px;
+    }
+    .nav-tabs{
+        font-size: 22px;
+      }
+      .table{
+        font-size: 20px;
+      }
+      .blankspace2{
+        height: 240px ;
+    }
+}
+@media (max-width:767px)  {
+    .Name{
+        font-size: 20px;
+    }
+    .blankspace6{
+        height: 30px;
+    }
+    .nav-tabs{
+        font-size: 15px;
+      }
+      .table{
+        font-size: 15px;
+      }
+      .blankspace2{
+        height: 70px ;
+    }
+
+}
+@media (max-width:468px)  {
+    .Name{
+        font-size: 20px;
+    }
+    .blankspace6{
+        height: 30px;
+    }
+    .nav-tabs{
+        font-size: 15px;
+      }
+      .table{
+        font-size: 15px;
+      }
+      .blankspace2{
+        height: 70px ;
+    }
+}

@@ -9,7 +9,6 @@
 .col-md-4{
     font-family: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
     color: #595959;
-
 }
 
 .cardheader {
@@ -26,6 +25,9 @@ padding-left: 15px;
     background-color: transparent !important;
     border: 0;
 }
-.blankspacelogin2{
-    height: 45px !important ;
+
+@media (min-width:900px)  {
+    .blankspacelogin2{
+        height: 45px;
+    }
 }

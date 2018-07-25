@@ -1,13 +1,57 @@
 .letter{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 150%;
+   
     color: #909497  ;
 }
 
-.blankspace5{
-    height: 150px ;
-}
 
 .col-md-1:hover{
     text-decoration:underline;
+}
+
+@media (min-width:1100px)  {
+  .letter{
+    font-size: 150%;
+  }
+  .blankspace3{
+      height: 50px;
+  }
+}
+
+@media (min-width:768px)  {
+    .letter{
+        font-size: 130%;
+      }
+      .blankspace3{
+        height: 50px;
+    }
+    .blankspace5{
+        height: 80px ;
+    }
+    
+}
+@media (max-width:767px)  {
+    .letter{
+        font-size: 100%;
+      }
+      .blankspace3{
+        height: 20px;
+    }
+    .blankspace5{
+        height: 0px ;
+    }
+    
+
+}
+@media (max-width:468px)  {
+    .letter{
+        font-size: 100%;
+      }
+      .blankspace3{
+        height: 20px;
+    }
+    .blankspace5{
+        height: 0px ;
+    }
+    
 }
