@@ -45,16 +45,16 @@
     }
 }
 @media (max-width: 767px)  {
-    .bg-light{
-       font-size: 50px;
+    .navbar{
+       font-size: 10px;
     }
     .titule{
         font-size: 60px;
     }
 }
 @media (max-width: 480px)  {
-    .bg-light{
-       font-size: 5px;
+    .navbar{
+       font-size: 10px;
     }
     .titule{
         font-size: 20px;

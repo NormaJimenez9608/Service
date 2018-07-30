@@ -27,9 +27,9 @@
       
 
 
- <p class="fecha" >Start Date and Hour:  <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00"  (keyup.enter)="onEnter()" [(ngModel)]="alarms.startDate"></p> 
- <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00" (keyup.enter)="onEnter()" [(ngModel)]="alarms.endDate"></p> 
- <button type="button" (click)="Alarms()" class="btn btn-secondary btn-sm">OK</button>
+ <p class="fecha" >Start Date and Hour:  <input class="fecha" type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00"  (keyup.enter)="onEnter()" [(ngModel)]="alarms.startDate"></p> 
+ <p class="fecha">End  Date and Hour: <input class="fecha" type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2025-12-31T12:00" (keyup.enter)="onEnter()" [(ngModel)]="alarms.endDate"></p> 
+ <button type="button" (click)="Alarms()" class="btn btn-secondary btn-sm boton">OK</button>
  <div class="blankspace"> </div>
   
  <table class="table table-bordered " id="testTable">
@@ -62,9 +62,9 @@
  </tbody>
  
    </table>
-   <pagination-controls (pageChange)="p = $event"></pagination-controls>
+   <pagination-controls class="boton" (pageChange)="p = $event"></pagination-controls>
 
-<button type="button" (click)="tableToExcel('testTable1', 'Alarms History')" class="btn btn-info  btn-lg" >Download data as file </button>
+<button type="button" (click)="tableToExcel('testTable1', 'Alarms History')" class="btn btn-info  btn-lg boton" >Download data as file </button>
 
 <table style="display: none" class="table table-bordered " id="testTable1">
   <thead>

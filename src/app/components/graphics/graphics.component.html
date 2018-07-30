@@ -33,7 +33,7 @@
 
         <div class="row ">
 
-          <form class="list">
+          <form class=" boton">
             <div class="form-row align-items-center  ">
               
               <div class="col-auto my-1">
@@ -77,7 +77,7 @@
           <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" (keyup.enter)="onEnter(valueid, value2id)"
             [(ngModel)]="graphics.endDate">
         </p>
-        <button type="button" class="btn btn-secondary btn-sm" (click)="getDay(valueid, value2id, value3id, value4id, value5id)">OK</button>
+        <button type="button" class="btn btn-secondary btn-sm boton" (click)="getDay(valueid, value2id, value3id, value4id, value5id)">OK</button>
         <div class="blankspace"> </div>
 
         <div id="line-chart"></div>

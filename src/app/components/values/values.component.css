@@ -1,6 +1,5 @@
 .valores{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100%;
     color: #566573;
 }
 .border{
@@ -9,14 +8,57 @@
  
 }
 
-.input-group{
+.texto{
+    color: black;
+}
+@media (min-width:1100px)  {
+  .valores{
+      font-size: 100%;
+  }
+  .input-group{
 
     font-size: 15px;
 }
 .blankspace2{
     height: 100px;
 }
+   }
+   
+   @media (min-width:768px)  {
+    .valores{
+        font-size: 100%;
+    }
+    .input-group{
 
-.texto{
-    color: black;
-}
+        font-size: 15px;
+    }
+    .blankspace2{
+        height: 100px;
+    }
+   }
+   @media (max-width:767px)  {
+    .valores{
+        font-size: 80%;
+    } 
+    .input-group{
+
+        font-size: 9px;
+    }
+    .blankspace2{
+        height: 50px;
+    }
+   
+   }
+   @media (max-width:468px)  {
+    .valores{
+        font-size: 80%;
+    } 
+    .input-group{
+
+        font-size: 9px;
+    }
+    .blankspace2{
+        height: 50px;
+    }
+    
+   }

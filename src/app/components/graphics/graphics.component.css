@@ -1,28 +1,25 @@
 .nav-tabs{
     background-color: #F2F3F4;
     padding-left: 15px !important;
-    font-size: 120%;
+    
 }
 .Name{
     padding-left: 60px;
-    font-size: 150%;
+ 
     font-family: Arial, Helvetica, sans-serif;
     color: #566573  ;
 
 }
 
-.blankspace2{
-    height: 100% ;
-}
 
 .table{
-    font-size: 100%;
+    
     font-family: Arial, Helvetica, sans-serif;
     color:#283747;
 }
 
 .fecha {
-    font-size: 100%;
+    
     font-family: Arial, Helvetica, sans-serif;
     color:#17202A  ;
 }
@@ -34,6 +31,92 @@
     padding-bottom: 0px;
 }
 
-.list{
-    font-size: 100%px;
-}
+
+
+@media (min-width:1100px)  {
+    .Name{
+     font-size: 30px;
+    }
+    .nav-tabs{
+     font-size: 22px;
+    }
+    .table{
+     font-size: 20px;
+    }
+    .blankspace2{
+        height: 150px ;
+    }
+    .fecha{
+        font-size: 20px;
+    }
+   }
+   
+   @media (min-width:768px)  {
+     .Name{
+         font-size: 20px;
+        }
+        .nav-tabs{
+         font-size: 15px;
+        }
+        .table{
+         font-size: 15px;
+        }
+        .blankspace2{
+            height: 80px ;
+        }
+        .fecha{
+            font-size: 15px;
+        }
+        .boton{
+            font-size: 15px;
+        }
+   }
+   @media (max-width:767px)  {
+     .Name{
+         font-size: 15px;
+        }
+        .nav-tabs{
+         font-size: 13px;
+        }
+        .table{
+         font-size: 10px;
+        }
+        .boton{
+            font-size: 9px;
+        }
+        .blankspace2{
+            height: 40px ;
+        }
+        .fecha{
+            font-size: 15px;
+        }
+        .blankspace{
+            height: 20px;
+        }
+        
+   
+   }
+   @media (max-width:468px)  {
+     
+     .Name{
+         font-size: 15px;
+        }
+        .nav-tabs{
+         font-size: 13px;
+        }
+        .table{
+         font-size: 9px;
+        }
+        .boton{
+         font-size: 10px;
+     }
+     .blankspace2{
+        height: 40px ;
+    }
+    .fecha{
+        font-size: 10px;
+    }
+    .blankspace{
+        height: 20px;
+    }
+   }

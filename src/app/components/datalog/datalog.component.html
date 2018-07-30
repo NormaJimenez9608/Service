@@ -30,12 +30,12 @@
 
   <div class="blankspace"> </div>
 
-  <form class="value"> 
+  <form class="value boton"> 
     <div class="form-row align-items-center">
       <div class="col-auto my-1">
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
+        <select  class="boton" class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
            
-          <option value="{{value.id}}" *ngFor="let value of listdata"   >({{value.deviceName}}) {{value.name}}</option>       
+          <option class="boton" value="{{value.id}}" *ngFor="let value of listdata"   >({{value.deviceName}}) {{value.name}}</option>       
         </select>
       </div>
     </div>
@@ -46,10 +46,10 @@
 
  <p class="fecha" >Start Date: <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog.startDate"></p> 
  <p class="fecha">End   Date:  <input type="date" name="fecha" step="1" min="2018-01-01" max="2019-12-31" value="2018-05-29" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog.endDate"></p> 
- <button type="button" class="btn btn-secondary btn-sm" (click)="getDay(valueid)">OK</button>
+ <button type="button" class="btn btn-secondary btn-sm boton" (click)="getDay(valueid)">OK</button>
  <div class="blankspace"> </div>
   
- <table class="table table-bordered ">
+ <table class="table table-bordered">
  <thead>
    <tr class="name">
       <th scope="col">Time</th>
@@ -76,9 +76,9 @@
    <tr>
  </tbody>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls class="boton" (pageChange)="p = $event"></pagination-controls>
 
-<button type="button" (click)="tableToExcel('testTable1', 'Datalog for Day')" class="btn btn-info  btn-lg" >Download data as file</button>
+<button type="button" (click)="tableToExcel('testTable1', 'Datalog for Day')" class="btn btn-info  btn-lg boton" >Download data as file</button>
    
    <table style="display: none" class="table table-bordered " id="testTable1">
      <thead>

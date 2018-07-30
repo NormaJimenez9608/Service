@@ -30,7 +30,7 @@
 
   <div class="blankspace"> </div>
 
-  <form class="value"> 
+  <form class="value boton"> 
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
           <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
@@ -45,7 +45,7 @@
     <div class="blankspace"> </div>
  <p class="fecha" >Start Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog2.startDate"></p> 
  <p class="fecha">End  Date and Hour: <input type="datetime-local" name="fechahora" step="1" min="2018-01-01T00:00" max="2019-12-31T12:00" (keyup.enter)="onEnter(valueid)" [(ngModel)]="datalog2.endDate"></p> 
- <button type="button" class="btn btn-secondary btn-sm"  (click)="getHours(valueid)">OK</button>
+ <button type="button" class="btn btn-secondary btn-sm boton"  (click)="getHours(valueid)">OK</button>
  <div class="blankspace"> </div>
   
  <table class="table table-bordered ">
@@ -68,9 +68,9 @@
     <tr>
   </tbody>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls class="boton" (pageChange)="p = $event"></pagination-controls>
 
-<button type="button" (click)="tableToExcel('testTable1', 'Datalog For Hours')" class="btn btn-info  btn-lg" >Download data as file</button>
+<button type="button" (click)="tableToExcel('testTable1', 'Datalog For Hours')" class="btn btn-info  btn-lg boton " >Download data as file</button>
    
    <table style="display: none" class="table table-bordered " id="testTable1">
      <thead>

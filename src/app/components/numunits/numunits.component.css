@@ -16,7 +16,11 @@
   .blankspace3{
       height: 50px;
   }
+  .blankspace5{
+    height: 150px ;
 }
+}
+
 
 @media (min-width:768px)  {
     .letter{
@@ -26,7 +30,7 @@
         height: 50px;
     }
     .blankspace5{
-        height: 80px ;
+        height: 180px ;
     }
     
 }
