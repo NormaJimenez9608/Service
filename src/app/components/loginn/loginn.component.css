@@ -30,4 +30,20 @@ padding-left: 15px;
     .blankspacelogin2{
         height: 45px;
     }
+    
+}
+
+@media (min-width:768px)  {
+    
+}
+@media (max-width:767px)  {
+    .size{
+font-size: 12px;
+    }
+}
+@media (max-width:468px)  {
+    .size{
+        font-size: 12px;
+            }
+
 }

@@ -46,8 +46,8 @@ import { DatalogsService } from './services/datalogs.service';
 const appRoutes: Routes = [
   { path: '', component: LoginnComponent },
   { path: 'Systems', canActivate: [AuthGuardGuard], component: InicioComponent, },
-  { path: 'Service', canActivate: [AuthGuardGuard], component: ConservicesComponent },
-  { path: 'Sales', canActivate: [AuthGuardGuard], component: ConsalesComponent },
+  { path: 'Service', component: ConservicesComponent },
+  { path: 'Sales', component: ConsalesComponent },
 
   { path: 'Systems/Devices', canActivate: [AuthGuardGuard], component: UnitsComponent, },
   { path: 'Systems/Devices/Values', canActivate: [AuthGuardGuard], component: PagevaluesComponent },

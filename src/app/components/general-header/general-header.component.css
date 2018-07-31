@@ -40,7 +40,7 @@ color: white !important;
 
 @media (min-width:768px)  {
     .Letter{
-        font-size:240%;
+        font-size:190%;
         padding-top: 15px;
         padding-left: 15px;
     }

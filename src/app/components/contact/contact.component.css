@@ -1,5 +1,5 @@
 .bluespace{
-          
+      
     height: 80px ;
     background-color: #0057a3!important; 
     
@@ -12,5 +12,28 @@
 
 .navbar-nav{
     color: black !important;
-    font-size: 25px;
+   
+}
+
+@media (min-width:900px)  {
+    .navbar-nav{
+        font-size: 25px;
+    }
+}
+
+@media (min-width:768px)  {
+    .navbar-nav{
+        font-size: 20px;
+    }
+}
+@media (max-width:767px)  {
+    .navbar-nav{
+        font-size: 15px;
+    }
+}
+@media (max-width:468px)  {
+
+    .navbar-nav{
+        font-size: 15px;
+    }
 }

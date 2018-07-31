@@ -35,6 +35,9 @@
     .img{
         width:10px
     }
+    .toped{
+        font-size: 40px;
+    }
 }
 @media (min-width: 768px)  {
     .bg-light{
@@ -42,6 +45,9 @@
     }
     .titule{
         font-size: 50px;
+    }
+    .toped{
+        font-size: 40px;
     }
 }
 @media (max-width: 767px)  {
@@ -51,6 +57,15 @@
     .titule{
         font-size: 60px;
     }
+    .toped{
+        font-size: 25px;
+    }
+    .bg-light{
+        height: 70px;
+    }
+    .blankspace{
+        height: 30px;
+    }
 }
 @media (max-width: 480px)  {
     .navbar{
@@ -58,5 +73,14 @@
     }
     .titule{
         font-size: 20px;
+    }
+    .toped{
+        font-size: 25px;
+    }
+    .bg-light{
+        height: 70px;
+    }
+    .blankspace{
+        height: 30px;
     }
 }
