@@ -24,8 +24,9 @@
     font-size: 18px;
 }
 .blankspace2{
-    height: 300px;
+    height: 290px;
 }
+
 }
 
 
@@ -40,7 +41,7 @@
         font-size: 18px;
     }
     .blankspace2{
-        height: 300px;
+        height: 270px;
     }
 }
 
@@ -61,7 +62,14 @@
         height: 15px;
     }
     .blankspace2{
-        height: 25px;
+        height: 20px;
+    }
+    .valor{
+        font-size: 12px;
+    }
+    .valor2{
+        font-size: 10px;
+        size: 1px;
     }
    
    }
@@ -80,6 +88,13 @@
         height: 15px;
     }
     .blankspace2{
-        height: 25px;
+        height: 20px;
+    }
+    .valor{
+        font-size: 12px;
+    }
+    .valor2{
+        font-size: 10px;
+        size: 1px;
     }
    }
