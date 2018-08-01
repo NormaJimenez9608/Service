@@ -1,4 +1,4 @@
-.valores{
+.texteando{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #566573;
 }
@@ -8,7 +8,7 @@
  
 }
 
-.texto{
+.valor{
     color: black;
 }
 
@@ -17,73 +17,69 @@
 .img-1{
     width: 67px;
 }
-
-
+.blankspace{
+    height: 30px ;
+}
+.texteando{
+    font-size: 18px;
+}
+.blankspace2{
+    height: 300px;
+}
 }
 
 
 @media (min-width: 768px)  {
-
     .img-1{
         width: 67px;
     }
-
-}
-
-@media (min-width:1100px)  {
-  .valores{
-      font-size: 100%;
-  }
-  .input-group{
-
-    font-size: 15px;
-}
-.blankspace2{
-    height: 100px;
-}
-   }
-   
-   @media (min-width:768px)  {
-    .valores{
-        font-size: 100%;
+    .blankspace{
+        height: 30px ;
     }
-    .input-group{
-
-        font-size: 15px;
+    .texteando{
+        font-size: 18px;
     }
     .blankspace2{
-        height: 100px;
+        height: 300px;
     }
-   }
+}
+
+
    @media (max-width:767px)  {
-    .valores{
-        font-size: 80%;
-    } 
+    
     .input-group{
-
         font-size: 9px;
-    }
-    .blankspace2{
-        height: 50px;
-    }
-    .img-1{
-        width: 40px;
-    }
-   
-   }
-   @media (max-width:468px)  {
-    .valores{
-        font-size: 80%;
-    } 
-    .input-group{
-
-        font-size: 9px;
-    }
-    .blankspace2{
-        height: 50px;
     }
     
     .img-1{
         width: 40px;
+    }
+    .texteando{
+        font-size: 12px;
+    }
+    .blankspace{
+        height: 15px;
+    }
+    .blankspace2{
+        height: 25px;
+    }
+   
+   }
+   @media (max-width:468px)  {
+    
+    .input-group{
+        font-size: 9px;
+    }
+    .img-1{
+        width: 40px;
+    }
+    .texteando{
+        font-size: 12px;
+    }
+    .blankspace{
+        height: 15px;
+    }
+    .blankspace2{
+        height: 25px;
     }
    }

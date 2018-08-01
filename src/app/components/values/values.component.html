@@ -1,81 +1,24 @@
-<div class="valores">
-  <div class="row">
-    <div class="container-fluid">
-        <div class="row">
-                <div *ngFor="let data of data2" align="center">
-                    
-               
-            <div class=" row col-xs-12 col-sm-12 col-md-12">
-                <div class=" col-xs-0 col-sm-0 col-md-1"></div>
-                
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === '% opening Valve'"><img class="img-1"  src="assets/images/signo.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Absolute Operating Hours'" ><img class="img-1"  src="assets\images\reloj.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Ambient Temp'" ><img class="img-1"  src="assets/images/Temp_ambient..png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === '% Fan Speed form GMM'" ><img class="img-1"  src="assets/images/speed2.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Setpoint'" ><img class="img-1"  src="assets/images/setpoint.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Meter reading Water consumption'" ><img class="img-1"  src="assets/images/MEDIDOR.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Control Value'" ><img class="img-1"  src="assets/images/fan.gif" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Process Temperature'" ><img class="img-1"  src="assets/images/processTemp.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Power Consumption'" ><img class="img-1"  src="assets/images/power.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Fan Speed 1'" ><img class="img-1"  src="assets/images/speed2.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Fan Speed 2'" ><img class="img-1"  src="assets/images/speed2.png" alt=""></p>
-<p align="center" class="col-xs-2 col-sm-2 col-md-3" *ngIf="data.name === 'Humidity'" ><img class="img-1"  src="assets/images/humedad.png" alt=""></p>
 
-<p align="right" class="col-xs-3 col-sm-3 col-md-5">{{data.name}}</p>
-
-<div *ngIf="data.name != 'Setpoint'">
-
-<p align="right" class=" texto col-xs-1 col-sm-1 col-md-1  text-center" *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></p>
-
-</div>
-
-<div class="input-group mb-1  col-xs-1 col-sm-1 col-md-1 " *ngIf="data.name === 'Setpoint'"  align="right">
-    <input class="border text text-left texto" align="right" type="text"  placeholder="{{data.value}}"  size="3px" value='{{data.value}}' [(ngModel)]="ValuesModel.value">
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button>
-      </div>
-   
-  </div>            
-<div *ngIf="data.name != 'Setpoint'">
-<p  *ngIf="data.value != 'null'" align="right"   class=" texto col-xs-1 col-sm-1  col-md-1  text-left" >{{data.value}}</p>
-
-</div>
-
-
-</div>
-<div class="blankspace"> </div>
-
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="blankspace2"> </div>
-<div *ngIf="count === 6"   class="blankspace"> </div>
-
-</div>
-
-<div class="row container">
+<div class="row container col-md-12">
          
       <div  *ngFor="let data of data2" >
-            <div class="col" align="left" >
-      <p align="left"  *ngIf="data.name === '% opening Valve'"><img class="img-1"  src="assets/images/signo.png" alt="">&nbsp; {{data.name}} &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left"  *ngIf="data.name === 'Absolute Operating Hours'" ><img class="img-1"  src="assets\images\reloj.png" alt="">&nbsp; {{data.name}} &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left"  *ngIf="data.name === 'Ambient Temp'" ><img class="img-1"  src="assets/images/Temp_ambient..png" alt="">&nbsp; {{data.name}} &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === '% Fan Speed form GMM'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp;{{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Setpoint'" ><img class="img-1"  src="assets/images/setpoint.png" alt="">&nbsp; {{data.name}} &nbsp; &nbsp; <input class="border text text-left texto" align="right" type="text"  placeholder="{{data.value}}"  size="3px" value='{{data.value}}' [(ngModel)]="ValuesModel.value">&nbsp;<button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button></p>
-      <p align="left" *ngIf="data.name === 'Meter reading Water consumption'" ><img class="img-1"  src="assets/images/MEDIDOR.png" alt=""> &nbsp; &nbsp;Meter reading<br> Water consumption &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-    <div class="col-md-2"></div>
+            <div class="col-md-12 texteando" align="center" >
+      <p  *ngIf="data.name === '% opening Valve'"><img class="img-1"  src="assets/images/signo.png" alt="">&nbsp; &nbsp;{{data.name}} &nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Absolute Operating Hours'" ><img class="img-1"  src="assets\images\reloj.png" alt="">&nbsp; &nbsp; Operating Hours &nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Ambient Temp'" ><img class="img-1"  src="assets/images/Temp_ambient..png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === '% Fan Speed form GMM'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;% Fan Speed GMM &nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Setpoint'" ><img class="img-1"  src="assets/images/setpoint.png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp;  <input class="border text text-left texto" align="right" type="text"  placeholder="{{data.value}}"  size="3px" value='{{data.value}}' [(ngModel)]="ValuesModel.value">&nbsp;<button class="btn btn-outline-secondary" (click)="Values()" type="button">Set</button></p>
+      <p  *ngIf="data.name === 'Meter reading Water consumption'" ><img class="img-1"  src="assets/images/MEDIDOR.png" alt="">  &nbsp; Water consumption &nbsp; &nbsp; <a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Control Value'" ><img class="img-1"  src="assets/images/fan.gif" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Process Temperature'" ><img class="img-1"  src="assets/images/processTemp.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Power Consumption'" ><img class="img-1"  src="assets/images/power.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Fan Speed 1'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Fan Speed 2'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      <p  *ngIf="data.name === 'Humidity'" ><img class="img-1"  src="assets/images/humedad.png" alt=""> &nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a class="valor" *ngIf="data.value != 'null'">{{data.value}}</a></p>
+      
     </div>
-    <div class="col" align="left" >
-      <p align="left" *ngIf="data.name === 'Control Value'" ><img class="img-1"  src="assets/images/fan.gif" alt="">&nbsp; {{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Process Temperature'" ><img class="img-1"  src="assets/images/processTemp.png" alt="">&nbsp; {{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Power Consumption'" ><img class="img-1"  src="assets/images/power.png" alt="">&nbsp; {{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Fan Speed 1'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; {{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Fan Speed 2'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp;{{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <p align="left" *ngIf="data.name === 'Humidity'" ><img class="img-1"  src="assets/images/humedad.png" alt=""> &nbsp;{{data.name}}&nbsp; &nbsp;<a  *ngIf="data.value === 'null'" ><img  style="width:1%; "  style="height:25px" src="assets\images\loading(3).gif" alt=""></a><a *ngIf="data.value != 'null'">{{data.value}}</a></p>
-      <div class="col-md-1"></div>  
+    <div class="blankspace"></div>
     </div>
-     
-    </div>
+
 </div>
+<div class="blankspace2"></div>
