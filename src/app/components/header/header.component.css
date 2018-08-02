@@ -21,22 +21,22 @@
 
 @media (min-width:900px)  {
     .bg-light{
-       font-size: 105px;
+       font-size: 80px;
     }
     .titule{
-        font-size: 60px;
+        font-size: 40px;
     }
     .img{
        width: 30%;
     }
     .blankspace5{
-        height: 50px ;
+        height: 47px ;
     }
     .img{
         width:10px
     }
     .toped{
-        font-size: 40px;
+        font-size: 35px;
     }
 }
 @media (min-width: 768px)  {
@@ -44,10 +44,10 @@
        font-size: 50px;
     }
     .titule{
-        font-size: 50px;
+        font-size: 40px;
     }
     .toped{
-        font-size: 40px;
+        font-size: 35px;
     }
 }
 @media (max-width: 767px)  {

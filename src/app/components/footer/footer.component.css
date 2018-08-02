@@ -10,34 +10,34 @@
 
 @media (min-width:900px)  {
     .img-icon{
-        height: 22px;
+        height: 18px;
     }
     .copyright{
-        font-size: 15px;
+        font-size: 12px;
     }
     .title{
-        font-size: 15px ;
+        font-size: 12px ;
       
      }
      .bg-light{
-         height: 90px;
+         height: 70px;
      }
 }
 
 
 @media (min-width:768px)  {
     .img-icon{
-        height: 25px;
+        height: 18px;
     }
     .title{
-       font-size: 15px;
+       font-size: 12px;
      
     }
     .copyright{
-        font-size: 15px;
+        font-size: 12px;
     }
     .bg-light{
-        height: 90px;
+        height: 70px;
     }
 }
 @media (max-width:767px)  {

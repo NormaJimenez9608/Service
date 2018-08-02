@@ -27,19 +27,19 @@
 
 @media (min-width:1100px)  {
     .Name{
-     font-size: 30px;
+     font-size: 20px;
     }
     .nav-tabs{
      font-size: 22px;
     }
     .table{
-     font-size: 20px;
+     font-size: 13px;
     }
     .blankspace2{
-        height: 150px ;
+        height: 100px ;
     }
     .fecha{
-        font-size: 20px;
+        font-size: 13px;
     }
    }
    
@@ -51,16 +51,16 @@
          font-size: 15px;
         }
         .table{
-         font-size: 15px;
+         font-size: 13px;
         }
         .blankspace2{
             height: 80px ;
         }
         .fecha{
-            font-size: 15px;
+            font-size: 13px;
         }
         .boton{
-            font-size: 15px;
+            font-size: 13px;
         }
    }
    @media (max-width:767px)  {

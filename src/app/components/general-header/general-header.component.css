@@ -23,7 +23,7 @@ color: white !important;
         padding-left: 15px;
     }
     .navbar-nav{
-  font-size: 150%; 
+  font-size: 120%; 
   padding: 2px;
     }
     .col-md-3{
@@ -54,6 +54,10 @@ color: white !important;
         height: 60px !important;
         color: white !important;
     }
+    .navbar-nav{
+        font-size: 120%; 
+        padding: 2px;
+          }
 }
 @media (max-width:767px)  {
     

@@ -15,16 +15,16 @@
 @media (min-width:900px)  {
 
 .img-1{
-    width: 67px;
+    width: 60px;
 }
 .blankspace{
     height: 30px ;
 }
 .texteando{
-    font-size: 18px;
+    font-size: 15px;
 }
 .blankspace2{
-    height: 290px;
+    height: 50px;
 }
 
 }
@@ -32,16 +32,16 @@
 
 @media (min-width: 768px)  {
     .img-1{
-        width: 67px;
+        width: 60px;
     }
     .blankspace{
         height: 30px ;
     }
     .texteando{
-        font-size: 18px;
+        font-size: 15px;
     }
     .blankspace2{
-        height: 270px;
+        height: 50px;
     }
 }
 

@@ -37,7 +37,7 @@
      font-size: 15px;
     }
     .table{
-        font-size: 15px;
+        font-size: 13px;
     }
     .blankspace2{
         height: 120px ;
@@ -46,8 +46,11 @@
         font-size: 20px;
     }
     .columna{
-        font-size: 15px;
+        font-size: 13px;
         
+    }
+    .boton{
+        font-size: 13px;
     }
    }
    
@@ -59,7 +62,7 @@
          font-size: 15px;
         }
         .table{
-            font-size: 15px;
+            font-size: 13px;
         }
         .blankspace2{
             height: 120px ;
@@ -68,8 +71,11 @@
             font-size: 20px;
         }
         .columna{
-            font-size: 15px;
+            font-size: 13px;
             
+        }
+        .boton{
+            font-size: 13px;
         }
    }
    @media (max-width:767px)  {
