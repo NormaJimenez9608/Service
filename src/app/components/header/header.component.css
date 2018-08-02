@@ -21,7 +21,8 @@
 
 @media (min-width:900px)  {
     .bg-light{
-       font-size: 80px;
+      
+       height: 70px;
     }
     .titule{
         font-size: 40px;
@@ -41,7 +42,7 @@
 }
 @media (min-width: 768px)  {
     .bg-light{
-       font-size: 50px;
+        height: 70px;
     }
     .titule{
         font-size: 40px;
