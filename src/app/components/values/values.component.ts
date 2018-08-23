@@ -25,8 +25,9 @@ export class ValuesComponent implements OnInit {
   public filtrado = [];
   public listdata = [];
   public listdata2 = [];
-  public data = [];
+  public data;
   public data2 = [];
+  public listdata3 =[]
   
   public list = [];
   public cero;
@@ -52,7 +53,7 @@ export class ValuesComponent implements OnInit {
 
   getUnit(): void {
 
-    this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
+      this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
       this.device = data;
 
       for (let i of this.device) {
@@ -61,11 +62,11 @@ export class ValuesComponent implements OnInit {
          this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
         }
 
-var persona = {};
+    var object = {};
     var unicos = this.filtrado.filter(function (e) { 
-        return persona[e.name] ? false : (persona[e.name] = true);
+        return object[e.name] ? false : (object[e.name] = true);
     });
-     
+    console.log( unicos)
     for (let i in unicos) {
       this.listdata.push({
         name: unicos[i].name,
@@ -78,30 +79,39 @@ var persona = {};
 
  
    getValues(){
+    
    this.data2.length=0;
 for( let i in this.listdata){
+  console.log('hola')
 this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id ).subscribe((valores:any)=>{
   this.data = valores.id;
+
+  
   this.number= i
+  
   this.getValores(this.data, this.number);
- 
    }) 
+  
+   
    }
 
  }
 
  getValores(data1, number):void{
+  console.log('hola2')
+  console.log(this.data)
   this.data2.length=0;
   this.ValuesService.getValores(this.idSystem, data1, this.accessKey).subscribe((dato:any)=>{
-    if (dato == null) {
-      // console.log('entro')
-      // let timer = Observable.timer(5000);
-      // timer.subscribe(() => this.getValores(this.data, this.number));
-         this.cero = 'null'
-    }else{
+    console.log(dato)
+     if (dato == null) {
+    //   // console.log('entro')
+    //   // let timer = Observable.timer(5000);
+    //   // timer.subscribe(() => this.getValores(this.data, this.number));
+          this.cero = 'null'
+   }else{
        
-        this.cero= dato[0].value
-    }
+    this.cero= dato[0].value
+     }
       this.data2.push({
         name: this.listdata[number].name,
         id: this.listdata[number].id,   
@@ -115,8 +125,6 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
   if (this.data2[i].name === "Setpoint"){
     this.idSetpoint= this.data2[i].id
   }
-  
-    
   
   }
  })
@@ -132,9 +140,4 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
  }
 
 
-
- 
-  
-
- 
   }
