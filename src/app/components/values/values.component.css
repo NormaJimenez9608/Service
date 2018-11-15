@@ -9,7 +9,7 @@
 }
 
 .valor{
-    color: black;
+    color: #383837 !important
 }
 
 @media (min-width:900px)  {
