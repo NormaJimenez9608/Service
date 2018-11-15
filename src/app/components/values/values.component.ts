@@ -66,7 +66,7 @@ export class ValuesComponent implements OnInit {
     var unicos = this.filtrado.filter(function (e) { 
         return object[e.name] ? false : (object[e.name] = true);
     });
-    console.log( unicos)
+ 
     for (let i in unicos) {
       this.listdata.push({
         name: unicos[i].name,
@@ -82,7 +82,7 @@ export class ValuesComponent implements OnInit {
     
    this.data2.length=0;
 for( let i in this.listdata){
-  console.log('hola')
+
 this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id ).subscribe((valores:any)=>{
   this.data = valores.id;
 
@@ -98,11 +98,10 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
  }
 
  getValores(data1, number):void{
-  console.log('hola2')
-  console.log(this.data)
+ 
   this.data2.length=0;
   this.ValuesService.getValores(this.idSystem, data1, this.accessKey).subscribe((dato:any)=>{
-    console.log(dato)
+
      if (dato == null) {
     //   // console.log('entro')
     //   // let timer = Observable.timer(5000);

@@ -24,7 +24,7 @@ constructor (public _http: Http,private router: Router, private HTTP: HttpClient
 
 getUnit(idSystems, accessKey:string){
     this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystems}/live/config?accesskey=${accessKey}`;
-    console.log(this.url)
+    
     return this.HTTP.get(this.url)
 }
 }

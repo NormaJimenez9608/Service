@@ -55,7 +55,7 @@ export class Values2Component implements OnInit {
  getValores():void{
   
   this.ValuesService.getValores(this.idSystem, this.idValor, this.accessKey).subscribe((dato:any)=>{
-  console.log(dato); 
+ 
   this.setpoint3 = dato[2].value;
   this.temperatura3 = dato[0].value;
   this.controlvalue3 = dato[1].value;
