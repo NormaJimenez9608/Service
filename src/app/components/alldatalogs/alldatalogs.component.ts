@@ -52,18 +52,18 @@ getDatos(): void {
       name:this.listdata[i].name,
       id: this.listdata[i].id,
       data: this.list
-    
     })
    // console.log(this.listID[0].data[0].timestamp)
    console.log(i)
   //  console.log(this.listID);
   this.fecha.length= 0;
+  
   for(let i in this.list){
-    
+    console.log(this.listID)
     this.fecha.push({
       time : this.list[i].timestamp
     })
-    
+  
   }
   
  
