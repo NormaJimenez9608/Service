@@ -17,8 +17,12 @@
       height: 50px;
   }
   .blankspace5{
-    height: 130px ;
+    height: 110px ;
 }
+.blankspace6{
+    height: 250px ;
+}
+
 }
 
 
@@ -30,7 +34,10 @@
         height: 50px;
     }
     .blankspace5{
-        height: 130px ;
+        height: 110px ;
+    }
+    .blankspace6{
+        height: 250px ;
     }
     
 }
@@ -44,7 +51,9 @@
     .blankspace5{
         height: 0px ;
     }
-    
+    .blankspace6{
+        height: 0px ;
+    }
 
 }
 @media (max-width:468px)  {
@@ -57,5 +66,7 @@
     .blankspace5{
         height: 0px ;
     }
-    
+    .blankspace6{
+        height: 0px ;
+    }
 }

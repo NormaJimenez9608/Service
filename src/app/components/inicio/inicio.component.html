@@ -32,9 +32,9 @@
     <tbody>
       
       <tr *ngFor="let data of table" >
-        <th scope="row"  class="img"  *ngIf="data.activated === true" ><img  style="width:2%; "  style="height:8%" src="assets\images\Boton_verde.png" alt="activated"></th>
+        <th scope="row"  class="img"  *ngIf="data.activated === true" ><img  style="width:45px; "  style="height:45px" src="assets\images\Boton_verde.png" alt="activated"></th>
         <td style="cursor:pointer"   class="cursor" (click)="onSelect(data)"  >{{data.name}}</td>
-        <td scope="row" class="img"  *ngIf="data.suspended === false"><img  style="width:2%; "  style="height:4%" src="assets\images\Boton-rojo.png" alt="activated"></td>
+        <td scope="row" class="img"  *ngIf="data.suspended === false"><img  style="width:45px; "  style="height:45px" src="assets\images\Boton-rojo.png" alt="activated"></td>
         
       </tr>
     
@@ -42,5 +42,6 @@
   
   </table>
   <div class="blankspace2"> </div>
+  <div class="blankspace10"> </div>
   </div>
 

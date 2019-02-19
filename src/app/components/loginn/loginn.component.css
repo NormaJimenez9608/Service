@@ -25,12 +25,15 @@ padding-left: 15px;
     background-color: transparent !important;
     border: 0;
 }
-
-@media (min-width:900px)  {
+@media (min-width:902px)  {
+    .blankspacelogin2{
+        height: 70px;
+    }
+}
+@media (max-width:901px)  {
     .blankspacelogin2{
         height: 8px;
     }
-    
 }
 
 @media (min-width:768px)  {
@@ -39,11 +42,12 @@ padding-left: 15px;
 @media (max-width:767px)  {
     .size{
 font-size: 12px;
-    }
+    }  
 }
+
 @media (max-width:468px)  {
     .size{
         font-size: 12px;
             }
-
+   
 }

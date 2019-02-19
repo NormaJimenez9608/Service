@@ -42,6 +42,8 @@ import { AlarmHistoryService } from './services/alarm-history.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlldatalogsComponent } from './components/alldatalogs/alldatalogs.component';
 import { DatalogsService } from './services/datalogs.service';
+import { Numunits2Component } from './components/numunits2/numunits2.component';
+import { PagedevicesComponent } from './components/pagedevices/pagedevices.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginnComponent },
@@ -58,7 +60,8 @@ const appRoutes: Routes = [
   { path: 'Systems/Devices/Datalog', canActivate: [AuthGuardGuard], component: DatalogComponent },
   { path: 'Systems/Devices/DatalogHours', canActivate: [AuthGuardGuard], component: DataloghoursComponent },
   { path: 'Systems/Devices/Graphics', canActivate: [AuthGuardGuard], component: GraphicsComponent },
-  { path: 'Systems/Devices/AllDatalogs', canActivate: [AuthGuardGuard], component: AlldatalogsComponent }
+  { path: 'Systems/Devices/AllDatalogs', canActivate: [AuthGuardGuard], component: AlldatalogsComponent },
+  { path: 'Systems/Devices/Name', canActivate: [AuthGuardGuard], component: PagedevicesComponent }
 ]
 
 @NgModule({
@@ -85,6 +88,8 @@ const appRoutes: Routes = [
     DataloghoursComponent,
     GraphicsComponent,
     AlldatalogsComponent,
+    Numunits2Component,
+    PagedevicesComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

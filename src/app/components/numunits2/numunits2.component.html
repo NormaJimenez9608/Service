@@ -1,0 +1,36 @@
+<div class="unidades">
+
+  <div class="logo">
+      <div class="container-fluid">
+          
+
+              <div class="row ">
+              <div *ngFor="let name of units" align="center">
+                      
+                          <div class=" row col-md-12">
+                                  <div *ngIf="count === 1" class="col-md-2"> </div>
+                                  <div *ngIf="count === 4" class="col-md-2"> </div>
+                                  <div class="col-md-2
+                                  "></div>
+                  <p align="center" class="col-md-3" style="cursor:pointer">
+                      <img style="width:150px;" routerLink="/Values>" src="assets/images/drycoler.JPG" alt="">
+                  </p>
+                  <div class="col-md-2"></div>
+                  
+                  <p align="center" class="col-md-3 letter" style="cursor:pointer" routerLink="/Systems/Devices/Name" (click)="onSelect(name)">{{  name.unit}}</p>
+                  <div *ngIf="name.unit === 'Unit 1'" class="col-md-1"></div>
+                  <div *ngIf="name.unit === 'Unit 2'" class="col-md-1"></div>
+                  <div *ngIf="name.unit === 'Unit 3'" class="col-md-1"></div>
+                  <div *ngIf="name.unit === 'Unit 4'" class="col-md-1"></div>
+                  <div *ngIf="count != 2" class="col-md-2"></div>
+                  
+              </div>
+              <div class="blankspace3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="count === 1" class="blankspace6"> </div>
+<div *ngIf="count === 4" class="blankspace5"> </div>
+<div class="blankspace5"> </div>

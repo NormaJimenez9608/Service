@@ -46,10 +46,13 @@
     font-size: 15px;
   }
   .blankspace2{
-    height: 180px ;
+    height: 250px ;
 }
 .blankspace7{
     height: 50px;
+}
+.blankspace10{
+    height: 150px;
 }
 }
 
@@ -72,6 +75,9 @@
     }
     .blankspace7{
         height: 50px;
+    }
+    .blankspace10{
+        height: 150px;
     }
 }
 @media (max-width:767px)  {

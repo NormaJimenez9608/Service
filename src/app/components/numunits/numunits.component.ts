@@ -25,12 +25,16 @@ export class NumunitsComponent implements OnInit {
   public filtrado = [];
   public concatenadofilter = [];
   public count: number;
+  public units=[];
+  public nameUnit;
+  public Devices=[];
   SystemsModels = new systems;
   unitModel = new unit;
 
   constructor(private UnitService:  UnitService, private SystemsService:  SystemsService, private router: Router) {
     this.accessKey = localStorage.getItem('accessKey');
     this.idSystem = localStorage.getItem('idSystem');
+    this.nameUnit= localStorage.getItem('nameUnit')
   }
 
   ngOnInit() {
@@ -39,38 +43,72 @@ export class NumunitsComponent implements OnInit {
 
   getUnit(): void {
 
-    this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
-      this.device = data;
+if (this.nameUnit == "Unit"){
+  this.Devices.push(
+    {name: "GMM"}), 
+    this.Devices.push(
+     {name: "GHM PAD"})
+     }
+
+if (this.nameUnit == "Unit 1"){
+this.Devices.push(
+  { name: "GMM1"}), 
+this.Devices.push(
+  { name: "GHM PAD1"})
+    }
+
+if (this.nameUnit == "Unit 2"){
+ this.Devices.push(
+   {name: "GMM2"}), 
+  this.Devices.push(
+   {name: "GHM PAD2"})
+     }
+if (this.nameUnit == "Unit 3"){
+  this.Devices.push(
+    {name: "GMM3"}), 
+   this.Devices.push(
+    {name: "GHM PAD3"})
+      }
+ if (this.nameUnit == "Unit 4"){
+    this.Devices.push(
+      {name: "GMM4"}), 
+      this.Devices.push(
+    {name: "GHM PAD4"})
+       }
+
+console.log(this.Devices)
+   // this.UnitService.getUnit(this.idSystem, this.accessKey).subscribe((data: any) => {
+    //  this.device = data;
+    //  var names = this.device.map(function (person) { return person.deviceName; });
+   //   var sorted = names.sort();
+    //  var unique = sorted.filter(function (value, index) {
+        //  return value !== sorted[index + 1];
+    // });
+//for (let i in unique) {
+  //this.deviNames.push(
+   //      {
+     //  deviceName: unique[i]
+    // })
+//}
 
 
-      var names = this.device.map(function (person) { return person.deviceName; });
-      var sorted = names.sort();
-      var unique = sorted.filter(function (value, index) {
-          return value !== sorted[index + 1];
-      });
 
-     
-for (let i in unique) {
-  this.deviNames.push(
-         {
-       deviceName: unique[i]
-     })
-}
-
-
-this.count=this.deviNames.length
-
+//console.log(this.deviNames)
+this.count=this.Devices.length
     //   for (let i of devicesNames) {
     //     this.concatenadofilter = this.filtrado;
     //     this.filtrado = this.device.filter(device => device.deviceName === i.deviceName);
     //     this.concatenadofilter = this.concatenadofilter.concat(this.filtrado);
     //   }
-   });
+  // });
   }
+
+
+
   onSelect(name) {
 
     
-    this.nameDevice = name.deviceName
+    this.nameDevice = name.name
     //console.log([this.nameDevice]);
     localStorage.setItem('nameDevice', this.nameDevice);
 
