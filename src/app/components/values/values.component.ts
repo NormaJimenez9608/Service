@@ -127,7 +127,7 @@ this.ValuesService.getValues( this.idSystem, this.accessKey, this.listdata[i].id
   
   }
  })
- 
+ //console.log(this.data2)
   } 
 
   

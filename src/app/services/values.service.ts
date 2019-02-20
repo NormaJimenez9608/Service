@@ -24,16 +24,18 @@ getValues(idSystem:string, accessKey:string, value:string){
   
  
     this.url = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async?accesskey=${accessKey}&id=${value}`;
- 
-    return this.HTTP.get(this.url)
-    
+    //console.log(this.url)
+    return this.HTTP.get(this.url);
+   
 }
 
 getValores( idSystem:string, idValor:string, accessKey:string){
   
     this.url2 = `https://api.netbiter.net/operation/v1/rest/json/system/${idSystem}/live/async/${idValor}?accesskey=${accessKey}`;
-
-    return this.HTTP.get(this.url2)
+  //  console.log(this.url2)
+    return this.HTTP.get(this.url2);
     
 }
+
+
 }

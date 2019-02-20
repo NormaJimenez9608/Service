@@ -54,26 +54,26 @@ if (this.nameUnit == "Unit 1"){
 this.Devices.push(
   { name: "GMM1"}), 
 this.Devices.push(
-  { name: "GHM PAD1"})
+  { name: "GHM Pad1"})
     }
 
 if (this.nameUnit == "Unit 2"){
  this.Devices.push(
    {name: "GMM2"}), 
   this.Devices.push(
-   {name: "GHM PAD2"})
+   {name: "GHM Pad2"})
      }
 if (this.nameUnit == "Unit 3"){
   this.Devices.push(
     {name: "GMM3"}), 
    this.Devices.push(
-    {name: "GHM PAD3"})
+    {name: "GHM Pad3"})
       }
  if (this.nameUnit == "Unit 4"){
     this.Devices.push(
       {name: "GMM4"}), 
       this.Devices.push(
-    {name: "GHM PAD4"})
+    {name: "GHM Pad4"})
        }
 
 console.log(this.Devices)
