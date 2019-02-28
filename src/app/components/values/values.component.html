@@ -3,24 +3,24 @@
          
       <div  *ngFor="let data of data2" >
             <div class="col-md-12 texteando" align="center" >
-      <p  *ngIf="data.name === '% opening Valve'"><img class="img-1"  src="assets/images/signo.png" alt="">&nbsp; &nbsp;{{data.name}} &nbsp; &nbsp; &nbsp; <a class="valor">100 %</a></p>
+      <p  *ngIf="data.name === '% opening Valve'"><img class="img-1"  src="assets/images/signo.png" alt="">&nbsp; &nbsp;{{data.name}} &nbsp; &nbsp; &nbsp; <a class="valor">0 %</a></p>
       <p  *ngIf="data.name === 'Absolute Operating Hours'" ><img class="img-1"  src="assets\images\reloj.png" alt="">&nbsp; &nbsp; Operating Hours &nbsp; &nbsp; &nbsp;<a class="valor">0 hrs</a></p>
-      <p  *ngIf="data.name === 'Ambient Temp'" ><img class="img-1"  src="assets/images/Temp_ambient..png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp; &nbsp;<a class="valor">36.7 °C</a></p>
+      <p  *ngIf="data.name === 'Ambient Temp'" ><img class="img-1"  src="assets/images/Temp_ambient..png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp; &nbsp;<a class="valor">30.1 °C</a></p>
       <p  *ngIf="data.name === '% Fan Speed form GMM'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;% Fan Speed GMM &nbsp; &nbsp; &nbsp;<a class="valor">0 %</a></p>
-      <p  *ngIf="data.name === 'Setpoint'" ><img class="img-1"  src="assets/images/setpoint.png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp;  <input class="border text text-left texto" align="right" type="text"  placeholder="38"  size="3px" value='38' [(ngModel)]="ValuesModel.value">&nbsp;<button class="btn btn-outline-secondary valor2" (click)="Values()" type="button">Set</button></p>
+      <p  *ngIf="data.name === 'Setpoint'" ><img class="img-1"  src="assets/images/setpoint.png" alt="">&nbsp; &nbsp; {{data.name}} &nbsp; &nbsp;  <input class="border text text-left texto" align="right" type="text"  placeholder="38"  size="3px" value='34' [(ngModel)]="ValuesModel.value">&nbsp;<button class="btn btn-outline-secondary valor2" (click)="Values()" type="button">Set</button></p>
       <p  *ngIf="data.name === 'Meter reading Water consumption'" ><img class="img-1"  src="assets/images/MEDIDOR.png" alt="">  &nbsp; Water consumption &nbsp; &nbsp; <a class="valor">0 GPM</a></p>
-      <p  *ngIf="data.name === 'Control Value'" ><img class="img-1"  src="assets/images/fan.gif" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">93 %</a></p>
-      <p  *ngIf="data.name === 'Process Temperature'" ><img class="img-1"  src="assets/images/processTemp.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">37.8 °C</a></p>
-      <p  *ngIf="data.name === 'Power Consumption'" ><img class="img-1"  src="assets/images/power.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">25420 W</a></p>
-      <p  *ngIf="data.name === 'Fan Speed 1'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">977 RPMs</a></p>
-      <p  *ngIf="data.name === 'Fan Speed 2'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">977 RPMs</a></p>
+      <p  *ngIf="data.name === 'Control Value'" ><img class="img-1"  src="assets/images/fan.gif" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">77 %</a></p>
+      <p  *ngIf="data.name === 'Process Temperature'" ><img class="img-1"  src="assets/images/processTemp.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">37.6 °C</a></p>
+      <p  *ngIf="data.name === 'Power Consumption'" ><img class="img-1"  src="assets/images/power.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">13772 W </a></p>
+      <p  *ngIf="data.name === 'Fan Speed 1'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">786 RPMs</a></p>
+      <p  *ngIf="data.name === 'Fan Speed 2'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a class="valor">786 RPMs</a></p>
       <p  *ngIf="data.name === 'Fan Speed 3'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
       <p  *ngIf="data.name === 'Fan Speed 4'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
       <p  *ngIf="data.name === 'Fan Speed 5'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
       <p  *ngIf="data.name === 'Fan Speed 6'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
       <p  *ngIf="data.name === 'Fan Speed 7'" ><img class="img-1"  src="assets/images/speed2.png" alt="">&nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
       <p  *ngIf="data.name === 'Fan Speed 8'" ><img class="img-1"  src="assets/images/speed2.png" alt=""> &nbsp; &nbsp;{{data.name}}&nbsp; &nbsp; &nbsp;<a >{{data.value}}</a></p>
-      <p  *ngIf="data.name === 'Humidity'" ><img class="img-1"  src="assets/images/humedad.png" alt=""> &nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class="valor">43 °C</a></p>
+      <p  *ngIf="data.name === 'Humidity'" ><img class="img-1"  src="assets/images/humedad.png" alt=""> &nbsp; &nbsp; {{data.name}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class="valor">55 %</a></p>
       
     </div>
     <div class="blankspace"></div>
