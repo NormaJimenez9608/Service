@@ -24,7 +24,7 @@
       <tr class="name">
         <th scope="col">Activated</th>
         <th scope="col">Name</th>
-        <th scope="col">Suspended</th>
+        
         
       </tr>
     </thead>
@@ -32,7 +32,7 @@
     <tbody>
       
       <tr *ngFor="let data of table" >
-        <th scope="row"  class="img"  *ngIf="data.activated === true" ><img  style="width:45px; "  style="height:45px" src="assets\images\Boton_verde.png" alt="activated"></th>
+        <th scope="row"  class="img"  *ngIf="data.activated === true" ><img  style="width:40px; "  style="height:45px" src="assets\images\Boton_verde.png" alt="activated"></th>
         <td style="cursor:pointer"   class="cursor" (click)="onSelect(data)"  >{{data.name}}</td>
         <!-- <td scope="row" class="img"  *ngIf="data.suspended === false"><img  style="width:45px; "  style="height:45px" src="assets\images\Boton-rojo.png" alt="activated"></td>-->
         
