@@ -42,24 +42,33 @@
    .nav-tabs{
     font-size: 15px;
    }
+   .blankspace3{
+    height: 80px;
+}
 }
 
-@media (min-width:768px)  {
+@media (min-width:801px)  {
     .Name{
         font-size: 25px;
        }
        .nav-tabs{
         font-size: 15px;
        }
+       .blankspace3{
+        height: 80px;
+    }
 }
-@media (max-width:767px)  {
+@media (max-width:800px)  {
    
     .Name{
-        font-size: 15px;
+        font-size: 22px;
        }
        .nav-tabs{
-        font-size: 12px;
+        font-size: 15px;
        }
+       .blankspace3{
+        height: 40px;
+    }
 }
 @media (max-width:468px)  {
     .Name{
@@ -68,4 +77,7 @@
        .nav-tabs{
         font-size: 12px;
        }
+       .blankspace3{
+        height: 40px;
+    }
 }

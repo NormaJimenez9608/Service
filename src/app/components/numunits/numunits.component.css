@@ -22,7 +22,7 @@
 }
 
 
-@media (min-width:768px)  {
+@media (min-width:801px)  {
     .letter{
         font-size: 130%;
       }
@@ -34,12 +34,12 @@
     }
     
 }
-@media (max-width:767px)  {
+@media (max-width:800px)  {
     .letter{
         font-size: 100%;
       }
       .blankspace3{
-        height: 20px;
+        height: 40px;
     }
     .blankspace5{
         height: 0px ;
